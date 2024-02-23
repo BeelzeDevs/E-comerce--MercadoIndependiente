@@ -8,13 +8,19 @@
     list-style: none; 
   }
 body{
+    background-color: #EBEBEB;/* mercado-libre*/
     background-color: #F8F8FF;
     background-color: #EFECEC;
+    background-color: rgb(226, 222, 222);
+    background-color: #EBEBEB;
 }
 li,ul{
     list-style-type: none;
     color: white;
     
+}
+a{
+    text-decoration: none;
 }
 
 /* HEADER */
@@ -225,7 +231,7 @@ li,ul{
 
   @media only screen and (min-width: 1400px) {
     .search-brand-container{
-        grid-template-columns: 1fr 1fr;  
+        grid-template-columns: 0.7fr 1.3fr;  
         justify-items:normal;
     }
     .navbar-brand{
@@ -235,13 +241,15 @@ li,ul{
 /* FIN HEADER */
  
 /* FOOTER */
+footer{
+    background-color: #00008B;
+}
 .footer-container{
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: 1fr 0.1fr 1fr 0.1fr 1fr;
     align-items: center;
     justify-items: center;
-    background-color: #00008B;
     opacity: 90%;
     padding: 10px;
     border-top: 1px solid gray;
@@ -451,3 +459,168 @@ li,ul{
     }
 }
 /* FIN FOOTER */
+
+/* MAIN */
+
+/*      xs
+        font-size: 1em;
+        font-weight: 400;
+        padding: 0.5rem;
+        outline: 1px solid black;
+        background-color: rgb(255,102,203, 0.5);
+        color: white;
+*/
+
+/* Main - Information */
+.container-info{
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-row: repeat(6,1fr);
+    align-items: flex-start;
+    text-align:center;
+    gap: 0px;
+    margin-bottom: 40px; 
+    margin-top: 40px;
+    background-color: white;
+    border-radius: 20px;
+}
+.info-item:nth-child(1){
+    grid-row: 1/2;
+}
+.info-item:nth-child(3){
+    grid-row: 3/4;
+}
+.info-item:nth-child(5){
+    grid-row: 5/6;
+}
+.info-link:nth-child(2){
+    grid-row: 2/3;
+}
+.info-link:nth-child(4){
+    grid-row: 4/5;
+}
+.info-link:nth-child(6){
+    grid-row: 6/7;
+}
+.info-img{
+    padding: 0.5rem;
+    margin-top: 1.3rem;
+    max-height: 60px;
+    display: flex;
+    justify-content: center;
+}
+.info-item h2{
+    display: block;
+    font-size: 1.3em;
+    font-weight: 500;
+    padding: 0.3rem;
+    margin-bottom: 0.2rem;
+}
+.info-item p{
+    display: block;
+    font-size: 1em;
+    padding:0.3rem;
+    margin: 0px;
+} 
+.info-buttons{  
+    font-size: 1em;
+    font-weight: 400;
+    padding: 0.4rem;
+    margin: 0.5rem;
+    outline: 1px solid rgb(0,75,172);
+    background-color: rgb(65, 121, 194,0.7);
+    border-radius: 5px;
+    color: white;      
+}
+.info-buttons:hover{
+    background-color: rgb(0,75,172,0.08);
+    color: black;
+}
+.info-link{
+    display: flex;
+    padding: 1.2rem;
+    margin: 0.2rem;
+    justify-content: center;
+}  
+@media only screen and (min-width: 768px){
+    .info-img{
+        padding: 0.5rem;
+        margin-top: 1.3rem;
+        min-height: 75px;
+        display: flex;
+        justify-content: center;
+    }
+    .info-item h2{
+        font-size: 1.5em;
+    }
+    .info-item p{
+        font-size: 1.2em;
+    }
+    .info-buttons{  
+        font-size: 1.2em ;
+        font-weight: 500;
+    }
+    
+}
+@media only screen and (min-width:1200px){
+    .container-info{
+        display: grid;
+        grid-template-columns: repeat(3,1fr);
+        grid-row: repeat(2,1fr);
+        align-items: flex-start;
+        text-align:center;
+        gap: 0px;
+        margin-bottom: 40px;
+    }
+
+    .info-item:nth-child(1){
+        grid-column: 2/3;
+        grid-row: 1/2;
+    }
+    .info-item:nth-child(3){
+        grid-column: 1/2;
+        grid-row: 1/2;
+    }
+    .info-item:nth-child(5){
+        grid-column: 3/4;
+        grid-row: 1/2;
+    }
+    .info-link:nth-child(2){
+        grid-column: 2/3;
+        grid-row: 2/3;
+        align-self: flex-end;
+    }
+    .info-link:nth-child(4){
+        grid-column: 1/2;
+        grid-row: 2/3;
+        align-self: flex-end;
+    }
+    .info-link:nth-child(6){
+        grid-column: 3/4;
+        grid-row: 2/3;
+        align-self: flex-end;
+    }    
+    .info-img{
+        padding: 5px;
+        min-height: 60px;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+    }
+    .info-link{
+        padding: 1rem;
+    }
+
+    .info-item h2{
+        font-size: 1.3em;
+    }
+    .info-img img{
+        width: 30%;
+        height: auto;
+
+    }
+    .info-buttons{  
+        font-size: 1.03em ;
+        font-weight: 400;
+    }
+}
