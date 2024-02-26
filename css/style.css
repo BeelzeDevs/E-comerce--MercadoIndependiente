@@ -468,10 +468,16 @@ footer{
 #main-carousel{
     display: none;
 }
+.my-container{
+    position: relative;
+    height: 100%;
+    width: 100%;
+}
 
 @media only screen and (min-width:768px){ 
     #main-carousel{
-    display: contents;
+        display: flex;
+        
     }
     .welcome-title{
         font-size: 1.2rem;
@@ -484,6 +490,10 @@ footer{
     }    
     .carousel-control-prev{
         justify-content: flex-start;
+        position: absolute;
+        top: 0;
+        height: 100%;
+        width: 40%;
     }
     .carousel-control-prev-icon{
         background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' stroke='white' fill='white'%3e%3cpath d='M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z'/%3e%3c/svg%3e");
@@ -494,6 +504,10 @@ footer{
     }
     .carousel-control-next{
         justify-content: flex-end;
+        position: absolute;
+        top: 0;
+        height: 100%;
+        width: 40%;
     }
     .carousel-control-next-icon{
         background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' stroke='white' fill='white'%3e%3cpath d='M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e");
@@ -504,7 +518,7 @@ footer{
     }
     .remark{
         font-weight: 700;
-    }
+    }   
 }
 @media only screen and (min-width:992px){
     .welcome-title{
@@ -519,21 +533,15 @@ footer{
         margin-top: 100px;
         min-width:50px;
 
-    }
+    } 
 }
 @media only screen and (min-width:1200px){
     .welcome-title{
         font-size: 1.8rem;
         line-height: 6;
-    }    
-    .carousel-control-prev{
-        justify-content: flex-start;
-    }
+    }  
     .carousel-control-prev-icon{
         margin-top: 0px;
-    }
-    .carousel-control-next{
-        justify-content: flex-end;
     }
     .carousel-control-next-icon{
         margin-top: 0px;
@@ -545,12 +553,14 @@ footer{
         
     }
 }
-@media only screen and (min-width:1600px){
+@media only screen and (min-width:1400px){
     .welcome-title{
         font-size: 1.8rem;
         line-height: 5;
     }
 }
+
+/* END - Main title & welcome carrousel  */
 
 /* Offers - section container */
 .main-offers-container{
@@ -739,8 +749,9 @@ footer{
         font-size: 1em;
         
     }
-
 }
+
+/*  END Offers */
 
 
 /* Information */
@@ -897,6 +908,10 @@ footer{
     }
 }
 
+/* END - Information */
+
+/* END INDEX.html */
+
 /*  SOBRE-NOSOTROS.html */
 .aboutus-container{
     display: grid;
@@ -1020,8 +1035,9 @@ footer{
     }
 
 }
+/* END SOBRE-NOSOTROS.html*/
 
-/* CONTACT.html */
+/* CONTACTO.html */
 
 .contact-title{
     text-align: center;
@@ -1029,7 +1045,7 @@ footer{
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
 
-/* Contact - containers structure*/
+/* Contacto - containers structure*/
 .contact{
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     background-color: #282c34;
@@ -1071,7 +1087,7 @@ footer{
     justify-self: center;
     justify-content: center;
 }
-/* contact - img & form */
+/* contacto - img & form */
 .contact__img{
     border-radius: 25px;
     width: 50%;
@@ -1164,3 +1180,6 @@ footer{
     }
 
 }
+
+
+/* END CONTACTO.html */
