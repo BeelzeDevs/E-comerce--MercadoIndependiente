@@ -57,41 +57,30 @@
     </header><!-- 1 - Fin Header-->
 
     <main> <!-- Seccion 2 - Main -->
-        <section className='contact'> <!-- Formulario de contacto -->
-            <h2>Contactanos vía e-mail</h2>
-            <div className="contact-container">
-                <form className="form-contact">
-                    <div className="">
-                        <input type="text" className="form_input" placeholder="Nombre..">
-                    </div>
-                    <div className="">
-                        <input type="email" className="form_input" placeholder="Email...">
-                    </div>
-                    <div className="">
-                        <select name="" id="" required>
+
+        <section  class="container">
+            <article class='contact'> <!-- Formulario de contacto -->
+                <h2 class="contact-title">Contactanos vía e-mail</h2>
+                <div class="contact-container">
+                    <form class="form-contact">
+                        <input type="text" class="form_input" placeholder="Nombre Apellido">
+                        <input type="email" class="form_input" placeholder="example@email.com">
+                        <select name="" id="" required class="form_input">
                             <option value="sinAsunto" selected disabled hidden>Seleccionar Asunto</option>
-                            <option value="reclamos">Reclamos</option>
-                            <option value="asistencia">Asistencia Técnica</option>
-                            <option value="importación">Pedido Importación</option>
+                            <option value="reclamos" class="form-selec__option">Reclamos</option>
+                            <option value="asistencia" class="form-selec__option">Asistencia Técnica</option>
+                            <option value="importación" class="form-selec__option">Pedido Importación</option>
                         </select>
-                    </div>
-                    <div className="">
-                        <textarea className="form_input" placeholder="Escriba el mensaje..."></textarea>
-                    </div>
-                    <div className="">
-                        <input className="form_input" type="submit">
-                    </div>
-                </form>
-    
-                <div className='contact-form-img'>
-                    <div className='img-container'>
-                        <div >
-                            <img className='logo' src="../img/email-logo.svg" />
-                        </div>
+                        <textarea class="form_input" placeholder="Escriba el mensaje..."></textarea>
+                        <input class="form_input-submit" type="submit">
+                    </form>
+                    <div class="contact-form-img">
+                        <img src="../img/email-logo.svg" alt="email icon" class="contact__img">
                     </div>
                 </div>
-            </div>
-        </section><!-- Fin Formulario de contacto -->
+            </article><!-- Fin Formulario de contacto -->
+        </section>
+    
     </main><!-- Fin Seccion 2 - Main -->
 
 
