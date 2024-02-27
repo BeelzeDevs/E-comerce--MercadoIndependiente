@@ -1047,6 +1047,11 @@ footer{
     font-weight: 500;
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
+.contact-pos{
+    display: flex;
+    justify-content: center;
+}
+
 
 /* Contacto - containers structure*/
 .contact{
@@ -1061,7 +1066,7 @@ footer{
     width: 100%;
     display: flex;
     flex-direction: column;
-    font-size: calc(10px + 2vmin);
+    font-size: calc(5px + 2vmin);
 
 }
 .contact-container{
@@ -1077,8 +1082,6 @@ footer{
     flex-direction: column;
     justify-items: center;
     gap: 40px;
-    
-
 }
 .contact-form-img{
     grid-row: 1/2;
@@ -1135,6 +1138,10 @@ footer{
     .contact-form-img{
         width: 50%;
     }
+    .contact{
+        width: 70%;
+    }
+
 }
 @media only screen and (min-width:768px){
     .contact{
@@ -1168,7 +1175,7 @@ footer{
         grid-column: 2/3;
         grid-row: 1/2;
         display: flex;
-        width: 60%;
+        width: 70%;
         justify-self: center;
         align-self: center;
         justify-content: center;
@@ -1186,3 +1193,130 @@ footer{
 
 
 /* END CONTACTO.html */
+
+/* Iniciar-sesion.html */
+
+/* containers */
+.sesion-container{
+    display: flex;
+    flex-direction: column;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    background-color: #282c34;
+    color: white;
+    border: 1px solid gray;
+    border-radius: 5px;
+    padding-top: 20px;
+    margin-top: 40px;
+    margin-bottom: 40px;
+    width: 100%;
+    padding: 0px;
+    font-size: calc(5px + 2vmin);
+}
+.sesion__content{
+    display: flex;
+    flex-direction: column;
+    background-color:#333;
+    margin: 0px;
+    padding: 20px 20px 15px;
+    gap: 5px;
+    
+}
+.sesion-form{
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 20px;
+    
+}
+/* form title*/
+.sesion-title{
+    text-align: center;
+    font-weight: 500;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+/* form inputs */
+
+.sesion-form__input{
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-bottom: 3px solid  rgb(0, 0, 124);
+    background: transparent;
+    color:#fff;
+
+}
+.sesion-form__input:focus{
+    background: linear-gradient(to bottom,transparent,#222);
+    outline:none;
+    border-bottom: 3px solid  rgba(13, 13, 194);
+}
+
+
+/* submit buttons */
+.sesion__submit{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin: 20px 0px 20px;
+}
+
+.sesion__submit input[type="submit"]{
+    outline: 3px solid rgba(0, 0, 139,0.5);
+    color:#fff;
+    background-color: rgba(0, 0, 124);
+    padding: 10px 20px;
+    align-self: center;
+}
+.sesion__submit input[type="submit"]:hover{
+    background-color: rgba(13, 13, 194);
+}
+.sesion__submit input[type="submit"]:focus{
+    background:rgba(13, 13, 194);
+}
+.sesion__submit a{
+    outline: 3px solid rgba(0, 0, 139,0.5);
+    color:#fff;
+    background-color: rgba(0, 0, 124);
+    padding: 10px 20px;
+    border: 2px outset rgb(118, 118, 118);
+
+}
+.sesion__submit a:hover{
+    background-color: rgba(13, 13, 194);
+}
+.sesion__submit a:focus{
+    background:rgba(13, 13, 194);
+}
+.sesion__submit a:active{
+    border: 2px inset rgb(118, 118, 118);
+}
+
+/* sesion responsive */
+
+@media only screen and (min-width:576px){
+    .sesion__content{
+        padding: 20px 40px 10px;
+    }
+    .sesion__submit a{
+        padding: 10px 40px;
+    }
+    .sesion__submit input[type="submit"]{
+        padding: 10px 40px;
+    }
+    
+
+}
+
+@media only screen and (min-width:768px){
+    .sesion-container{
+        width: 60%;
+    } 
+}
+
+@media only screen and (min-width:1200px){
+    .sesion-container{
+        width: 40%;
+    } 
+}
