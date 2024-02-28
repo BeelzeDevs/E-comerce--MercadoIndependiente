@@ -1320,3 +1320,102 @@ footer{
         width: 40%;
     } 
 }
+
+/* END Iniciar-sesion.html */
+
+
+/* Producto.html */
+.container-product{
+    margin-top: 40px;
+    margin-bottom: 40px;
+    padding: 0px;
+}
+.product-list{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 20px;
+    justify-content: space-around;
+}
+.product-item{
+    background-color: gray;
+    border-radius: 30px;
+    display: flex;
+    flex-direction: column;
+    width:250px;
+    justify-content: flex-start;
+    color: white;
+
+}
+.product-content{
+    display: grid;
+    grid-template-rows: 1fr 0.5fr 0.3fr;
+    justify-items: center;
+    height: 100%;
+    padding: 20px 0px;
+    gap: 5px;
+}
+.container-image{
+    background-color: white;
+    border-top-left-radius: 30px;
+    border-top-right-radius: 30px;
+}
+.product-image{
+    width: 100%;
+    height: auto;
+    border-top-left-radius: 30px;
+    border-top-right-radius: 30px;
+}
+.product-item__link{
+    grid-row: 1/2;
+    padding: 15px;
+}
+.product-item__btn{
+    grid-row: 3/4;
+}
+.product-item__link a{
+    color: white;
+}   
+.product-item__price{
+    font-family: Proxima Nova,-apple-system,Roboto,Arial,sans-serif;
+
+}
+.product-item__btn button{
+    outline: 3px solid rgba(0, 0, 139,0.5);
+    color:#fff;
+    background-color: rgba(0, 0, 124);
+    padding: 10px 20px;
+    border: 2px outset rgb(118, 118, 118);
+
+
+}
+.product-item__btn button:hover{
+    background-color: rgba(13, 13, 194);
+}
+.product-item__btn button:focus{
+    background:rgba(13, 13, 194);
+    outline: 3px solid rgba(0, 0, 139,0.5);
+}
+.product-item__btn button:active{
+    border: 2px inset rgb(118, 118, 118);
+    outline: 3px solid rgba(0, 0, 139,0.5);
+}
+
+/* responsive */
+@media only screen and (min-width: 576px){
+    .product-item{
+    }
+}
+@media only screen and (min-width: 768px){
+    .product-list{
+        justify-content: space-around;
+    }
+}
+@media only screen and (min-width: 1200px){
+    .product-list{
+        justify-content: space-between;
+    }
+    
+}
+
+/* END Productos.html*/
