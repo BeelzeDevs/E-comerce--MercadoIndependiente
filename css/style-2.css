@@ -27,16 +27,16 @@ a{
 }
 
 /* HEADER */
-.img-sm-ico{
+.company-logo{
     width: 100%;
     height: auto;
 }
-.modelo-bg-azul{
+.nav-bg-azul{
     background-color: #00008B;
     opacity: 90%;
 }
 /* Contiene 3 sections: Brand, Search y Toggler-links */
-.search-brand-container{
+.brand-search-container{
     display: grid;
     grid-template-columns: 1fr 2fr 1fr 0.5fr ;
     gap: 5px;
@@ -128,14 +128,14 @@ a{
         flex-direction: column;
         align-items: stretch;
     }
-    .img-sm-ico{
+    .company-logo{
         width: 20%;
     }
     .navbar-title {
         display:inline-block;
         margin-right: 0px;
     }
-    .search-brand-container{
+    .brand-search-container{
         display: grid;
         grid-template-columns: 1fr 1fr 1fr;
         grid-template-rows: repeat(2,minmax(50px,10vh));
@@ -178,13 +178,13 @@ a{
     .navbar>.container{
         flex-direction: row;
     }
-    .img-sm-ico{
+    .company-logo{
         max-width: 100%;
         height: auto;
         display: block;
 
     }
-    .search-brand-container{
+    .brand-search-container{
         display: grid;
         grid-template-columns:  0.68fr 1fr;
         grid-template-rows: auto;
