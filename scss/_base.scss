@@ -1,0 +1,111 @@
+@use "sass:list";
+/* Global y Body */
+$colors:(
+    bg-header:rgb(0, 0, 139),
+    bg-main:#EBEBEB,
+    bg-footer:rgb(0, 0, 139),
+    bg-details:rgba(255,102,203, 0.5),
+    btn-primary:rgba(255, 68, 193, 0.9),
+    font-w:white,
+    nav-link:white,
+    nav-link-active:white,
+    aux-1:#5f9
+);
+
+$font-1:'Montserrat', sans-serif;
+
+$fonts:(
+    f-primary:$font-1
+
+);
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family:map-get($fonts,"f-primary" );
+    text-decoration: none;
+    list-style: none; 
+  }
+body{
+    background-color: map-get($colors,"bg-main");
+}
+li,ul{
+    list-style-type: none;
+    color: map-get($colors,"font-w");
+    
+}
+a{
+    text-decoration: none;
+}
+
+@mixin grid-box($tcol:1fr,$trow:1fr){
+    display: grid;
+    grid-template-columns: $tcol;
+    grid-template-rows: $trow;
+}
+@mixin grid-col-row($col1:1,$col2:2,$row1:1,$row2:2){
+    grid-column: list.slash($col1,$col2);
+    grid-row: list.slash($row1,$row2);
+}
+@mixin flex-box($direc:row,$wrap:nowrap){
+    display: flex;
+    flex-direction: $direc;
+    flex-wrap: $wrap;
+}
+@mixin justify-align($justify:center,$align:center){
+    justify-content: $justify;
+    align-items: $align;
+}
+
+@mixin font-size-weight($size:1.3rem,$weight:400){
+    font-size: $size;
+    font-weight: $weight;
+}
+
+@mixin reset-margin($pad:0px, $marg:0px){
+    padding: $pad;
+    margin: $marg;
+}
+@mixin f-size-weight($size:1.3rem,$weight:400){
+    font-size: $size;
+    font-weight: $weight;
+}
+
+
+/*
+#5f9  
+#094
+#EBEBEB
+rgba(255, 68, 193, 0.9)
+rgb(0, 0, 139)
+*/
+@mixin mq-sm{
+    @media only screen and (min-width:576px){
+        @content;
+    }
+}
+
+@mixin mq-md{
+    @media only screen and (min-width:768px){
+        @content;
+    }
+}
+
+@mixin mq-lg{
+    @media only screen and (min-width:992px){
+        @content;
+    }
+}
+
+@mixin mq-xl{
+    @media only screen and (min-width:1200px){
+        @content;
+    }
+}
+
+@mixin mq-xxl{
+    @media only screen and (min-width:1400px){
+        @content;
+    }
+}
