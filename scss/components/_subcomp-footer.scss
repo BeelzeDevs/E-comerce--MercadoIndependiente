@@ -1,0 +1,55 @@
+/* btn-footer controla todos los botones, divisions controla las primera division 
+, la 2da tiene su propio comportamiento pero comparte las características */
+
+.btn-footer{
+        @include font-size-weight(1em,400);
+        padding: 0.5rem;
+        background-color: map-get($colors, "footer-bg-buton");
+        color: map-get($colors, "footer-txt-buton");
+        outline: 1px solid map-get($colors,"footer-outline-buton");
+        &:hover{
+            background-color: map-get($colors, "footer-bg-buton-hover");
+            color: map-get($colors, "footer-txt-buton-hover");
+            outline: 1px solid map-get($colors,"footer-outline-buton-hover" );
+        } 
+}
+
+.divisions{
+    @include grid-col-row(1,2,2,3);
+    @include width-heigth(100%,30px);
+    @include flex-box();
+    @include justify-align(space-around,flex-start);
+    border-top: 5px solid map-get($colors,"footer-divisions");
+    .division-p{
+        color: map-get($colors,"bg-footer");
+    }
+}
+
+@include mq-sm{
+    .btn-footer{
+        @include font-size-weight(1.2em,500);
+    }
+}
+
+@include mq-md{
+    .btn-footer{
+        @include font-size-weight(1.2em,500);
+    }
+    .divisions{
+        @include grid-col-row(2,3);
+        @include reset-border();
+        border-right: 2px solid map-get($colors,"footer-divisions");
+        @include flex-box(column);
+        justify-content: flex-start;
+        text-align: center;
+        height: 75%;
+    }
+}
+
+@include mq-xl{
+    .divisions{
+        @include grid-col-row(2,3);
+        border-right: 2px solid map-get($colors,"footer-divisions");
+        @include flex-box(column);
+    }
+}

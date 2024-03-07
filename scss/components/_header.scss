@@ -1,6 +1,6 @@
+/*  INICIO - HEADER */
 header{   
     background-color: map-get($colors,"bg-header");
-    opacity: 90%;
     nav{
         --bs-navbar-toggler-border-color: map-get($colors,"bg-details");
         --bs-navbar-toggler-border-radius: 15px;
@@ -68,10 +68,8 @@ header{
                 align-items: center;
                 .nav-link{
                     color: map-get($colors,"nav-link");
-                    opacity: 70%;
                     &.active{
                         color:map-get($colors,"nav-link-active");
-                        opacity: 100%;
                     }
                 }
             }
@@ -217,4 +215,6 @@ header{
 
 
 }
+
+/* FIN HEADER */
 
