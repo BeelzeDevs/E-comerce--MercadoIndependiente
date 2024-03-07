@@ -1,14 +1,32 @@
 @use "sass:list";
 /* Global y Body */
 $colors:(
-    bg-header:rgb(0, 0, 139),
+    /* Principales */
+    bg-header:rgb(0, 0, 139, 0.9),
     bg-main:#EBEBEB,
     bg-footer:rgb(0, 0, 139),
     bg-details:rgba(255,102,203, 0.5),
+    bg-details-hover:rgba(255,102,203,0.6),
     btn-primary:rgba(255, 68, 193, 0.9),
+
+    /* Header link & link active */
+    nav-link:rgb(255, 255, 255, 0.7),
+    nav-link-active:rgb(255, 255, 255),
+    /* Links footer */
+    footer-link:rgb(0, 0, 139),
+    footer-link-hover:rgb(255,102,203, 0.8),
+    /* Botones footer*/
+    footer-bg-buton:rgba(255,102,203, 0.5),
+    footer-txt-buton:white,
+    footer-outline-buton:black,
+    footer-bg-buton-hover:rgba(255,102,203,0.6),
+    footer-txt-buton-hover:white,
+    footer-outline-buton-hover:rgba(3, 3, 184, 0.641),
+    /* Divisiones footer*/
+    footer-divisions: gray,
+    /**/
     font-w:white,
-    nav-link:white,
-    nav-link-active:white,
+
     aux-1:#5f9
 );
 
@@ -39,6 +57,7 @@ a{
     text-decoration: none;
 }
 
+
 @mixin grid-box($tcol:1fr,$trow:1fr){
     display: grid;
     grid-template-columns: $tcol;
@@ -57,19 +76,28 @@ a{
     justify-content: $justify;
     align-items: $align;
 }
+@mixin justifyitems-alignitems($justify:center,$align:center){
+    justify-items: $justify;
+    align-items: $align;
+}
 
 @mixin font-size-weight($size:1.3rem,$weight:400){
     font-size: $size;
     font-weight: $weight;
 }
 
-@mixin reset-margin($pad:0px, $marg:0px){
-    padding: $pad;
+@mixin reset-margin($marg:0px){
     margin: $marg;
 }
-@mixin f-size-weight($size:1.3rem,$weight:400){
-    font-size: $size;
-    font-weight: $weight;
+@mixin reset-padding($pad:0px){
+    padding: $pad;
+}
+@mixin reset-border($border:0px){
+    border: $border;
+}
+@mixin width-heigth($width,$height){
+    width:$width;
+    height:$height;
 }
 
 
