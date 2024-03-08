@@ -8,19 +8,18 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-    <link rel="stylesheet" href="./css/style.css" />
-    
+    <link rel="stylesheet" href="./css/style-2.css">
 
     <link rel="shortcut icon" href="img/icono-empresa.ico" />
     <title>Mercado Independiente</title>
 </head>
 <body>
     <header>
-        <nav class="navbar navbar-dark navbar-expand-md nav-bg-azul"> <!-- 1 - Header-->
+        <nav class="navbar navbar-dark navbar-expand-md modelo-bg-azul"> <!-- 1 - Header-->
             <div class="container">
-                <div class="brand-search-container"><!-- Company Logo  / Search bar & Toggler button < 768px -->
+                <div class="search-brand-container"><!-- Company Logo  / Search bar & Toggler button < 768px -->
                     <a  class="navbar-brand" href="./index.html">
-                        <img src="./img/icono-empresa.ico" alt="Imagen del sitio mercado independiente" class="company-logo">
+                        <img src="./img/icono-empresa.ico" alt="Imagen del sitio mercado independiente" class="img-sm-ico">
                         <h1 class="navbar-title">Mercado <br> Independiente</h1>
                     </a>
                     <form class="navbar-search" role="search">
@@ -36,19 +35,19 @@
                 </div>
                 <div class="collapse navbar-collapse " id="navbarSupportedContent"><!-- Navegación del sitio web -->
                     <ul class="navbar-nav line-t">
-                        <li class="nav-item nav-item-one">
+                        <li class="nav-item nav-link-one">
                             <a class="nav-link active" aria-current="page" href="./index.html">Home</a>
                         </li>
-                        <li class="nav-item nav-item-two">
+                        <li class="nav-item nav-link-two">
                             <a class="nav-link " aria-current="page" href="pages/producto.html">Producto</a>
                         </li>
-                        <li class="nav-item nav-item-three">
+                        <li class="nav-item nav-link-three">
                             <a class="nav-link " aria-current="page" href="pages/contacto.html">Contacto</a>
                         </li>
-                        <li class="nav-item nav-item-four">
+                        <li class="nav-item nav-link-four">
                             <a class="nav-link " aria-current="page" href="pages/sobre-nosotros.html">Sobre nosotros</a>
                         </li>
-                        <li class="nav-item nav-item-five">
+                        <li class="nav-item nav-link-five">
                             <a class="nav-link " aria-current="page" href="pages/iniciar-sesion.html">Iniciar sesión</a>
                         </li>
                     </ul>
@@ -95,57 +94,26 @@
                 </button>
             </div>
           </div>
-          
-        <section class="main-offers-container container"> <!-- Sección 2.2 - Ofertas -->
-            <article class="main-offers-day"> <!-- 2.2.1 - Ofertas del día-->
-                <div >
-                    <h3 class="offer-title">Oferta del día</h3>
-                </div>
-                <div class="card-container">
-                    <div >
-                        <a href="pages/producto.html" class="card__link">
-                            <img src="img/productos/procesador-1.jpg" alt="Procesador AMD RYZEN 3 3200G" class="card__img">
-                            Procesador AMD RYZEN 3 3200G
-                        </a>
-                    </div>
-                    <div class="offer-day-info">
-                        <p class="line-through">
-                            <span>$</span> 160.000
-                        </p>
-                        <div>
-                            <p class="card__price">
-                                <span>$</span>135.000
-                            </p>
-                        </div>
-                        <div>
-                            <p class="card__shipment">
-                                <span>Envio Gratis</span>
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </article> <!-- Fin sección 2.2.1 Ofertas del día-->
 
-            <article class="main-offers-moreoffers"> <!-- 2.2.2 - Más ofertas-->
-                <div >
-                    <h3 class="offer-title">Ofertas</h3>
-                </div>
-                <div class="moreoffers-slider">
-                    <div class="moreoffers-card-container"> <!-- Producto 1-->
-                        <div>
+        <section class="main-offers-container container"> <!-- Sección 2.2 - Ofertas -->
+                <article class="main-offers-day"> <!-- 2.2.1 - Ofertas del día-->
+                    <div >
+                        <h3 class="offer-title">Oferta del día</h3>
+                    </div>
+                    <div class="card-container">
+                        <div >
                             <a href="pages/producto.html" class="card__link">
-                                <img src="img/productos/notebook-dell.jpg" alt="Notebook Dell" class="card__img">
-                                Notebook Dell Inspiron 3525
+                                <img src="img/productos/procesador-1.jpg" alt="Procesador AMD RYZEN 3 3200G" class="card__img">
+                                Procesador AMD RYZEN 3 3200G
                             </a>
                         </div>
                         <div>
                             <p class="line-through">
-                                <span>$</span>1.059.999
+                                <span>$</span> 160.000
                             </p>
-                            
                             <div>
                                 <p class="card__price">
-                                    <span>$</span>999.999
+                                    <span>$</span>135.000
                                 </p>
                             </div>
                             <div>
@@ -154,20 +122,51 @@
                                 </p>
                             </div>
                         </div>
-                    </div> <!-- Fin producto 1-->       
-                    
-                    <div class="moreoffers-card-container"> <!-- Producto 2-->
-                        <div>
-                            <a href="pages/producto.html" class="card__link">
-                                <img src="img/productos/monitor.jpg" alt="Notebook Dell" class="card__img">
-                                Monitor Gamer Samsung 24"
-                            </a>
-                        </div>
-                        <div> 
-                            <p class="line-through">
-                                <span>$</span> 275.000
-                            </p>
+                    </div>
+                </article> <!-- Fin sección 2.2.1 Ofertas del día-->
+
+                <article class="main-offers-moreoffers"> <!-- 2.2.2 - Más ofertas-->
+                    <div >
+                        <h3 class="offer-title">Ofertas</h3>
+                    </div>
+                    <div class="moreoffers-slider">
+                        <div class="moreoffers-card-container"> <!-- Producto 1-->
+                            <div>
+                                <a href="pages/producto.html" class="card__link">
+                                    <img src="img/productos/notebook-dell.jpg" alt="Notebook Dell" class="card__img">
+                                    Notebook Dell Inspiron 3525
+                                </a>
+                            </div>
+                            <div>
+                                <p class="line-through">
+                                    <span>$</span>1.059.999
+                                </p>
+                                
+                                <div>
+                                    <p class="card__price">
+                                        <span>$</span>999.999
+                                    </p>
+                                </div>
+                                <div>
+                                    <p class="card__shipment">
+                                        <span>Envio Gratis</span>
+                                    </p>
+                                </div>
+                            </div>
+                        </div> <!-- Fin producto 1-->       
                         
+                        <div class="moreoffers-card-container"> <!-- Producto 2-->
+                            <div>
+                                <a href="pages/producto.html" class="card__link">
+                                    <img src="img/productos/monitor.jpg" alt="Notebook Dell" class="card__img">
+                                    Monitor Gamer Samsung 24"
+                                </a>
+                            </div>
+                            <div> 
+                                <p class="line-through">
+                                    <span>$</span> 275.000
+                                </p>
+                            </div>
                             <div>
                                 <p class="card__price">
                                     <span>$</span>254.900
@@ -178,22 +177,21 @@
                                     <span>Envio Gratis</span>
                                 </p>
                             </div>
-                        </div>
-                    </div> <!-- Fin producto 2-->
-                     
-                    
-                    <div class="moreoffers-card-container"> <!-- Producto 3-->
-                        <div>
-                            <a href="pages/producto.html" class="card__link">
-                                <img src="img/productos/memoria-16.jpg" alt="Notebook Dell" class="card__img">
-                                Memoria Adata DDR4 16GB
-                            </a>
-                        </div>
-                        <div>
-                            <p class="line-through">
-                                <span>$</span> 99.99
-                            </p>
-
+                        </div> <!-- Fin producto 2-->
+                         
+                        
+                        <div class="moreoffers-card-container"> <!-- Producto 3-->
+                            <div>
+                                <a href="pages/producto.html" class="card__link">
+                                    <img src="img/productos/memoria-16.jpg" alt="Notebook Dell" class="card__img">
+                                    Memoria Adata DDR4 16GB
+                                </a>
+                            </div>
+                            <div>
+                                <p class="line-through">
+                                    <span>$</span> 99.99
+                                </p>
+                            </div>
                             <div>
                                 <p class="card__price">
                                     <span>$</span>77.580
@@ -204,21 +202,20 @@
                                     <span>Envio Gratis</span>
                                 </p>
                             </div>
-                        </div>
-                    </div> <!-- Fin producto 3-->
-                    
-                    <div class="moreoffers-card-container"> <!-- Producto 4-->
-                        <div>
-                            <a href="pages/producto.html" class="card__link">
-                                <img src="img/productos/fuente-1.jpg" alt="Notebook Dell" class="card__img">
-                                Fuente Be Quiet 1000W
-                            </a>
-                        </div>
-                        <div>
-                            <p class="line-through">
-                                <span>$</span> 190.000
-                            </p>
-                            
+                        </div> <!-- Fin producto 3-->
+                        
+                        <div class="moreoffers-card-container"> <!-- Producto 4-->
+                            <div>
+                                <a href="pages/producto.html" class="card__link">
+                                    <img src="img/productos/fuente-1.jpg" alt="Notebook Dell" class="card__img">
+                                    Fuente Be Quiet 1000W
+                                </a>
+                            </div>
+                            <div>
+                                <p class="line-through">
+                                    <span>$</span> 190.000
+                                </p>
+                            </div>
                             <div>
                                 <p class="card__price">
                                     <span>$</span>171.900
@@ -229,20 +226,19 @@
                                     <span class="card__shipment">Envio Gratis</span>
                                 </p>
                             </div>
-                        </div>
-                    </div> <!-- Fin producto 4-->
-                    <div class="moreoffers-card-container"> <!-- Producto 5, es igual al 4-->
-                        <div>
-                            <a href="pages/producto.html" class="card__link">
-                                <img src="img/productos/fuente-1.jpg" alt="Notebook Dell" class="card__img">
-                                Fuente Be Quiet 1000W
-                            </a>
-                        </div>
-                        <div>
-                            <p class="line-through">
-                                <span>$</span> 190.000
-                            </p>
-                       
+                        </div> <!-- Fin producto 4-->
+                        <div class="moreoffers-card-container"> <!-- Producto 5, es igual al 4-->
+                            <div>
+                                <a href="pages/producto.html" class="card__link">
+                                    <img src="img/productos/fuente-1.jpg" alt="Notebook Dell" class="card__img">
+                                    Fuente Be Quiet 1000W
+                                </a>
+                            </div>
+                            <div>
+                                <p class="line-through">
+                                    <span>$</span> 190.000
+                                </p>
+                            </div>
                             <div>
                                 <p class="card__price">
                                     <span>$</span>171.900
@@ -253,13 +249,13 @@
                                     <span class="card__shipment">Envio Gratis</span>
                                 </p>
                             </div>
-                        </div>
-                    </div> <!-- Fin producto 5, es igual al 4--> 
+                        </div> <!-- Fin producto 5, es igual al 4--> 
 
-                </div> <!-- Fin contenedor seccion 2.2.2 - Más Ofertas -->
-            </article><!-- Fin 2.2.2 - Más Ofertas -->  
+                    </div> <!-- Fin contenedor seccion 2.2.2 - Más Ofertas -->
+                </div><!-- Fin 2.2.2 - Más Ofertas -->  
+                    
         </section><!-- Fin seccion 2 - Ofertas -->
-        
+
         <section> <!-- Sección 2.3 más información y seguridad-->
             <div class="container-info container"> <!-- Contenedor -->
                 <div class="info-item"> <!-- Item 1-->
@@ -308,8 +304,9 @@
                 </div> <!-- Fin item 3-->
             </div> <!-- Fin del container-->
         </section> <!-- Fin sección 2.3 información y seguridad-->
-    
+
     </main>
+
 
     <footer> <!-- 3 - Footer -->
         <div class="footer-container container">  

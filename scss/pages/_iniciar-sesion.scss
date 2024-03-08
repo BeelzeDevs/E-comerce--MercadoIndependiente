@@ -1,0 +1,51 @@
+/* INICIO - MAIN - INICIAR-SESION */
+
+.sesion-container{
+    @include flex-box(column);
+    @include margin-bottom-top(40px,40px);
+    font-family: map-get($fonts,"f-sesion");
+    background-color: map-get($colors,"bg-sesion");
+    color: map-get($colors,"color-sesion");
+    border: 1px solid map-get($colors,"border-sesion");
+    border-radius: 5px;
+    padding-top: 20px;
+    width: 100%;
+    padding: 0px;
+    font-size: calc(5px + 2vmin);
+    .sesion-title{
+        text-align: center;
+        font-weight: 500;
+        font-family: map-get($fonts,"f-sesion");
+    }
+    .sesion__content{
+        @include flex-box(column);
+        background-color:map-get($colors,"bg-sesion-content");
+        margin: 0px;
+        padding: 20px 20px 15px;
+        gap: 5px;
+        .sesion-form{
+            @include flex-box(column);
+            align-items: stretch;
+            gap: 20px;
+            .sesion-form__input{
+                @extend .sesion-inputs;
+            }
+            .sesion__submit{
+               @extend .sesion-submit;
+            }
+        }
+    }
+    @include mq-sm{
+        .sesion__content{
+            padding: 20px 40px 10px;
+        }
+    }
+    @include mq-md{
+        width: 60%;
+    }
+    @include mq-xl{
+        width: 40%;
+    }
+
+}
+/* FIN - MAIN - INICIAR SESION */

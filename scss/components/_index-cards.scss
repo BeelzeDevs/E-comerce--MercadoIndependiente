@@ -1,0 +1,37 @@
+.cards-img{
+    @include width-heigth(100%,auto);
+}
+.cards-link{
+    @include font-size-weight(0.9em,400);
+    color: map-get($colors,"cards-link");
+}
+.cards-price-linethrought{
+    text-decoration-line:line-through;
+    font-size: 0.7em;
+    margin-bottom: 0.5rem;
+}
+.cards-price{
+    @include font-size-weight(1em,600);
+    margin-bottom: 0.5rem;
+
+}
+.cards-shipment{
+    @include font-size-weight(1rem,500);
+    color: map-get($colors,"cards-shipment");
+}
+
+@include mq-xl{
+    .cards-link{
+        font-size: 1.2em;
+    }
+    .cards-price-linethrought{
+        font-size: 1em;
+    }
+    .cards-price{
+        font-size: 1.3em;
+    }
+    .cards-shipment{
+        @include font-size-weight(1.2rem,600);
+        color: map-get($colors,"cards-shipment");
+    }
+}

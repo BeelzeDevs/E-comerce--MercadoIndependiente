@@ -539,10 +539,7 @@ footer{
     } 
 }
 @media only screen and (min-width:1200px){
-    .welcome-title{
-        font-size: 1.8rem;
-        line-height: 6;
-    }  
+
     .carousel-control-prev-icon{
         margin-top: 0px;
     }
@@ -761,7 +758,7 @@ footer{
 .container-info{
     display: grid;
     grid-template-columns: 1fr;
-    grid-row: repeat(6,1fr);
+    grid-template-row: repeat(3,1fr 0.3fr);
     align-items: flex-start;
     text-align:center;
     gap: 0px;
@@ -852,7 +849,7 @@ footer{
     .container-info{
         display: grid;
         grid-template-columns: repeat(3,1fr);
-        grid-row: repeat(2,1fr);
+        grid-template-row: 1fr 0.5fr;
         align-items: flex-start;
         text-align:center;
         gap: 0px;
@@ -919,7 +916,7 @@ footer{
 .aboutus-container{
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-rows: 1 frrepeat(2,0.5fr);
+    grid-template-rows: 1fr repeat(2,0.4fr);
     margin-top: 40px;
     margin-bottom: 40px;
     gap: 20px;
@@ -943,19 +940,18 @@ footer{
     font-weight: 600; 
     font-style: italic; 
     line-height: 44px; 
-    margin: 0 0 12px; 
-    text-align: left;
+    margin: 0 0 12px;
+    text-align: center;
 }
 .sect-1__p{
     font-family: 'Droid serif', serif; 
-    text-indent: 30px;
-    font-size: 2.25rem; 
-    font-style: italic; 
+    font-size: 1.2rem; 
     line-height: 44px; 
     margin: 0 0 12px; 
-    text-align: center;
+    text-align: left;
 }
 .remark-2{
+    font-style: italic; 
     color: #c64119;
     border-bottom: 1px solid #c64119;
 }
@@ -1013,6 +1009,10 @@ footer{
         grid-column: 2/3;
         grid-row: 2/3;
     }
+    .sect-1__p{
+        text-indent: 30px;
+        font-size: 1.5rem;
+    }
 
 }
 
@@ -1035,6 +1035,9 @@ footer{
     .aboutus-sect-3{
         grid-column: 1/2;
         grid-row: 2/3;
+    }
+    .sect-1__title{
+        text-align: left;
     }
 
 }
@@ -1414,8 +1417,7 @@ footer{
 @media only screen and (min-width: 1200px){
     .product-list{
         justify-content: space-between;
-    }
-    
+    }  
 }
 
 /* END Productos.html*/

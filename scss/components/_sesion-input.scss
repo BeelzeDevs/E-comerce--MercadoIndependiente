@@ -1,0 +1,13 @@
+.sesion-inputs{
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-bottom: 3px solid  map-get($colors,"border-sesion-input");
+    background: transparent;
+    color:map-get($colors,"color-sesion-input");
+    &:focus{
+        background: linear-gradient(to bottom,transparent,map-get($colors,"color-sesion-input-focus"));
+        outline:none;
+        border-bottom: 3px solid  map-get($colors,"border-sesion-input-focus");
+    }
+}

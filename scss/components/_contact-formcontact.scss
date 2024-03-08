@@ -1,0 +1,92 @@
+
+.formcontact{
+    @include grid-col-row(1,2,2,3);
+    @include flex-box(column);
+    justify-items: center;
+    gap: 40px;
+    .form_input{
+        width: 100%;
+        padding: 10px;
+        border: none;
+        border-bottom: 3px solid  map-get($colors,"border-contact-input");
+        background: transparent;
+        color:map-get($colors,"color-contact-input");
+        &:focus{
+            background: linear-gradient(to bottom,transparent,map-get($colors,"bg-contact-input-gradient"));
+            outline:none;
+            border-bottom: 3px solid  map-get($colors,"border-contact-input-focus");
+        }
+        .form-selec__option{
+            background-color: map-get($colors,"bg-contact-form-select");
+        }
+       
+    } 
+    #asunto{
+        border-top:1px solid black;
+        border-left:1px solid black;
+        border-right:1px solid black;
+    }
+    .form_input-submit[type="submit"]{
+        background-color: map-get($colors,"bg-contact-submit-btn" );
+        color:map-get($colors,"color-contact-submit-btn" );
+        outline: 3px solid map-get($colors,"outline-contact-submit-btn" );
+        padding: 10px 50px;
+        align-self: center;
+        
+        &[type="submit"]:hover{
+            background-color: map-get($colors,"bg-contact-form-btn-hover");
+        }
+        &[type="submit"]:focus{
+            background-color:map-get($colors,"bg-contact-form-btn-focus");
+        }
+    }
+
+}
+
+.formcontactimg{
+    @include grid-col-row();
+    @include flex-box();
+    background-color:map-get($colors,"bg-contact-img");
+    border-radius: 250px;
+    width: 80%;
+    align-self: flex-start;
+    justify-self: center;
+    justify-content: center;
+    .contact__img{
+        border-radius: 25px;
+        width: 50%;
+    }
+}
+
+@include mq-sm{
+    .formcontactimg{
+        width: 50%;
+    }
+}
+
+@include mq-md{
+    .formcontactimg{
+        width: 40%;
+    }
+}
+
+@include mq-xl{
+    .formcontact{
+        @include grid-col-row();
+        .form_input-submit[type="submit"]{
+            justify-items: center;
+        }
+    }
+    .formcontactimg{     
+        @include grid-col-row(2,3,1,2);
+        @include flex-box();
+        width: 70%;
+        justify-self: center;
+        align-self: center;
+        justify-content: center;
+        .contact__img{
+            border-radius: 25px;
+            width: 60%;
+        }
+    }
+}

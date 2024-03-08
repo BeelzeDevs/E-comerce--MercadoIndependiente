@@ -1,0 +1,60 @@
+.product-productitem{
+    background-color: map-get($colors,"bg-product-item" );
+    border-radius: 30px;
+    @include flex-box(column);
+    width:250px;
+    justify-content: flex-start;
+    color:map-get($colors,"color-product-item" );
+    .container-image{
+        background-color: map-get($colors,"bg-product-item-img");
+        border-top-left-radius: 30px;
+        border-top-right-radius: 30px;
+        .product-image{
+            @include width-heigth(100%,auto);
+            border-top-left-radius: 30px;
+            border-top-right-radius: 30px;
+
+        }
+    }
+    .product-content{
+        @include grid-box(1fr, 1fr 0.5fr 0.3fr);
+        justify-items: center;
+        height: 100%;
+        padding: 20px 0px;
+        gap: 5px;
+        .product-item__link{
+            @include grid-col-row();
+            padding: 15px;
+            a{
+                color: map-get($colors,"color-link");
+            }
+
+        }
+        div{
+            .product-item__price{    
+                font-family:map-get($fonts,"f-product-price");
+            }
+        }
+        .product-item__btn{
+            @include grid-col-row(1,2,3,4);
+            button{
+                background-color: map-get($colors,"bg-product-btn");
+                color:map-get($colors,"color-product-btn");
+                outline: 3px solid map-get($colors,"outline-product-btn");
+                padding: 10px 20px;
+                border: 2px outset map-get($colors,"border-product-btn");
+                &:hover{
+                    background-color: map-get($colors,"bg-product-btn-hover");
+                }
+                &:focus{
+                    background:map-get($colors,"bg-product-btn-hover");
+                }
+                &:active{
+                    border: 2px inset map-get($colors,"border-product-btn");
+                }
+            }
+        }
+
+    }
+
+}

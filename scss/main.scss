@@ -1,7 +1,18 @@
 @import "base";
 
-@import "components/subcomp-footer";
+@import "components/f-subcomp";
+@import "components/index-carousel-icons";
+@import "components/index-info-buttons";
+@import "components/index-cards";
+@import "components/contact-formcontact";
+@import "components/sesion-input";
+@import "components/sesion-submit";
+@import "components/product-productitem";
 @import "components/footer";
 @import "components/header";
 
 @import "pages/index";
+@import "pages/contacto";
+@import "pages/iniciar-sesion";
+@import "pages/producto";
+@import "pages/sobre-nosotros";

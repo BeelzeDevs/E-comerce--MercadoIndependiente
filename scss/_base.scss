@@ -24,17 +24,88 @@ $colors:(
     footer-outline-buton-hover:rgba(3, 3, 184, 0.641),
     /* Divisiones footer*/
     footer-divisions: gray,
-    /**/
-    font-w:white,
 
-    aux-1:#5f9
+    /* Index */
+    txt-carousel:aquamarine,
+    cards-border: gray,
+    cards-background:white,
+    cards-link:blue,
+    cards-shipment: green,
+    /* more information */
+    bg-info:white,
+    bg-info-button:rgb(65, 121, 194,0.7),
+    bg-info-button-hover:rgb(0,75,172,0.08),
+    outline-info-button:rgb(0,75,172),
+    color-info-button:white,
+    color-info-button-hover:black,
+    /*about us*/
+    color-about-title:#b48608,
+    color-about-remark:#c64119,
+    color-about-remark-bottom:#c64119,
+    color-about-li-icons:green,
+    /*contact*/
+    bg-contact:rgb(40, 44, 52),
+    color-contact:white,
+    border-contact:gray,
+    bg-contact-container:rgb(51, 51, 51),
+    bg-contact-img:rgb(0, 0, 139,0.5),
+    border-contact-input:rgb(0, 0, 124),
+    color-contact-input:white,
+    border-contact-input-focus:rgba(13, 13, 194),
+    bg-contact-input-gradient:rgb(34, 34, 34),
+    bg-contact-form-select:black,
+    /*contact submit btn*/
+    bg-contact-submit-btn:rgba(0, 0, 124),
+    color-contact-submit-btn:white,
+    outline-contact-submit-btn:rgba(0, 0, 139,0.5),
+    bg-contact-submit-btn-hover:rgba(13, 13, 194),
+    bg-contact-submit-btn-focus:rgba(13, 13, 194),
+    /*Sesion */
+    bg-sesion:#282c34,
+    color-sesion:white,
+    boder-sesion:gray,
+    bg-sesion-content:rgb(51, 51, 51),
+    border-sesion-input:rgb(0, 0, 124),
+    color-sesion-input:white,
+    color-sesion-input-focus:rgb(34, 34, 34),
+    border-sesion-input-focus:rgba(13, 13, 194),
+    bg-sesion-submit-a:rgba(0, 0, 124),
+    color-sesion-submit-a:white,
+    border-sesion-submit-a-outset-inset:rgb(118, 118, 118),
+    outline-sesion-submit-a:rgba(0, 0, 139,0.5),
+    bg-sesion-submit-hover-a:rgba(13, 13, 194),
+    bg-sesion-submit-btn:rgba(0, 0, 124),
+    color-sesion-submit-btn:white,
+    outline-sesion-submit-btn:rgba(0, 0, 139,0.5),
+    outline-sesion-submit-hover:rgba(13, 13, 194),
+    /* Product */
+    color-product:white,
+    bg-container-img:white,
+    color-link:white,
+    bg-product-btn:rgba(0, 0, 124),
+    color-product-btn:white,
+    outline-product-btn:rgba(0, 0, 139,0.5),
+    border-product-btn:rgb(118, 118, 118),
+    bg-product-btn-hover:rgba(13, 13, 194),
+    bg-product-item:gray,
+    color-product-item:white,
+    bg-product-item-img:white
+
 );
 
 $font-1:'Montserrat', sans-serif;
+$font-2:'Droid serif', serif; 
+$font-3: 'Verdana', sans-serif; 
+$font-4:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+$font-5:Proxima Nova,-apple-system,Roboto,Arial,sans-serif;
 
 $fonts:(
-    f-primary:$font-1
-
+    f-primary:$font-1,
+    f-aboutus:$font-2,
+    f-aboutus-ul:$font-3,
+    f-contact:$font-4,
+    f-sesion:$font-4,
+    f-product-price:$font-5
 );
 
 * {
@@ -99,15 +170,12 @@ a{
     width:$width;
     height:$height;
 }
+@mixin margin-bottom-top($bottom:0px,$top:0px){
+    margin-bottom: $bottom;
+    margin-top: $top;
+}
 
 
-/*
-#5f9  
-#094
-#EBEBEB
-rgba(255, 68, 193, 0.9)
-rgb(0, 0, 139)
-*/
 @mixin mq-sm{
     @media only screen and (min-width:576px){
         @content;

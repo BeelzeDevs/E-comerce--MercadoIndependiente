@@ -1,0 +1,25 @@
+.index-info-buttons{
+    @include font-size-weight(1em,400);
+    padding: 0.4rem;
+    margin: 0.5rem;
+    border-radius: 5px;
+    outline: 1px solid map-get($colors,"outline-info-button");
+    background-color: map-get($colors,"bg-info-button");
+    color: map-get($colors,"color-info-button");
+}
+.index-info-buttons:hover{
+    background-color: map-get($colors, "bg-info-button-hover");
+    color: map-get($colors, "color-info-button-hover");
+}
+
+@include mq-md{
+    .index-info-buttons{
+        @include font-size-weight(1.2em,500);
+    }
+}
+@include mq-xl{
+    .index-info-buttons{
+        @include font-size-weight(1.03em ,400);
+
+    }
+}
