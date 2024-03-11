@@ -1,5 +1,6 @@
 @charset "UTF-8";
 /* Global y Body */
+/*color - animacion iniciar sesion*/
 * {
   margin: 0;
   padding: 0;
@@ -21,6 +22,158 @@ a {
   text-decoration: none;
 }
 
+.cardanim, .product-productitem, .container-product .product-list .product-item {
+  opacity: 0.8;
+  transition: opacity 0.15s, background 0.6s ease, scale 0.2s;
+}
+
+.cardanim:hover, .product-productitem:hover, .container-product .product-list .product-item:hover {
+  background-color: rgb(30, 177, 235);
+  transition: background-color 0.8s ease 0.2s;
+  opacity: 1;
+  transform: scaleX(1.1) scaleY(1.1);
+}
+
+.moreoffers-cardanim, main .main-offers-container .main-offers-moreoffers .moreoffers-slider .moreoffers-card-container {
+  opacity: 0.9;
+  transition: opacity 0.15s, scale 0.2s;
+}
+
+.moreoffers-cardanim:hover, main .main-offers-container .main-offers-moreoffers .moreoffers-slider .moreoffers-card-container:hover {
+  border-radius: 20px;
+  opacity: 1.1;
+  transform: scaleX(1.1) scaleY(1.1);
+}
+
+@keyframes card-color {
+  from {
+    background: linear-gradient(black, transparent), gray;
+  }
+  to {
+    background: linear-gradient(black, transparent), gray;
+  }
+}
+@keyframes card-radial {
+  0% {
+    background-image: radial-gradient(circle closest-corner at 0% 0%, blue, gray);
+  }
+  14.2% {
+    background-image: radial-gradient(circle closest-corner at 50% 0%, blue, gray);
+  }
+  28.5% {
+    background-image: radial-gradient(circle closest-corner at 100% 0%, blue, gray);
+  }
+  42.8% {
+    background-image: radial-gradient(circle closest-corner at 100% 50%, blue, gray);
+  }
+  57% {
+    background-image: radial-gradient(circle closest-corner at 100% 100%, blue, gray);
+  }
+  71.1% {
+    background-image: radial-gradient(circle closest-corner at 50% 100%, blue, gray);
+  }
+  85.3% {
+    background-image: radial-gradient(circle closest-corner at 0% 100%, blue, gray);
+  }
+  100% {
+    background-image: radial-gradient(circle closest-corner at 0% 50%, blue, gray);
+  }
+}
+.txt-anim-left, main .aboutus-container .aboutus-sect-3, main .aboutus-container .aboutus-sect-2, main .aboutus-container .aboutus-sect-1 {
+  animation: appears-left 0.5s linear;
+  position: relative;
+}
+
+@keyframes appears-left {
+  0% {
+    right: 100%;
+  }
+  50% {
+    right: 50%;
+  }
+  100% {
+    right: 0%;
+  }
+}
+.txt-anim-right {
+  animation: appears-right 0.5s linear;
+  position: relative;
+}
+
+@keyframes appears-right {
+  0% {
+    left: 100%;
+  }
+  50% {
+    left: 50%;
+  }
+  100% {
+    left: 0%;
+  }
+}
+.mail-anim, .contact-pos .contact .contact-container .contact-form-img {
+  animation: pulso 1s infinite;
+}
+
+.mail-anim:hover, .contact-pos .contact .contact-container .contact-form-img:hover {
+  animation: pulso2 1s infinite;
+}
+
+@keyframes pulso {
+  100% {
+    box-shadow: 0 0 5px 5px rgba(61, 25, 221, 0.3);
+  }
+  60% {
+    box-shadow: 0 0 0px 1px rgba(207, 47, 15, 0.7);
+  }
+  0% {
+    box-shadow: 0 0 0px 15px rgba(0, 0, 0, 0.3);
+  }
+}
+@keyframes pulso2 {
+  100% {
+    box-shadow: 0 0 5px 5px rgba(61, 25, 221, 0.3);
+  }
+  60% {
+    box-shadow: 0 0 0px 1px rgba(207, 47, 15, 0.7);
+  }
+  0% {
+    box-shadow: 0 0 0px 15px rgba(0, 0, 0, 0.3);
+  }
+}
+.sesion-anim, .sesion-container .sesion-title {
+  text-shadow: 0 0 15px rgba(0, 0, 0, 0.8);
+  animation: color-txt 0.6s ease 3;
+  animation-play-state: running;
+}
+
+@keyframes color-txt {
+  0% {
+    background: -webkit-linear-gradient(right, rgb(0, 248, 182), rgb(0, 248, 182), rgb(0, 248, 182), rgb(163, 14, 255), rgb(163, 14, 255), rgb(163, 14, 255));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  30% {
+    background: -webkit-linear-gradient(right, rgb(163, 14, 255), rgb(0, 248, 182), rgb(0, 248, 182), rgb(0, 248, 182), rgb(163, 14, 255), rgb(163, 14, 255));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  50% {
+    background: -webkit-linear-gradient(left, rgb(163, 14, 255), rgb(163, 14, 255), rgb(0, 248, 182), rgb(0, 248, 182), rgb(0, 248, 182), rgb(163, 14, 255));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  60% {
+    background: -webkit-linear-gradient(left, rgb(163, 14, 255), rgb(163, 14, 255), rgb(163, 14, 255), rgb(0, 248, 182), rgb(0, 248, 182), rgb(0, 248, 182));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  100% {
+    background: -webkit-linear-gradient(right, rgb(0, 248, 182), rgb(163, 14, 255), rgb(163, 14, 255), rgb(163, 14, 255), rgb(0, 248, 182), rgb(0, 248, 182));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+}
 /* btn-footer controla todos los botones, divisions controla las primera division 
 , la 2da tiene su propio comportamiento pero comparte las características */
 .btn-footer, footer .footer-container .footer-workwithus .footer-butons, footer .footer-container .footer-help .footer-butons {
@@ -314,7 +467,7 @@ a {
 }
 
 .product-productitem, .container-product .product-list .product-item {
-  background-color: gray;
+  background: linear-gradient(gray, transparent), gray;
   border-radius: 30px;
   display: flex;
   flex-direction: column;
@@ -430,7 +583,7 @@ footer .footer-container .footer-networks .footer-networks-butons {
   justify-content: center;
 }
 footer .footer-container .footer-networks .footer-networks-butons .butons-a {
-  color: rgb(0, 0, 139);
+  color: white;
 }
 footer .footer-container .footer-networks .footer-networks-butons .butons-a .footer-links {
   font-size: 2em;
@@ -877,7 +1030,7 @@ main .main-offers-container .main-offers-moreoffers div .offer-title {
   font-size: 0.9em;
   font-weight: 600;
   display: block;
-  margin-bottom: 0px;
+  margin-bottom: 15px;
   text-align: start;
 }
 main .main-offers-container .main-offers-moreoffers .moreoffers-slider {
@@ -1197,6 +1350,9 @@ main section .container-info .info-link:nth-child(6) {
   text-align: center;
   font-weight: 500;
   font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  background: -webkit-linear-gradient(left, rgb(163, 14, 255), rgb(163, 14, 255), rgb(0, 248, 182), rgb(0, 248, 182), rgb(0, 248, 182), rgb(163, 14, 255));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 .sesion-container .sesion__content {
   display: flex;
@@ -1241,7 +1397,7 @@ main section .container-info .info-link:nth-child(6) {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  gap: 20px;
+  gap: 40px;
   padding: 20px;
   justify-content: space-around;
 }
@@ -1346,10 +1502,12 @@ main .aboutus-container .aboutus-sect-3 .sect-3__ul li .icon-green {
     grid-column: 1 / 2;
     grid-row: 2 / 3;
     margin-left: 0px;
+    animation: appears-left 0.5s linear;
   }
   main .aboutus-container .aboutus-sect-3 {
     grid-column: 2 / 3;
     grid-row: 2 / 3;
+    animation: appears-right 0.5s linear;
   }
 }
 @media only screen and (min-width: 1200px) {
@@ -1362,6 +1520,7 @@ main .aboutus-container .aboutus-sect-3 .sect-3__ul li .icon-green {
   main .aboutus-container .aboutus-sect-1 {
     grid-column: 1 / 3;
     grid-row: 1 / 2;
+    animation: appears-left 0.5s linear;
   }
   main .aboutus-container .aboutus-sect-1 .sect-1__title {
     text-align: left;
@@ -1371,10 +1530,12 @@ main .aboutus-container .aboutus-sect-3 .sect-3__ul li .icon-green {
     grid-row: 2 / 3;
     justify-self: center;
     min-width: 70%;
+    animation: appears-right 0.5s linear;
   }
   main .aboutus-container .aboutus-sect-3 {
     grid-column: 1 / 2;
     grid-row: 2 / 3;
+    animation: appears-left 0.5s linear;
   }
 }
 

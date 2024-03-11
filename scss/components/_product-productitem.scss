@@ -1,10 +1,11 @@
 .product-productitem{
-    background-color: map-get($colors,"bg-product-item" );
+    background:linear-gradient(map-get($colors,"bg-product-item"),transparent),map-get($colors,"bg-product-item");
     border-radius: 30px;
     @include flex-box(column);
     width:250px;
     justify-content: flex-start;
     color:map-get($colors,"color-product-item" );
+    @extend .cardanim;
     .container-image{
         background-color: map-get($colors,"bg-product-item-img");
         border-top-left-radius: 30px;

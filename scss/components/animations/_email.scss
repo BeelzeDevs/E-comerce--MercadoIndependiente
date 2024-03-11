@@ -1,0 +1,32 @@
+.mail-anim {
+    animation: pulso 1s infinite; 
+}
+.mail-anim:hover{
+    animation: pulso2 1s infinite;
+
+}
+
+
+@keyframes pulso {
+    100%{
+        box-shadow: 0 0 5px 5px rgba(61, 25, 221, 0.3); 
+    }
+    60% {
+        box-shadow: 0 0 0px 1px rgba(207, 47, 15, 0.7); 
+    }
+    0%{
+        box-shadow: 0 0 0px 15px rgba(0, 0, 0, 0.3);
+    }
+}
+
+@keyframes pulso2 {
+    100%{
+        box-shadow: 0 0 5px 5px rgba(61, 25, 221, 0.3); 
+    }
+    60% {
+        box-shadow: 0 0 0px 1px rgba(207, 47, 15, 0.7); 
+    }
+    0%{
+        box-shadow: 0 0 0px 15px rgba(0, 0, 0, 0.3);
+    }
+}

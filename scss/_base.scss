@@ -13,7 +13,7 @@ $colors:(
     nav-link:rgb(255, 255, 255, 0.7),
     nav-link-active:rgb(255, 255, 255),
     /* Links footer */
-    footer-link:rgb(0, 0, 139),
+    footer-link:white,
     footer-link-hover:rgb(255,102,203, 0.8),
     /* Botones footer*/
     footer-bg-buton:rgba(255,102,203, 0.5),
@@ -88,10 +88,14 @@ $colors:(
     border-product-btn:rgb(118, 118, 118),
     bg-product-btn-hover:rgba(13, 13, 194),
     bg-product-item:gray,
+    bg-product-item-hover:rgb(30, 177, 235),
     color-product-item:white,
-    bg-product-item-img:white
-
+    bg-product-item-img:white,
 );
+/*color - animacion iniciar sesion*/
+$primary-c-anim:rgb(163, 14, 255);
+$secondary-c-anim:rgb(0, 248, 182);
+$remark-c-anim:rgb(0, 248, 182);
 
 $font-1:'Montserrat', sans-serif;
 $font-2:'Droid serif', serif; 

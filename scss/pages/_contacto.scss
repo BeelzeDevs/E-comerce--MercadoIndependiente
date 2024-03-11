@@ -29,6 +29,7 @@
             }
             .contact-form-img{
                 @extend .formcontactimg;
+                @extend .mail-anim;
             }
         }
     }

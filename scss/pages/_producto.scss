@@ -5,7 +5,7 @@
     padding: 0px;
     .product-list{
         @include flex-box(row,wrap);
-        gap: 20px;
+        gap: 40px;
         padding: 20px;
         justify-content: space-around;
         .product-item{

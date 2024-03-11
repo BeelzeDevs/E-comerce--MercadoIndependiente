@@ -1,0 +1,66 @@
+.cardanim{
+    opacity: 0.8;    
+    transition: opacity .15s, 
+                background 0.6s ease, 
+                scale .2s;
+
+}
+.cardanim:hover{
+    background-color:map-get($colors,"bg-product-item-hover");
+    transition: background-color 0.8s ease 0.2s;        
+    opacity: 1;
+    transform: scaleX(1.1) scaleY(1.1);
+}
+
+.moreoffers-cardanim{ 
+    opacity: 0.9;    
+    transition: opacity .15s,  
+                scale .2s;
+}
+.moreoffers-cardanim:hover{
+    border-radius: 20px;      
+    opacity: 1.1;
+    transform: scaleX(1.1) scaleY(1.1);
+}
+
+
+@keyframes card-color{
+    from{
+        background:linear-gradient(black,transparent),map-get($colors,"bg-product-item");
+    }
+    to{
+        
+        background:linear-gradient(black,transparent),map-get($colors,"bg-product-item");
+
+    }
+}
+
+@keyframes card-radial{
+    0%{
+        background-image: radial-gradient(circle closest-corner at 0% 0%, blue,map-get($colors,"bg-product-item" ));
+
+    }
+    14.2%{
+        background-image: radial-gradient(circle closest-corner at 50% 0%, blue,map-get($colors,"bg-product-item" ));
+    }
+    28.5%{
+        background-image: radial-gradient(circle closest-corner at 100% 0%, blue,map-get($colors,"bg-product-item" ));
+    }
+    42.8%{
+        background-image: radial-gradient(circle closest-corner at 100% 50%,blue,map-get($colors,"bg-product-item" ));
+    }
+    57%{
+        background-image: radial-gradient(circle closest-corner at 100% 100%, blue,map-get($colors,"bg-product-item" ));
+    }
+    71.1%{
+        background-image: radial-gradient(circle closest-corner at 50% 100%, blue,map-get($colors,"bg-product-item" ));
+    }
+    85.3%{
+        background-image: radial-gradient(circle closest-corner at 0% 100%, blue,map-get($colors,"bg-product-item" ));
+    }
+    100%{
+        background-image: radial-gradient(circle closest-corner at 0% 50%, blue,map-get($colors,"bg-product-item" ));
+
+        }
+
+}

@@ -6,6 +6,7 @@ main{
         gap: 20px;
         .aboutus-sect-1{
             @include grid-col-row();
+            @extend .txt-anim-left;
             .sect-1__title{ 
                 font-family: map-get($fonts,"f-aboutus");
                 color:map-get($colors, "color-about-title");
@@ -33,12 +34,14 @@ main{
         }
         .aboutus-sect-2{
             @include grid-col-row(1,2,3,4);
+            @extend .txt-anim-left;
             .sect-2__map{
                 @include width-heigth(100%,100%);
             }
         }
         .aboutus-sect-3{
             @include grid-col-row(1,2,2,3);
+            @extend .txt-anim-left;
             .sect-3__title{
                 font-family: map-get($fonts,"f-aboutus"); 
                 color: map-get($colors, "color-about-title");
@@ -79,10 +82,12 @@ main{
             .aboutus-sect-2{
                 @include grid-col-row(1,2,2,3);
                 margin-left: 0px;
+                animation: appears-left 0.5s linear;
 
             }
             .aboutus-sect-3{
                 @include grid-col-row(2,3,2,3);
+                animation: appears-right 0.5s linear;
 
             }
 
@@ -94,6 +99,7 @@ main{
             gap: 20px;
             .aboutus-sect-1{
                 @include grid-col-row(1,3);
+                animation: appears-left 0.5s linear;
                 .sect-1__title{
                     text-align: left;
                 } 
@@ -102,10 +108,12 @@ main{
                 @include grid-col-row(2,3,2,3);        
                 justify-self: center;
                 min-width: 70%;
+                animation: appears-right 0.5s linear;
 
             }
             .aboutus-sect-3{
                 @include grid-col-row(1,2,2,3);
+                animation: appears-left 0.5s linear;
 
             }
         }

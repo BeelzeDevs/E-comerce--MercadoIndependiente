@@ -184,7 +184,7 @@ main{
                 .offer-title{
                     @include font-size-weight(0.9em,600);
                     display: block;
-                    margin-bottom: 0px;
+                    margin-bottom: 15px;
                     text-align: start;
                 }
             }
@@ -198,6 +198,7 @@ main{
                 .moreoffers-card-container{
                     min-width: 100%;
                     height: auto;
+                    @extend .moreoffers-cardanim;
                     div{
                         .card__link{
                             @extend .cards-link;
