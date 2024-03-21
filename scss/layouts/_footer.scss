@@ -55,10 +55,6 @@ footer{
                     }
                     .bi-facebook{
                         color:map-get($colors,"facebook");
-                        &::before{
-                            outline: 0.3px solid white;
-                            border-radius: 20px;
-                        }
                     }
                     .bi-linkedin{
                         color:map-get($colors,"linkedin");    

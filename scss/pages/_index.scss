@@ -1,6 +1,7 @@
 /* INICIO - MAIN - INDEX */
 
 #main-index{
+    overflow-x: hidden;
     @include mq-md{
         @include bg-image-index();
         padding-bottom: 5px;
