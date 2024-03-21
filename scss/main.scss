@@ -1,5 +1,7 @@
+/* variables, mixins, reset*/
 @import "base";
 
+/* components Animations*/
 @import "components/animations/cardprod";
 @import "components/animations/textcontact";
 @import "components/animations/email";
@@ -7,7 +9,8 @@
 @import "components/animations/btn-pulse";
 @import "components/animations/nav-items";
 
-@import "components/f-subcomp";
+/* components */
+@import "components/footer-subcomp";
 @import "components/index-carousel-icons";
 @import "components/index-info-buttons";
 @import "components/index-cards";
@@ -15,9 +18,12 @@
 @import "components/sesion-input";
 @import "components/sesion-submit";
 @import "components/product-productitem";
-@import "components/footer";
-@import "components/header";
 
+/* Layouts */
+@import "layouts/footer";
+@import "layouts/header";
+
+/* Pages */
 @import "pages/index";
 @import "pages/contacto";
 @import "pages/iniciar-sesion";

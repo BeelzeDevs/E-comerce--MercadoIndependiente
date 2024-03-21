@@ -1,0 +1,160 @@
+/* INICIO - FOOTER */
+footer{
+    background-color: map-get($colors, "bg-footer");           
+    .footer-container{
+        @include grid-box(1fr, 1fr 0.1fr 1fr 0.1fr 1fr);
+        @include justifyitems-alignitems();
+        padding: 10px;
+
+        .footer-help{      
+            @include grid-col-row();
+            @include flex-box(column);
+            align-items: center;
+            gap: 15px;
+            .footer-butons{
+                /* subcomp-footer.scss */
+                @extend .btn-footer;
+                @extend .btn-pulse;
+            }
+        }
+
+        .footer-division-1{
+            /* subcomp-footer.scss */
+            @extend .divisions;
+
+        }
+
+        .footer-networks{
+            @include grid-col-row(1,2,3,4);
+            @include flex-box(column);
+            align-items: center;
+            gap: 10px;
+            p {
+                @include font-size-weight(1.3em,600);
+                padding: 5px;
+                margin-bottom: 3px;
+            }
+            .txt-white{
+                color: white;
+            }
+            .footer-networks-butons{
+                @include flex-box(row,wrap);
+                max-width: 200px;
+                gap: 8px;
+                justify-content: center;
+                .butons-a{
+                    color: map-get($colors, "footer-link");
+                    .footer-links{
+                        font-size: 2em;     
+                        color: map-get($colors,"font-w");  
+                        &:hover {
+                            color: map-get($colors, "footer-link-hover");
+                        }
+                    }
+                }
+            }
+
+        }
+
+        .footer-division-2{
+            /* subcomp-footer.scss */
+            @extend .divisions;
+            @include grid-col-row(1,2,4,5);
+            .division-p{
+                @extend .division-p;
+            }
+        }
+
+        .footer-workwithus{    
+            @include grid-col-row(1,2,5,6);
+            @include flex-box(column);
+            gap: 20px;
+            .footer-workplaceicon{
+                width: 80%;
+                align-self: center;
+                padding: 5px;
+            }
+            .footer-butons{
+                /* btn-footer.scss */
+                @extend .btn-footer;
+                @extend .btn-pulse
+            }
+        }
+    }
+
+    @include mq-sm{
+        .footer-container{
+            .footer-networks{
+                p{
+                    font-size: 2em;
+                }
+                .footer-networks-butons{
+                    .butons-a{
+                        .footer-links{
+                            font-size: 2em;
+                        }
+                    }
+                }
+            }       
+        }
+    }
+
+    @include mq-md{
+        .footer-container{
+            @include grid-box(1fr 15px 15px 1fr, 0.99fr 1fr);
+            @include reset-padding();
+            .footer-help{
+                @include grid-col-row();
+            }
+            .footer-networks{
+                @include grid-col-row(4,5);
+                .footer-networks p{
+                    font-size: 1.6em; 
+                }
+                .footer-networks-butons{
+                    gap: 8px;
+                    .butons-a{
+                        .footer-links{
+                            font-size: 1.8em;   
+                        }
+                    }
+                } 
+            }
+            .footer-division-2{
+                display: none;
+            }
+            .footer-workwithus{
+                @include grid-col-row(1,5,2,3);
+                .footer-workplaceicon{
+                    margin-top: 20px;
+                    width: 90%;
+                }
+            }
+        }
+    }
+    @include mq-xl{
+        .footer-container{
+            @include grid-box(1fr repeat(2,15px) 1fr repeat(2,15px) 1fr,none);
+            .footer-help{
+                @include grid-col-row();
+            }            
+            .footer-networks{
+                @include grid-col-row(4,5);
+            }
+
+            .footer-division-2{  
+                @include grid-col-row(5,6);
+                border-right: 0px;
+                border-left: 2px solid map-get($colors,"footer-divisions");
+                @include flex-box(column);
+            }
+            .footer-workwithus{
+                @include grid-col-row(7,8);
+                gap: 3px;
+                margin-bottom: 13px;
+            }
+
+        }
+    }
+
+}

@@ -1,6 +1,6 @@
 /* INICIO - MAIN - CONTACTO */
 #main-contact{
-    @include bg-image-secondary();
+    @include bg-image-sesion-contact();
     .contact-pos{
         @include flex-box();
         justify-content: center;

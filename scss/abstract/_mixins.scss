@@ -1,0 +1,97 @@
+@use "sass:list";
+
+@mixin grid-box($tcol:1fr,$trow:1fr){
+    display: grid;
+    grid-template-columns: $tcol;
+    grid-template-rows: $trow;
+}
+@mixin grid-col-row($col1:1,$col2:2,$row1:1,$row2:2){
+    grid-column: list.slash($col1,$col2);
+    grid-row: list.slash($row1,$row2);
+}
+@mixin flex-box($direc:row,$wrap:nowrap){
+    display: flex;
+    flex-direction: $direc;
+    flex-wrap: $wrap;
+}
+@mixin justify-align($justify:center,$align:center){
+    justify-content: $justify;
+    align-items: $align;
+}
+@mixin justifyitems-alignitems($justify:center,$align:center){
+    justify-items: $justify;
+    align-items: $align;
+}
+
+@mixin font-size-weight($size:1.3rem,$weight:400){
+    font-size: $size;
+    font-weight: $weight;
+}
+
+@mixin reset-margin($marg:0px){
+    margin: $marg;
+}
+@mixin reset-padding($pad:0px){
+    padding: $pad;
+}
+@mixin reset-border($border:0px){
+    border: $border;
+}
+@mixin width-heigth($width,$height){
+    width:$width;
+    height:$height;
+}
+@mixin margin-bottom-top($bottom:0px,$top:0px){
+    margin-bottom: $bottom;
+    margin-top: $top;
+}
+@mixin shadow-1(){
+    box-shadow: 0px 0px 11px 3px gray;
+}
+@mixin bg-image-index(){
+    background-image: url(../img/backgrounds/bg-index-inverse.png), url(../img/backgrounds/bg-index.png);
+    background-repeat: no-repeat, no-repeat;
+    background-size: 25% 100%,25% 100%;
+    background-position: left, right;
+}
+@mixin bg-image-producto(){
+    background-image: url(../img/backgrounds/bg-product.jpg);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    background-position: center;
+}
+@mixin bg-image-sesion-contact(){
+    background-image: url(../img/backgrounds/bg-contact-sesion.jpg);
+    background-size: 100% 100%;
+}
+
+
+@mixin mq-sm{
+    @media only screen and (min-width:576px){
+        @content;
+    }
+}
+
+@mixin mq-md{
+    @media only screen and (min-width:768px){
+        @content;
+    }
+}
+
+@mixin mq-lg{
+    @media only screen and (min-width:992px){
+        @content;
+    }
+}
+
+@mixin mq-xl{
+    @media only screen and (min-width:1200px){
+        @content;
+    }
+}
+
+@mixin mq-xxl{
+    @media only screen and (min-width:1400px){
+        @content;
+    }
+}
