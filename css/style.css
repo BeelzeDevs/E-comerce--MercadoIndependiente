@@ -638,20 +638,16 @@ footer .footer-container .footer-networks .footer-networks-butons .butons-a .foo
   font-size: 2em;
 }
 footer .footer-container .footer-networks .footer-networks-butons .butons-a .bi-twitter-x {
-  color: white;
+  color: floralwhite;
 }
 footer .footer-container .footer-networks .footer-networks-butons .butons-a .bi-youtube {
   color: red;
 }
 footer .footer-container .footer-networks .footer-networks-butons .butons-a .bi-facebook {
-  color: rgb(136, 136, 247);
-}
-footer .footer-container .footer-networks .footer-networks-butons .butons-a .bi-facebook::before {
-  outline: 0.3px solid white;
-  border-radius: 20px;
+  color: rgb(36, 111, 250);
 }
 footer .footer-container .footer-networks .footer-networks-butons .butons-a .bi-linkedin {
-  color: rgb(36, 111, 250);
+  color: steelblue;
 }
 footer .footer-container .footer-networks .footer-networks-butons .butons-a .bi-instagram {
   color: rgb(238, 121, 31);
@@ -660,7 +656,7 @@ footer .footer-container .footer-networks .footer-networks-butons .butons-a .bi-
   color: rgb(245, 15, 245);
 }
 footer .footer-container .footer-networks .footer-networks-butons .butons-a .bi-tiktok {
-  color: white;
+  color: aliceblue;
 }
 footer .footer-container .footer-division-2 {
   /* subcomp-footer.scss */
@@ -985,6 +981,9 @@ header nav .navbar-collapse .line-t {
 /* FIN HEADER */
 /* Pages */
 /* INICIO - MAIN - INDEX */
+#main-index {
+  overflow-x: hidden;
+}
 @media only screen and (min-width: 768px) {
   #main-index {
     background-image: url(../img/backgrounds/bg-index-inverse.png), url(../img/backgrounds/bg-index.png);
