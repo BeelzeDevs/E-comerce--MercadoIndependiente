@@ -43,13 +43,34 @@ footer{
                 gap: 8px;
                 justify-content: center;
                 .butons-a{
-                    color: map-get($colors, "footer-link");
                     .footer-links{
-                        font-size: 2em;     
-                        color: map-get($colors,"font-w");  
-                        &:hover {
-                            color: map-get($colors, "footer-link-hover");
+                        font-size: 2em; 
+                        @extend .link-jump;    
+                    }
+                    .bi-twitter-x{
+                        color: map-get($colors,"x");
+                    }
+                    .bi-youtube{
+                        color:map-get($colors,"youtube");
+                    }
+                    .bi-facebook{
+                        color:map-get($colors,"facebook");
+                        &::before{
+                            outline: 0.3px solid white;
+                            border-radius: 20px;
                         }
+                    }
+                    .bi-linkedin{
+                        color:map-get($colors,"linkedin");    
+                    }
+                    .bi-instagram{
+                        color:map-get($colors,"instagram");
+                    }
+                    .bi-twitch{
+                        color:map-get($colors,"twitch");
+                    }
+                    .bi-tiktok{
+                        color:map-get($colors,"tiktok");
                     }
                 }
             }

@@ -14,6 +14,7 @@
 
 body {
   background-color: #EBEBEB;
+  min-height: 100vh;
 }
 
 li, ul {
@@ -206,8 +207,21 @@ a {
   transition: width 0.3s;
 }
 
+.navitem-anim.active::after, header nav .navbar-collapse .navbar-nav .active.nav-link::after {
+  background-color: transparent;
+  transition: none;
+}
+
 .navitem-anim:hover::after, header nav .navbar-collapse .navbar-nav .nav-link:hover::after {
   width: 100%;
+}
+
+.link-jump, footer .footer-container .footer-networks .footer-networks-butons .butons-a .footer-links {
+  transition: line-height 0.5s;
+}
+
+.link-jump:hover, footer .footer-container .footer-networks .footer-networks-butons .butons-a .footer-links:hover {
+  line-height: 25px;
 }
 
 /* components */
@@ -620,14 +634,33 @@ footer .footer-container .footer-networks .footer-networks-butons {
   gap: 8px;
   justify-content: center;
 }
-footer .footer-container .footer-networks .footer-networks-butons .butons-a {
-  color: white;
-}
 footer .footer-container .footer-networks .footer-networks-butons .butons-a .footer-links {
   font-size: 2em;
 }
-footer .footer-container .footer-networks .footer-networks-butons .butons-a .footer-links:hover {
-  color: rgba(255, 102, 203, 0.8);
+footer .footer-container .footer-networks .footer-networks-butons .butons-a .bi-twitter-x {
+  color: white;
+}
+footer .footer-container .footer-networks .footer-networks-butons .butons-a .bi-youtube {
+  color: red;
+}
+footer .footer-container .footer-networks .footer-networks-butons .butons-a .bi-facebook {
+  color: rgb(136, 136, 247);
+}
+footer .footer-container .footer-networks .footer-networks-butons .butons-a .bi-facebook::before {
+  outline: 0.3px solid white;
+  border-radius: 20px;
+}
+footer .footer-container .footer-networks .footer-networks-butons .butons-a .bi-linkedin {
+  color: rgb(36, 111, 250);
+}
+footer .footer-container .footer-networks .footer-networks-butons .butons-a .bi-instagram {
+  color: rgb(238, 121, 31);
+}
+footer .footer-container .footer-networks .footer-networks-butons .butons-a .bi-twitch {
+  color: rgb(245, 15, 245);
+}
+footer .footer-container .footer-networks .footer-networks-butons .butons-a .bi-tiktok {
+  color: white;
 }
 footer .footer-container .footer-division-2 {
   /* subcomp-footer.scss */

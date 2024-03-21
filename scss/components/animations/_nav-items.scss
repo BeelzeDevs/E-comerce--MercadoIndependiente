@@ -11,6 +11,10 @@
   transition: width .3s;
     
 }
+.navitem-anim.active::after{
+  background-color: transparent;
+  transition: none;
+}
 .navitem-anim:hover::after{
   width:100%;    
 }
