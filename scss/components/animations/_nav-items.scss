@@ -1,0 +1,18 @@
+.navitem-anim{
+  display: inline-block;
+}
+.navitem-anim::after{
+  content: '';
+  display: block;
+  width: 0%;
+  height: 2px;
+  background-color: white;
+  margin: auto;
+  transition: width .3s;
+    
+}
+.navitem-anim:hover::after{
+  width:100%;    
+}
+
+

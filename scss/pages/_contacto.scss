@@ -1,60 +1,65 @@
 /* INICIO - MAIN - CONTACTO */
-.contact-pos{
-    @include flex-box();
-    justify-content: center;
-    .contact{
-        @include flex-box(column);
-        @include margin-bottom-top(40px,40px);
-        font-family: map-get($fonts,"f-contact");
-        background-color:map-get($colors,"bg-contact");
-        color: map-get($colors,"color-contact");
-        border: 1px solid map-get($colors,"border-contact");
-        border-radius: 5px;
-        padding-top: 20px;
-        width: 100%;
-        font-size: calc(5px + 2vmin);
-        .contact-title{
-            text-align: center;
-            font-weight: 500;
+#main-contact{
+    @include bg-image-secondary();
+    .contact-pos{
+        @include flex-box();
+        justify-content: center;
+        .contact{
+            @include flex-box(column);
+            @include margin-bottom-top(40px,40px);
+            @include shadow-1();
             font-family: map-get($fonts,"f-contact");
-        }
-        .contact-container{
-            @include grid-box(1fr, 0.3fr 1fr);
-            background:map-get($colors,"bg-contact-container");
-            padding: 40px;
-            gap: 30px;
-            .form-contact{
-                @extend .formcontact;
-
+            background-color:map-get($colors,"bg-contact");
+            color: map-get($colors,"color-contact");
+            border: 1px solid map-get($colors,"border-contact");
+            border-radius: 5px;
+            padding-top: 20px;
+            width: 100%;
+            font-size: calc(5px + 2vmin);
+            .contact-title{
+                text-align: center;
+                font-weight: 500;
+                font-family: map-get($fonts,"f-contact");
+                @extend .sesion-anim;
             }
-            .contact-form-img{
-                @extend .formcontactimg;
-                @extend .mail-anim;
-            }
-        }
-    }
-    @include mq-sm{
-        .contact{
-            width: 70%;
-        }
-    }
-    @include mq-md{
-        .contact{
-            @include margin-bottom-top(50px,50px);
             .contact-container{
-                @include grid-box(1fr,0.3fr 1fr);
+                @include grid-box(1fr, 0.3fr 1fr);
+                background:map-get($colors,"bg-contact-container");
                 padding: 40px;
                 gap: 30px;
-            }
-        }
-    }
-    @include mq-xl{
-        .contact{
-            .contact-container{
-                @include grid-box(1fr 0.5fr, 1fr);
-            }
-        }
-    }
+                .form-contact{
+                    @extend .formcontact;
 
+                }
+                .contact-form-img{
+                    @extend .formcontactimg;
+                    @extend .mail-anim;
+                }
+            }
+        }
+        @include mq-sm{
+            .contact{
+                width: 70%;
+            }
+        }
+        @include mq-md{
+            .contact{
+                @include margin-bottom-top(50px,50px);
+                .contact-container{
+                    @include grid-box(1fr,0.3fr 1fr);
+                    padding: 40px;
+                    gap: 30px;
+                }
+            }
+        }
+        @include mq-xl{
+            .contact{
+                .contact-container{
+                    @include grid-box(1fr 0.5fr, 1fr);
+                }
+            }
+        }
+
+    }
 }
 /* FIN - MAIN - CONTACTO */

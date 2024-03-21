@@ -2,7 +2,8 @@
     @include flex-box();
     @include justify-align(space-between,center);
     margin: 20px 0px 20px;
-    a{
+    a{  
+        @extend .btn-pulse;
         background-color: map-get($colors,"bg-sesion-submit-a");
         color:map-get($colors,"color-sesion-submit-a");
         outline: 3px solid map-get($colors,"outline-sesion-submit-a");
@@ -19,6 +20,7 @@
         }
     }
     input[type="submit"]{
+        @extend .btn-pulse;
         background-color: map-get($colors,"bg-sesion-submit-btn");                
         color:map-get($colors,"color-sesion-submit-btn");
         outline: 3px solid map-get($colors,"outline-sesion-submit-btn");

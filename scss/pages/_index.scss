@@ -1,9 +1,12 @@
 /* INICIO - MAIN - INDEX */
 
-main{
-    
+#main-index{
+    @include mq-md{
+        @include bg-image-index();
+        padding-bottom: 5px;
+    }
     #main-carousel{
-        display: none;
+        display: none;          
         .my-container{
             .carousel-control-prev{
                 .carousel-control-prev-icon{
@@ -129,6 +132,7 @@ main{
         gap: 30px;
         @include margin-bottom-top(40px,40px);
         justify-content: space-around;
+        border-radius: 20px;
         .main-offers-day{
             @include grid-col-row();
             text-align: center;
@@ -136,6 +140,7 @@ main{
             border-radius: 20px;
             padding: 20px;
             background-color: map-get($colors,"cards-background"); 
+            @include shadow-1();
             @include flex-box(column);
             div{
                 .offer-title{
@@ -179,6 +184,7 @@ main{
             border-radius: 20px;
             background-color: map-get($colors,"cards-background");
             padding: 20px;
+            @include shadow-1();
             @include flex-box(column);
             div{
                 .offer-title{
@@ -315,7 +321,8 @@ main{
             align-items: flex-start;
             text-align:center;
             gap: 0px;
-            @include margin-bottom-top(40px,40px);
+            @include margin-bottom-top(40px,40px);           
+            @include shadow-1();
             background-color: map-get($colors,"bg-info");
             border-radius: 20px;
             .info-item{
@@ -366,6 +373,7 @@ main{
                 }
                 .info-buttons{
                     @extend .index-info-buttons;
+                    @extend .btn-pulse;
                 }
 
             }

@@ -5,6 +5,7 @@
     width:250px;
     justify-content: flex-start;
     color:map-get($colors,"color-product-item" );
+    @include shadow-1();
     @extend .cardanim;
     .container-image{
         background-color: map-get($colors,"bg-product-item-img");
@@ -39,6 +40,7 @@
         .product-item__btn{
             @include grid-col-row(1,2,3,4);
             button{
+                @extend .btn-pulse;
                 background-color: map-get($colors,"bg-product-btn");
                 color:map-get($colors,"color-product-btn");
                 outline: 3px solid map-get($colors,"outline-product-btn");

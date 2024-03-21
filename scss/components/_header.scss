@@ -1,10 +1,9 @@
 /*  INICIO - HEADER */
 header{   
-    background-color: map-get($colors,"bg-header");
+    background-color: map-get($colors,"bg-header");          
     nav{
         --bs-navbar-toggler-border-color: map-get($colors,"bg-details");
         --bs-navbar-toggler-border-radius: 15px;
-        border-bottom: 1px solid gray;
 
         .brand-search-container{
             @include grid-box(1fr 2fr 1fr 0.5fr);
@@ -55,6 +54,12 @@ header{
             .navbar-toggler{
                 @include grid-col-row(4,5);
                 border: 2px solid map-get($colors,"bg-details");
+                &:focus{
+                    box-shadow: 0 0 0 0;
+                }
+                &:hover{
+                    box-shadow: 0 0 0 var(--bs-navbar-toggler-focus-width);
+                }
                 .navbar-toggler-icon{
                     background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgb(255, 255, 255)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
                 } 
@@ -68,6 +73,7 @@ header{
                 align-items: center;
                 .nav-link{
                     color: map-get($colors,"nav-link");
+                    @extend .navitem-anim;
                     &.active{
                         color:map-get($colors,"nav-link-active");
                     }

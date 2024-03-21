@@ -1,26 +1,30 @@
 /* INICIO - MAIN - PRODUCTO */
-
-.container-product{
-    @include margin-bottom-top(40px,40px);
-    padding: 0px;
-    .product-list{
-        @include flex-box(row,wrap);
-        gap: 40px;
-        padding: 20px;
-        justify-content: space-around;
-        .product-item{
-            @extend .product-productitem; 
-        }
-    }
-    @include mq-md{
+#main-productos{
+    @include bg-image-producto();
+    padding: 10px;
+    .container-product{
+        @include margin-bottom-top(40px,40px);
+        padding: 0px;
         .product-list{
+            @include flex-box(row,wrap);
+            gap: 40px;
+            padding: 20px;
             justify-content: space-around;
+            .product-item{
+                @extend .product-productitem; 
+            }
+        }
+        @include mq-md{
+            .product-list{
+                justify-content: space-around;
+            }
+        }
+        @include mq-xl{
+            .product-list{
+                justify-content: space-between;
+            }
         }
     }
-    @include mq-xl{
-        .product-list{
-            justify-content: space-between;
-        }
-    }
+
 }
 /* FIN - MAIN - PRODUCTO */

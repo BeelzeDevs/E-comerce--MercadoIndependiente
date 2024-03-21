@@ -27,6 +27,7 @@
         border-right:1px solid black;
     }
     .form_input-submit[type="submit"]{
+        @extend .btn-pulse;
         background-color: map-get($colors,"bg-contact-submit-btn" );
         color:map-get($colors,"color-contact-submit-btn" );
         outline: 3px solid map-get($colors,"outline-contact-submit-btn" );

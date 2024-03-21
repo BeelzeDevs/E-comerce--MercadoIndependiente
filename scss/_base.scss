@@ -63,7 +63,7 @@ $colors:(
     /*Sesion */
     bg-sesion:#282c34,
     color-sesion:white,
-    boder-sesion:gray,
+    border-sesion:gray,
     bg-sesion-content:rgb(51, 51, 51),
     border-sesion-input:rgb(0, 0, 124),
     color-sesion-input:white,
@@ -177,6 +177,25 @@ a{
 @mixin margin-bottom-top($bottom:0px,$top:0px){
     margin-bottom: $bottom;
     margin-top: $top;
+}
+@mixin shadow-1(){
+    box-shadow: 0px 0px 11px 3px gray;
+}
+@mixin bg-image-index(){
+    background-image: url(../../img/pages-background/bg-img-std-inverse.png), url(../../img/pages-background/bg-img-std.png);
+    background-repeat: no-repeat, no-repeat;
+    background-size: 25% 100%,25% 100%;
+    background-position: left, right;
+}
+@mixin bg-image-producto(){
+    background-image: url(../../img/pages-background/3.jpg);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    background-position: center;
+}
+@mixin bg-image-secondary(){
+    background-image: url(../../img/pages-background/6.jpg);
+    background-size: 100% 100%;
 }
 
 

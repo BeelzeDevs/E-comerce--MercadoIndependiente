@@ -1,11 +1,10 @@
 /* INICIO - FOOTER */
 footer{
-    background-color: map-get($colors, "bg-footer");
+    background-color: map-get($colors, "bg-footer");           
     .footer-container{
         @include grid-box(1fr, 1fr 0.1fr 1fr 0.1fr 1fr);
         @include justifyitems-alignitems();
         padding: 10px;
-        border-top: 1px solid gray;
 
         .footer-help{      
             @include grid-col-row();
@@ -15,6 +14,7 @@ footer{
             .footer-butons{
                 /* subcomp-footer.scss */
                 @extend .btn-footer;
+                @extend .btn-pulse;
             }
         }
 
@@ -77,6 +77,7 @@ footer{
             .footer-butons{
                 /* btn-footer.scss */
                 @extend .btn-footer;
+                @extend .btn-pulse
             }
         }
     }
