@@ -1,6 +1,7 @@
 /* INICIO - MAIN - INICIAR-SESION */
 #main-sesion{
     @include bg-image-sesion-contact();
+    min-height: 70vh;
     padding: 10px;
     .sesion-container{
         @include flex-box(column);

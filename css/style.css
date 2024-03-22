@@ -1427,6 +1427,7 @@ header nav .navbar-collapse .line-t {
 #main-sesion {
   background-image: url(../img/backgrounds/bg-contact-sesion.jpg);
   background-size: 100% 100%;
+  min-height: 70vh;
   padding: 10px;
 }
 #main-sesion .sesion-container {
