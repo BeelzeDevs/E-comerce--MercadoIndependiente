@@ -1053,7 +1053,6 @@ header nav .navbar-collapse .line-t {
 @media only screen and (min-width: 1200px) {
   #main-index #main-carousel .my-container .carousel-inner .carousel-item .carousel-caption .welcome-title {
     font-size: 1.6rem;
-    line-height: 3;
     padding-left: 50px;
   }
   #main-index #main-carousel .my-container .carousel-control-prev {
@@ -1066,7 +1065,6 @@ header nav .navbar-collapse .line-t {
 @media only screen and (min-width: 1400px) {
   #main-index #main-carousel .my-container .carousel-inner .carousel-item .carousel-caption .welcome-title {
     font-size: 1.8rem;
-    line-height: 5;
   }
 }
 #main-index .main-offers-container {
