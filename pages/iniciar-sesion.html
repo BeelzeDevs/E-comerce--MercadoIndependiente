@@ -62,14 +62,14 @@
         <section class="sesion-container container">
                 <h2 class="sesion-title">Iniciar sesión</h2>
                 <div class="sesion__content">
-                    <form action="" method="post" class="sesion-form">
-                        <input type="email" name="" id="" placeholder="example@email.com" class="sesion-form__input">
-                        <input type="password" name="" id="" placeholder="contraseña..." class="sesion-form__input">
-                        <div class="">
+                    <form   class="sesion-form">
+                        <input type="email" name="email"  placeholder="example@email.com" class="sesion-form__input">
+                        <input type="password" name="password"  placeholder="contraseña..." class="sesion-form__input">
+                        <div >
                             <p>
                                 ¿No tienes cuenta?
                             </p>
-                            <a href="../index.html">Crear una</a>
+                            <button id="crearCuenta" >Crear una</button>
                         </div>
                             
                         <div class="sesion__submit">
@@ -78,6 +78,38 @@
                         </div>
                     </form>
                 </div>
+        </section>
+        <section class="modal-crearCuenta" id="modal-crearCuenta">
+            <form  class="form-crearCuenta">
+                <h2 class="titulo">Crear Cuenta</h2>
+                <div class="correo">
+                    <h3>Correo electrónico</h3>
+                    <input type="email" name="email"  placeholder="Email Address">
+                </div>
+                <div class="user-info">
+                    <div class="crearCuenta-container-1">
+                        <div>
+                            <input type="text" name="nombre"  placeholder="First name">
+                        </div>
+                        <div>
+                            <input type="text" name="apellido"  placeholder="Last name">
+                        </div>
+                    </div>
+                    <div class="crearCuenta-container-2">
+                        <input type="text" name="direccion"  placeholder="Street address">
+                        <input type="text" name="codPostal" placeholder="Zip/postal">
+                    </div>
+                    <div class="crearCuenta-container-3">
+                        <input type="text" name="provincia"  placeholder="State/province">
+                        <input type="tel" name="telefono"  placeholder="Phone number">
+                    </div>
+                </div>
+                <div class="botones">
+                    <button id="crearCuenta-btnAceptar">Aceptar</button>
+                    <button id="crearCuenta-btnCancelar">Cancelar</button>
+                </div>
+            </form>
+
         </section>
 
     </main> <!-- Fin Sección 2 - Main -->

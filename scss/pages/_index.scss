@@ -175,6 +175,7 @@
 			padding: 20px;
 			@include shadow-1();
 			@include flex-box(column);
+			position: relative;
 			div {
 				.offer-title {
 					@include font-size-weight(0.9em, 600);
@@ -183,10 +184,20 @@
 					text-align: start;
 				}
 			}
+			.main-offers-buttons{
+				border: 0px;
+				font-size: 1rem;
+				.prev{
+					@extend .btns-mainOffers;
+				}
+				.next{
+					@extend .btns-mainOffers;
+				}
+			}
 			.moreoffers-slider {
 				@include flex-box();
 				justify-content: flex-start;
-				overflow-x: auto;
+				overflow: hidden;
 				gap: 20px;
 				text-align: center;
 				padding: 20px;

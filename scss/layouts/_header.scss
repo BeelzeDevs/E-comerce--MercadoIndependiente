@@ -1,226 +1,236 @@
 /*  INICIO - HEADER */
-header{   
-    background-color: map-get($colors,"bg-header");          
-    nav{
-        --bs-navbar-toggler-border-color: map-get($colors,"bg-details");
-        --bs-navbar-toggler-border-radius: 15px;
+header {
+	background-color: map-get($colors, 'bg-header');
+	padding: 5px 15px;
+	.navbar {
+		justify-content: space-around;
+	}
+	nav {
+		--bs-navbar-toggler-border-color: map-get($colors, 'bg-details');
+		--bs-navbar-toggler-border-radius: 15px;
+		padding-top: 0px;
 
-        .brand-search-container{
-            @include grid-box(1fr 2fr 1fr 0.5fr);
-            gap: 5px;
+		.brand-search-container {
+			@include flex-box();
+			@include justify-align(space-between, center);
+			gap: 5px;
+			.bi-brilliance {
+				display: none;
+			}
+			.navbar-brand {
+				margin: 0px;
+				.company-logo {
+					max-width: 75px;
+					height: auto;
+				}
+				.navbar-title {
+					display: none;
+					text-align: start;
+					margin: 0px;
+					@include font-size-weight(1.2em, 400);
+					margin-right: 10px;
+					color: map-get($colors, 'font-w');
+				}
+			}
 
-            .navbar-brand{
-                @include grid-col-row();
-                margin: 0px;
-                .company-logo{
-                    width: 100%;
-                    height: auto;
-                }
-                .navbar-title{
-                    display: none;
-                    text-align:start;
-                    margin: 0px;
-                    @include font-size-weight(1.2em,400);
-                    margin-right: 10px;
-                    color: map-get($colors,"font-w");
-                    }
-                }
-            
+			.navbar-search {
+				@include flex-box();
+				background-color: map-get($colors, 'bg-details');
+				border-radius: 18px;
+				.form-control {
+					border-top-left-radius: 20px;
+					border-bottom-left-radius: 20px;
+				}
+				button {
+					.navbar-search-icon {
+						background-image: url('../img/icons/icon-search2.svg');
+						display: inline-block;
+						width: 1.5em;
+						height: 1.5em;
+						vertical-align: middle;
+						background-repeat: no-repeat;
+						background-position: center;
+						background-size: 100%;
+						color: map-get($colors, 'font-w');
+					}
+				}
+			}
 
-            .navbar-search{
-                @include grid-col-row(2,4);
-                @include flex-box();
-                background-color: map-get($colors,"bg-details");
-                border-radius: 18px;
-                .form-control{
-                    border-top-left-radius: 20px;
-                    border-bottom-left-radius: 20px;
-                }
-                button{
-                    .navbar-search-icon{
-                        background-image: url('../img/icons/icon-search2.svg');
-                        display: inline-block;
-                        width: 1.5em;
-                        height: 1.5em;
-                        vertical-align: middle;
-                        background-repeat: no-repeat;
-                        background-position: center;
-                        background-size: 100%;
-                        color: map-get($colors ,"font-w");
-                    }
-                } 
-            }
+			.navbar-toggler {
+				border: 2px solid map-get($colors, 'bg-details');
+				&:focus {
+					box-shadow: 0 0 0 0;
+				}
+				&:hover {
+					box-shadow: 0 0 0 var(--bs-navbar-toggler-focus-width);
+				}
+				.navbar-toggler-icon {
+					background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgb(255, 255, 255)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
+				}
+			}
+			#carrito {
+				button {
+					border-radius: 20px;
+					border-color: map-get($colors, 'bg-carrito');
+					background-color: map-get($colors, 'bg-carrito');
+					// background-color: map-get($colors, 'bg-details');
+					color: white;
+					@include flex-box();
+					@include justify-align(center, center);
+					padding: 3px 2px;
+					.badge {
+						max-width: 15%;
+						font-size: 0.3em;
+						display: none;
+						&.visible {
+							@include flex-box();
+							@include justify-align(center, center);
+						}
+					}
+				}
+			}
+		}
+		.navbar-collapse {
+			.navbar-nav {
+				align-items: center;
+				.nav-link {
+					color: map-get($colors, 'nav-link');
+					@extend .navitem-anim;
+					&.active {
+						color: map-get($colors, 'nav-link-active');
+					}
+				}
+			}
+			.line-t {
+				border-top: 0.1px solid map-get($colors, 'bg-details');
+				border-width: 0.1px;
+				margin-top: 15px;
+			}
+		}
+	}
+	@include mq-sm {
+		nav {
+			.brand-search-container {
+				#carrito {
+					button {
+						font-size: 25px;
+					}
+				}
+			}
+			.navbar-collapse {
+				.navbar-nav {
+					font-size: 1.2em;
+				}
+			}
+		}
+	}
+	@include mq-md {
+		.navbar {
+			padding: 0px;
+		}
+		nav {
+			div {
+				.brand-search-container {
+					@include grid-box(repeat(3, 1fr) 80px, repeat(2, minmax(50px, 10vh)));
+					gap: 5px;
+					align-items: center;
 
-            .navbar-toggler{
-                @include grid-col-row(4,5);
-                border: 2px solid map-get($colors,"bg-details");
-                &:focus{
-                    box-shadow: 0 0 0 0;
-                }
-                &:hover{
-                    box-shadow: 0 0 0 var(--bs-navbar-toggler-focus-width);
-                }
-                .navbar-toggler-icon{
-                    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgb(255, 255, 255)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
-                } 
-            }
-        
+					.navbar-brand {
+						@include flex-box();
+						@include grid-col-row(1, 5);
+						@include justify-align(center, center);
+						justify-self: center;
 
-        }
-        .navbar-collapse{
-
-            .navbar-nav{
-                align-items: center;
-                .nav-link{
-                    color: map-get($colors,"nav-link");
-                    @extend .navitem-anim;
-                    &.active{
-                        color:map-get($colors,"nav-link-active");
-                    }
-                }
-            }
-            .line-t{
-                border-top: 0.1px solid map-get($colors, "bg-details");
-                border-width: 0.1px;
-                margin-top: 15px;
-            }
-            
-        }
-    }
-    @include mq-sm{
-        nav{
-            .navbar-collapse{
-                .navbar-nav{
-                    font-size: 1.2em;
-                }
-            }
-        }
-    }
-    @include mq-md{
-        nav{
-            .container{
-                @include flex-box(column);
-                align-items: stretch;
-                
-                .brand-search-container{
-                    @include grid-box(1fr 1fr 1fr, repeat(2,minmax(50px,10vh)) );
-                    gap: 5px;
-                    align-items: center;
-                    
-                    .navbar-brand{
-                        @include flex-box();
-                        @include grid-col-row(2,3);
-                        @include justify-align(center,center);
-                        justify-self: flex-start;
-
-                        .company-logo{
-                                width: 20%;
-                        }
-                        .navbar-title{
-                            display:inline-block;
-                            margin-right: 0px;
-                            }
-                    }
-                    .navbar-search{
-                        @include grid-col-row(1,4,2,3);
-                        border-radius: 15px;
-                        .form-control{
-                            border-radius: 15px;
-                        }
-                    }
-                }
-                .navbar-collapse{
-                    @include flex-box();
-                    align-self: center;
-                    .navbar-nav{
-                        margin-top: 15px;
-                        border-top: 0px;
-                        align-items: flex-start;
-                        justify-items: flex-start;
-                    }
-                }
-            }
-        }
-    }
-    @include mq-xl{
-        nav{
-            .container{
-                @include flex-box();
-            
-                .brand-search-container{
-                    @include grid-box(0.68fr 1fr, 1fr);
-                    gap: 5px;
-                    align-content: center;
-                    justify-items: center;
-                    .navbar-brand{
-                        @include flex-box();
-                        @include grid-col-row();
-                        .company-logo{
-                            max-width: 100%;
-                            height: auto;
-                            display: block;
-                        }
-                        .navbar-title{
-                            font-size: 1.1em;
-                            font-weight: 600;
-                            margin-right: 0px;
-                        }
-                    }
-                    .navbar-search{
-                        @include grid-col-row(2,3);
-                        grid-row: auto;
-                        border-radius: 15px;
-                    }
-                }
-                .navbar-collapse{
-                    justify-content: space-around;
-                    .navbar-nav{
-                        margin:0px;
-                        @include grid-box(repeat(3,1fr) 1.8fr 1.6fr);
-                        align-items: center;
-                        justify-items: center;
-                        font-size: 1.1em;  
-                        .nav-item-one{
-                            @include grid-col-row();
-                        }
-                        .nav-item-two{
-                            @include grid-col-row(2,3);
-                        }
-                        .nav-item-three{
-                            @include grid-col-row(3,4);
-                        }
-                        .nav-item-four{
-                            @include grid-col-row(4,5);
-                        }
-                        .nav-item-five{
-                            @include grid-col-row(5,6);
-                        }
-                    }
-                }
-            }
-        }                      
-    }
-    @include mq-xxl{
-        nav{
-            .container{
-                .brand-search-container{
-                    grid-template-columns: 0.7fr 1.3fr;  
-                    justify-items:normal;
-                    .navbar-brand{
-                        justify-content: start;
-                    }
-                }
-                .navbar-collapse{
-                    .navbar-nav{
-                        @include grid-box(repeat(3,1fr) 1.8fr 1.4fr);
-                    }
-                }
-            }
-        }
-    }  
-
-
+						.company-logo {
+							width: 20%;
+						}
+						.navbar-title {
+							display: inline-block;
+							margin-right: 0px;
+						}
+					}
+					.navbar-search {
+						@include grid-col-row(1, 4, 2, 3);
+						border-radius: 15px;
+						.form-control {
+							border-radius: 15px;
+						}
+					}
+					#carrito {
+						@include grid-col-row(4, 5, 2, 3);
+					}
+				}
+				.navbar-collapse {
+					@include flex-box();
+					align-self: center;
+					.navbar-nav {
+						margin-top: 10px;
+						border-top: 0px;
+						align-items: flex-start;
+						justify-items: flex-start;
+					}
+				}
+			}
+		}
+	}
+	@include mq-xl {
+		.navbar {
+			display: block;
+			div {
+				.brand-search-container {
+					@include grid-box(0.5fr 1fr 0.1fr 0.4fr, 1fr);
+					gap: 15px;
+					align-content: center;
+					justify-items: stretch;
+					.bi-brilliance {
+						display: flex;
+						@include justify-align(center, center);
+						font-size: 32px;
+						color: map-get($colors, 'logo-ying');
+					}
+					.navbar-brand {
+						@include flex-box();
+						justify-self: flex-end;
+						@include grid-col-row(1, 2);
+						.company-logo {
+							width: 100%;
+							height: auto;
+							display: block;
+						}
+						.navbar-title {
+							font-size: 1.1em;
+							font-weight: 600;
+							margin-right: 0px;
+						}
+					}
+					.navbar-search {
+						@include grid-col-row(4, 5);
+						border-radius: 15px;
+						justify-self: flex-start;
+					}
+					#carrito {
+						@include grid-col-row(3, 4);
+						display: flex;
+						justify-content: flex-end;
+					}
+				}
+				.navbar-collapse {
+					display: grid;
+					@include grid-col-row(2, 3);
+					justify-content: space-around;
+					.navbar-nav {
+						margin: 0px;
+						@include flex-box();
+						@include justify-align(space-between, center);
+						gap: 15px;
+						font-size: 1.1em;
+					}
+				}
+			}
+		}
+	}
+	@include mq-xxl {
+	}
 }
 
 /* FIN HEADER */
-

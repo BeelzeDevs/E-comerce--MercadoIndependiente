@@ -1,0 +1,21 @@
+
+.btns-mainOffers{
+    border-radius: 100%;
+    background-color: white;
+    color: black;
+    border: 0px;
+    font-size: 2rem;
+    position: absolute;
+    bottom: 50%;
+    transform: translateY(50%);
+    margin: auto;
+    width: 40px; 
+    height: 50px; 
+    border-radius: 50%; 
+    &.prev{
+        left: -21px;
+    }
+    &.next{
+        right: -21px;
+    }
+}

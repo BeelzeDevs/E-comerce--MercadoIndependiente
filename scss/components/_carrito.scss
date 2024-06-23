@@ -1,0 +1,348 @@
+main {
+	.modal-añadirProducto {
+		background-color: #111111eb;
+		color: white;
+		position: fixed;
+		bottom: 13%;
+		right: 0;
+		top: 15%;
+		left: 0;
+		width: 60vw;
+		max-height: 150px;
+		max-width: 250px;
+		margin: auto;
+		border-radius: 20px;
+		opacity: 0;
+		visibility: hidden;
+		transition: opacity 0.5s ease-in-out, visibility 0s ease-in-out;
+
+		&.modal-show {
+			visibility: visible;
+			opacity: 1;
+			transition: opacity 0.5s ease-in-out, visibility 0s ease-in-out;
+			z-index: 100;
+		}
+		.modal-añadirProducto-container {
+			overflow: auto;
+			width: 100%;
+			max-height: 100%;
+			@include flex-box(column);
+			align-items: center;
+			justify-content: space-between;
+			padding-bottom: 5px;
+			.modal-añadirProducto-logo {
+				padding: 5px;
+				i {
+					color: white;
+					font-size: 40px;
+					background-color: green;
+				}
+			}
+			.modal-añadirProducto-titulo {
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				h2 {
+					font-size: 1rem;
+					margin: 0px;
+				}
+				i {
+					display: inline-block;
+				}
+			}
+			.modal-añadirProducto-pie button {
+				background-color: map-get($colors, 'footer-bg-buton');
+				color: map-get($colors, 'footer-txt-buton');
+				padding: 6px;
+			}
+		}
+	}
+	.modal-carrito {
+		display: none;
+		visibility: hidden;
+		opacity: 1;
+		transition: visibility 0s ease-in-out, opacity 0.5s ease-in-out;
+		position: fixed;
+		bottom: 5%;
+		right: 0;
+		background-color: rgb(24, 24, 24);
+		color: white;
+		min-width: 30vw;
+		max-width: 80vw; /* Asegura que el modal no exceda la altura de la ventana */
+
+		&.modal-show {
+			display: block;
+			opacity: 1;
+			visibility: visible;
+			z-index: 100;
+		}
+		.modal-carrito-container {
+			@include flex-box(column);
+			justify-content: space-between;
+			align-items: stretch;
+			max-height: 100%; /* Asegurar que el contenedor no exceda la altura del modal */
+			min-height: 100%;
+			overflow: hidden; /* Para que el overflow en los hijos funcione correctamente */
+			.modal-carrito-titulo {
+				@include flex-box();
+				@include justify-align(center, center);
+				gap: 3px;
+				border-bottom: 3px solid map-get($colors, 'txt-carousel');
+			}
+			p {
+				margin: 0;
+			}
+			.modal-carrito-productos {
+				@include flex-box(row);
+				flex-wrap: wrap;
+				gap: 0.4rem;
+				overflow: auto; //Funcionando
+				max-height: calc(
+					100vh - 350px
+				); /* Altura máxima para permitir el desbordamiento, ajusta dinámicamente la altura máxima */
+				min-height: calc(100vh - 350px);
+				.productos-item {
+					@include flex-box();
+					@include justify-align(space-between, center);
+					gap: 3rem;
+					width: 100%;
+					padding: 0px 15px 0px 0px;
+					.producto-info {
+						@include flex-box();
+						@include justify-align(space-between, center);
+						gap: 10px;
+						img {
+							width: 30%;
+							border-radius: 20px;
+						}
+						p {
+							font-size: 0.6em;
+						}
+					}
+					.producto-cantidad {
+						@include flex-box();
+						@include justify-align(space-between, center);
+						gap: 3px;
+
+						button {
+							font-size: 0.8rem;
+							font-weight: 400;
+							border: 0px;
+							border-radius: 5px;
+							outline: 1px solid rgb(0, 75, 172);
+							color: white;
+							background-color: rgba(65, 121, 194, 0.7);
+							padding: 0.05rem 0.3rem;
+							margin: 0.1rem;
+							&:hover {
+								background-color: rgba(0, 75, 172, 0.08);
+								color: rgb(126, 230, 236);
+							}
+						}
+						p {
+							font-size: 0.6rem;
+						}
+					}
+					.producto-subtotal {
+						justify-self: flex-end;
+						p {
+							font-size: 1rem;
+						}
+					}
+				}
+			}
+			.modal-carrito-pie {
+				@include flex-box(column);
+				.carrito-pie-1 {
+					@include flex-box();
+					@include justify-align(space-between, center);
+					border-top: 1.5px solid map-get($colors, 'txt-carousel');
+					border-bottom: 1px solid map-get($colors, 'txt-carousel');
+					padding: 0.5rem 15px 0.5rem 0.5rem;
+
+					p {
+						font-size: 1em;
+						span {
+							padding: 5px;
+						}
+					}
+				}
+				.carrito-pie-2 {
+					@include flex-box();
+					@include justify-align(space-evenly, center);
+					button {
+						@extend .index-info-buttons;
+						background-color: map-get($colors, 'bg-header');
+						padding: 6px;
+						&:hover {
+							background-color: map-get($colors, 'bg-header');
+							color: rgb(126, 230, 236);
+						}
+					}
+				}
+			}
+		}
+	}
+	@include mq-sm {
+		.modal-carrito {
+			max-width: 40vw;
+		}
+	}
+	@include mq-md {
+		.modal-carrito {
+			bottom: 0;
+			.modal-carrito-container {
+				gap: 1px;
+				.modal-carrito-productos {
+					max-height: calc(100vh - 350px);
+					.productos-item {
+						.producto-info {
+							gap: 10px;
+						}
+					}
+				}
+				.modal-carrito-pie {
+					.carrito-pie-2 {
+						button {
+							margin: 2px;
+							padding: 3px;
+						}
+					}
+				}
+			}
+		}
+	}
+	@include mq-xl {
+		.modal-carrito {
+			bottom: 5%;
+			.modal-carrito-container {
+				gap: 1em;
+				.modal-carrito-productos {
+					max-height: calc(100vh - 350px);
+					.productos-item {
+						.producto-info {
+							gap: 10px;
+							p {
+								font-size: 1em;
+							}
+						}
+						.producto-cantidad {
+							p {
+								font-size: 1.1em;
+							}
+						}
+						.producto-subtotal {
+							p {
+								font-size: 1.1em;
+							}
+						}
+					}
+				}
+				.modal-carrito-pie {
+					.carrito-pie-1 {
+						p {
+							font-size: 1.1em;
+						}
+					}
+					.carrito-pie-2 {
+						button {
+							padding: 6px;
+							margin: 0.5rem;
+						}
+					}
+				}
+			}
+		}
+	}
+	.modal-crearCuenta {
+		position: fixed;
+		top: 0;
+		bottom: 0;
+		left: 0;
+		right: 0;
+		margin: auto;
+		background-color: #111111eb;
+		width: 40vw; /* Define un ancho fijo */
+		height: 70vh; /* Define una altura fija */
+		z-index: 150;
+		display: flex;
+		flex-direction: row;
+		.form-crearCuenta {
+			display: grid;
+			grid-template-rows: 0.5fr 0.3fr 1fr 0.3fr;
+			grid-template-columns: 1fr;
+			gap: 5px;
+			min-width: 100%;
+			.titulo {
+				color: white;
+				@include flex-box();
+				@include justify-align(center, center);
+				@include grid-col-row();
+			}
+			.correo {
+				@include flex-box(column);
+				@include justify-align(flex-end, stretch);
+				@include grid-col-row(1, 2, 2, 3);
+				padding: 15px;
+				h3 {
+					color: white;
+					font-size: 1em;
+				}
+			}
+			.user-info {
+				@include grid-col-row(1, 2, 3, 4);
+				display: flex;
+				flex-direction: column;
+				justify-content: space-evenly;
+				gap: 15px;
+				padding: 15px;
+				.crearCuenta-container-1 {
+					@include flex-box();
+					@include justify-align(flex-start, center);
+					gap: 25px;
+					div {
+						width: 100%;
+						input {
+							width: 100%;
+						}
+					}
+				}
+				.crearCuenta-container-2 {
+					@include flex-box();
+					@include justify-align(flex-start, center);
+					gap: 35px;
+					input:nth-child(1) {
+						width: 60%;
+					}
+					input:nth-child(2) {
+						width: 30%;
+					}
+				}
+				.crearCuenta-container-3 {
+					@include flex-box();
+					@include justify-align(flex-start, center);
+					gap: 25px;
+					input {
+						width: 100%;
+					}
+				}
+			}
+			.botones {
+				@include flex-box();
+				@include justify-align(space-evenly, flex-end);
+				@include grid-col-row(1, 2, 4, 5);
+				padding: 4px;
+				button {
+					@extend .index-info-buttons;
+					padding: 4px;
+					margin: 0;
+					background-color: map-get($colors, 'bg-header');
+					&:hover {
+						background-color: map-get($colors, 'bg-header');
+						color: rgb(126, 230, 236);
+					}
+				}
+			}
+		}
+	}
+}

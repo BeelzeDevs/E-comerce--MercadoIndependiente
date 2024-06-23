@@ -1,32 +1,34 @@
 /* variables, mixins, reset*/
-@import "base";
+@import 'base';
 
 /* components Animations*/
-@import "components/animations/cardprod";
-@import "components/animations/textcontact";
-@import "components/animations/email";
-@import "components/animations/title-sesion";
-@import "components/animations/btn-pulse";
-@import "components/animations/nav-items";
-@import "components/animations/link-jump";
+@import 'components/animations/cardprod';
+@import 'components/animations/textcontact';
+@import 'components/animations/email';
+@import 'components/animations/title-sesion';
+@import 'components/animations/btn-pulse';
+@import 'components/animations/nav-items';
+@import 'components/animations/link-jump';
 
 /* components */
-@import "components/footer-subcomp";
-@import "components/index-carousel-icons";
-@import "components/index-info-buttons";
-@import "components/index-cards";
-@import "components/contact-formcontact";
-@import "components/sesion-input";
-@import "components/sesion-submit";
-@import "components/product-productitem";
+@import 'components/footer-subcomp';
+@import 'components/index-carousel-icons';
+@import 'components/index-info-buttons';
+@import 'components/index-cards';
+@import 'components/contact-formcontact';
+@import 'components/sesion-input';
+@import 'components/sesion-submit';
+@import 'components/mainOffersbtns';
+@import 'components/product-productitem';
+@import 'components/carrito';
 
 /* Layouts */
-@import "layouts/footer";
-@import "layouts/header";
+@import 'layouts/footer';
+@import 'layouts/header';
 
 /* Pages */
-@import "pages/index";
-@import "pages/contacto";
-@import "pages/iniciar-sesion";
-@import "pages/producto";
-@import "pages/sobre-nosotros";
+@import 'pages/index';
+@import 'pages/contacto';
+@import 'pages/iniciar-sesion';
+@import 'pages/producto';
+@import 'pages/sobre-nosotros';
