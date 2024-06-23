@@ -62,14 +62,14 @@
         <section class="sesion-container container">
                 <h2 class="sesion-title">Iniciar sesión</h2>
                 <div class="sesion__content">
-                    <form   class="sesion-form">
+                    <form   class="sesion-form" id="formIniciarSesion">
                         <input type="email" name="email"  placeholder="example@email.com" class="sesion-form__input">
                         <input type="password" name="password"  placeholder="contraseña..." class="sesion-form__input">
                         <div >
                             <p>
                                 ¿No tienes cuenta?
                             </p>
-                            <button id="crearCuenta" >Crear una</button>
+                            <button id="crearCuenta" class="crearCuenta">Crear una</button>
                         </div>
                             
                         <div class="sesion__submit">
@@ -80,32 +80,32 @@
                 </div>
         </section>
         <section class="modal-crearCuenta" id="modal-crearCuenta">
-            <form  class="form-crearCuenta">
+            <form  class="form-crearCuenta" method="post" action="" id="formCrearCuenta">
                 <h2 class="titulo">Crear Cuenta</h2>
                 <div class="correo">
                     <h3>Correo electrónico</h3>
-                    <input type="email" name="email"  placeholder="Email Address">
+                    <input type="email" name="email"  placeholder="example@email.com">
                 </div>
                 <div class="user-info">
                     <div class="crearCuenta-container-1">
                         <div>
-                            <input type="text" name="nombre"  placeholder="First name">
+                            <input type="text" name="nombre"  placeholder="Nombre">
                         </div>
                         <div>
-                            <input type="text" name="apellido"  placeholder="Last name">
+                            <input type="text" name="apellido"  placeholder="Apellido">
                         </div>
                     </div>
                     <div class="crearCuenta-container-2">
-                        <input type="text" name="direccion"  placeholder="Street address">
-                        <input type="text" name="codPostal" placeholder="Zip/postal">
+                        <input type="text" name="direccion"  placeholder="Direccion">
+                        <input type="text" name="codPostal" placeholder="Cod postal">
                     </div>
                     <div class="crearCuenta-container-3">
-                        <input type="text" name="provincia"  placeholder="State/province">
-                        <input type="tel" name="telefono"  placeholder="Phone number">
+                        <input type="text" name="provincia"  placeholder="Provincia">
+                        <input type="tel" name="telefono"  placeholder="Número de teléfono">
                     </div>
                 </div>
                 <div class="botones">
-                    <button id="crearCuenta-btnAceptar">Aceptar</button>
+                    <button id="crearCuenta-btnAceptar" type="submit">Aceptar</button>
                     <button id="crearCuenta-btnCancelar">Cancelar</button>
                 </div>
             </form>
@@ -162,5 +162,6 @@
         </div>   
     </footer> <!-- Fin Seccion 3 - Footer --> 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>    
+    <script src="../js/app.js" type="module"></script>
 </body>
 </html>

@@ -1,4 +1,24 @@
-import StorageService from "./Storage.js";
+import StorageService from "./models/Storage.js";
+import {preventFormSubmit, toggleVisibilidadForm} from './views/formsUser.js';
+
+
+document.addEventListener('DOMContentLoaded', (e)=>{
+
+    if(window.location.pathname.includes('iniciar-sesion')){
+        preventFormSubmit('formIniciarSesion');
+        preventFormSubmit('formCrearCuenta');
+        toggleVisibilidadForm('modal-crearCuenta','crearCuenta-btnCancelar');
+        toggleVisibilidadForm('modal-crearCuenta','crearCuenta'); 
+        toggleVisibilidadForm('modal-crearCuenta','crearCuenta-btnAceptar');// por el momento no hay validaciones en el form
+    }
+    
+});
+
+document.addEventListener('click', (e)=>{
+    if(window.location.pathname.includes('iniciar-sesion')){
+        console.log(e.target);
+    }
+})
 
 function mostrarModal() {
     const modalProducto = document.querySelector('.modal-añadirProducto');
@@ -46,6 +66,13 @@ function MainOffersButtons() {
 
 
 }
-mostrarModal();
-MainOffersButtons();
+if(window.location.pathname.includes('index')){
+    mostrarModal();
+    MainOffersButtons();
+
+}
+
+
+
+
 

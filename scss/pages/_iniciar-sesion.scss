@@ -34,6 +34,11 @@
                 .sesion-form__input{
                     @extend .sesion-inputs;
                 }
+                .crearCuenta{
+                    background-color:map-get($colors,"bg-sesion-content");
+                    border:0px;
+                    color: $remark-c-anim;
+                }
                 .sesion__submit{
                 @extend .sesion-submit;
                 }

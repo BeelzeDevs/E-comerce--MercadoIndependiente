@@ -1876,6 +1876,11 @@ header nav .navbar-collapse .line-t {
   align-items: stretch;
   gap: 20px;
 }
+#main-sesion .sesion-container .sesion__content .sesion-form .crearCuenta {
+  background-color: rgb(51, 51, 51);
+  border: 0px;
+  color: rgb(0, 248, 182);
+}
 @media only screen and (min-width: 576px) {
   #main-sesion .sesion-container .sesion__content {
     padding: 20px 40px 10px;
