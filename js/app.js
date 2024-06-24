@@ -77,8 +77,8 @@ function MainOffersButtons() {
 
 
 }
+mostrarModal();
 if(window.location.pathname.includes('index')){
-    mostrarModal();
     MainOffersButtons();
 
 }
