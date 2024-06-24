@@ -75,7 +75,7 @@
                 <h2 class="sesion-title">Iniciar sesión</h2>
                 <div class="sesion__content">
                     <form   class="sesion-form" id="formIniciarSesion">
-                        <input type="email" name="email"  placeholder="example@email.com" class="sesion-form__input">
+                        <input type="email" name="email"  placeholder="example@email.com" class="sesion-form__input" id="1234">
                         <input type="password" name="password"  placeholder="contraseña..." class="sesion-form__input">
                         <div >
                             <p>
@@ -96,24 +96,49 @@
                 <h2 class="titulo">Crear Cuenta</h2>
                 <div class="correo">
                     <h3>Correo electrónico</h3>
-                    <input type="email" name="email"  placeholder="example@email.com" value="email@hotmail.com" >
+                    <input type="email" name="email"  placeholder="example@email.com" value="email@hotmail.com" > 
+                </div>
+                <div class="passwords">
+                    <div>
+                        <input type="text" value="Contraseña" name="password1" placeholder="contraseña">
+                        <div id="ayudaPassword1" class="ayuda lead d-none" ></div>
+                    </div>
+                    <div>
+                        <input type="text" value="Contraseña" name="password2" placeholder="repetir contraseña">
+                        <div id="ayudaPassword2" class="ayuda lead d-none" ></div>
+                    </div>
                 </div>
                 <div class="user-info">
                     <div class="crearCuenta-container-1">
-                        <div>
+                        <div >
                             <input type="text" name="nombre"  placeholder="Nombre" value="user">
+                            <div id="ayudaNombre" class="ayuda lead d-none" >Solo letras</div>
                         </div>
                         <div>
                             <input type="text" name="apellido"  placeholder="Apellido" value="userLastName">
+                            <div id="ayudaApellido" class="ayuda lead d-none" >Solo letras</div>
                         </div>
                     </div>
+                  
                     <div class="crearCuenta-container-2">
-                        <input type="text" name="direccion"  placeholder="Direccion" value="direcion 1234">
-                        <input type="text" name="codPostal" placeholder="Cod postal" value="1635" >
+                        <div>
+                            <input type="text" name="direccion"  placeholder="Direccion" value="dirección 1234" class="classDireccion">
+                            <div id="ayudaDireccion" class="ayuda lead d-none" >Solo letras y números</div>
+                        </div>
+                        <div>
+                            <input type="text" name="codPostal" placeholder="Cod postal" value="1635" class="classCodPostal">
+                            <div id="ayudaCodPostal" class="ayuda lead d-none" >Deben ser 4 números</div>
+                        </div>
                     </div>
                     <div class="crearCuenta-container-3">
-                        <input type="text" name="provincia"  placeholder="Provincia" value="buenos aires">
-                        <input type="tel" name="telefono"  placeholder="Número de teléfono" value="1535094880">
+                        <div>
+                            <input type="text" name="provincia"  placeholder="Provincia" value="buenos aires">
+                            <div id="ayudaProvincia" class="ayuda lead d-none" >Solo letras</div>
+                        </div>
+                        <div>
+                            <input type="tel" name="telefono"  placeholder="Número de teléfono" value="1535094880" >
+                            <div id="ayudaTelefono" class="ayuda lead d-none" >Deben ser 10 números</div>
+                        </div>
                     </div>
                 </div>
                 <div class="botones">

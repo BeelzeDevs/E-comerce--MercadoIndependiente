@@ -307,7 +307,7 @@ a {
   border-radius: 20px;
 }
 
-.index-info-buttons, #main-index section .container-info .info-link .info-buttons, main .modal-crearCuenta .form-crearCuenta .botones button, main .modal-carrito .modal-carrito-container .modal-carrito-pie .carrito-pie-2 button {
+.index-info-buttons, #main-index section .container-info .info-link .info-buttons, #main-sesion .modal-crearCuenta .form-crearCuenta .botones button, main .modal-carrito .modal-carrito-container .modal-carrito-pie .carrito-pie-2 button {
   font-size: 1em;
   font-weight: 400;
   padding: 0.4rem;
@@ -318,19 +318,19 @@ a {
   color: white;
 }
 
-.index-info-buttons:hover, #main-index section .container-info .info-link .info-buttons:hover, main .modal-crearCuenta .form-crearCuenta .botones button:hover, main .modal-carrito .modal-carrito-container .modal-carrito-pie .carrito-pie-2 button:hover {
+.index-info-buttons:hover, #main-index section .container-info .info-link .info-buttons:hover, #main-sesion .modal-crearCuenta .form-crearCuenta .botones button:hover, main .modal-carrito .modal-carrito-container .modal-carrito-pie .carrito-pie-2 button:hover {
   background-color: rgba(0, 75, 172, 0.08);
   color: black;
 }
 
 @media only screen and (min-width: 768px) {
-  .index-info-buttons, #main-index section .container-info .info-link .info-buttons, main .modal-crearCuenta .form-crearCuenta .botones button, main .modal-carrito .modal-carrito-container .modal-carrito-pie .carrito-pie-2 button {
+  .index-info-buttons, #main-index section .container-info .info-link .info-buttons, #main-sesion .modal-crearCuenta .form-crearCuenta .botones button, main .modal-carrito .modal-carrito-container .modal-carrito-pie .carrito-pie-2 button {
     font-size: 1.2em;
     font-weight: 500;
   }
 }
 @media only screen and (min-width: 1200px) {
-  .index-info-buttons, #main-index section .container-info .info-link .info-buttons, main .modal-crearCuenta .form-crearCuenta .botones button, main .modal-carrito .modal-carrito-container .modal-carrito-pie .carrito-pie-2 button {
+  .index-info-buttons, #main-index section .container-info .info-link .info-buttons, #main-sesion .modal-crearCuenta .form-crearCuenta .botones button, main .modal-carrito .modal-carrito-container .modal-carrito-pie .carrito-pie-2 button {
     font-size: 1.03em;
     font-weight: 400;
   }
@@ -857,7 +857,8 @@ main .modal-carrito .modal-carrito-container .modal-carrito-pie .carrito-pie-2 b
     margin: 0.5rem;
   }
 }
-main .modal-crearCuenta {
+
+#main-sesion .modal-crearCuenta {
   position: fixed;
   top: 0;
   bottom: 0;
@@ -870,15 +871,26 @@ main .modal-crearCuenta {
   z-index: 150;
   display: flex;
   flex-direction: row;
+  min-height: 475px;
 }
-main .modal-crearCuenta .form-crearCuenta {
+#main-sesion .modal-crearCuenta .form-crearCuenta {
   display: grid;
-  grid-template-rows: 0.5fr 0.3fr 1fr 0.3fr;
+  grid-template-rows: 0.2fr 0.2fr 0.2fr 1fr 0.2fr;
   grid-template-columns: 1fr;
-  gap: 5px;
+  gap: 3px;
   min-width: 100%;
 }
-main .modal-crearCuenta .form-crearCuenta .titulo {
+#main-sesion .modal-crearCuenta .form-crearCuenta input {
+  border-bottom: 3px solid rgb(0, 0, 124);
+  color: white;
+  background: linear-gradient(to bottom, transparent, rgb(34, 34, 34));
+}
+#main-sesion .modal-crearCuenta .form-crearCuenta input:focus {
+  outline: none;
+  border-bottom: 3px solid rgb(13, 13, 194);
+  background: transparent;
+}
+#main-sesion .modal-crearCuenta .form-crearCuenta .titulo {
   color: white;
   display: flex;
   flex-direction: row;
@@ -888,7 +900,7 @@ main .modal-crearCuenta .form-crearCuenta .titulo {
   grid-column: 1 / 2;
   grid-row: 1 / 2;
 }
-main .modal-crearCuenta .form-crearCuenta .correo {
+#main-sesion .modal-crearCuenta .form-crearCuenta .correo {
   display: flex;
   flex-direction: column;
   flex-wrap: nowrap;
@@ -896,22 +908,49 @@ main .modal-crearCuenta .form-crearCuenta .correo {
   align-items: stretch;
   grid-column: 1 / 2;
   grid-row: 2 / 3;
-  padding: 15px;
+  padding: 10px 15px;
 }
-main .modal-crearCuenta .form-crearCuenta .correo h3 {
+#main-sesion .modal-crearCuenta .form-crearCuenta .correo h3 {
   color: white;
   font-size: 1em;
 }
-main .modal-crearCuenta .form-crearCuenta .user-info {
+#main-sesion .modal-crearCuenta .form-crearCuenta .passwords {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  align-items: center;
   grid-column: 1 / 2;
   grid-row: 3 / 4;
+  padding: 5px 15px;
+  gap: 30px;
+}
+#main-sesion .modal-crearCuenta .form-crearCuenta .passwords div {
+  position: relative;
+  width: 100%;
+}
+#main-sesion .modal-crearCuenta .form-crearCuenta .passwords div input {
+  width: 100%;
+}
+#main-sesion .modal-crearCuenta .form-crearCuenta .passwords div .ayuda {
+  position: absolute;
+  background-color: black;
+  color: white;
+  padding: 5px;
+  border-radius: 5px;
+  font-size: 12px;
+  bottom: 15;
+}
+#main-sesion .modal-crearCuenta .form-crearCuenta .user-info {
+  grid-column: 1 / 2;
+  grid-row: 4 / 5;
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
-  gap: 15px;
-  padding: 15px;
+  gap: 20px;
+  padding: 10px 15px 20px 15px;
 }
-main .modal-crearCuenta .form-crearCuenta .user-info .crearCuenta-container-1 {
+#main-sesion .modal-crearCuenta .form-crearCuenta .user-info .crearCuenta-container-1 {
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
@@ -919,13 +958,22 @@ main .modal-crearCuenta .form-crearCuenta .user-info .crearCuenta-container-1 {
   align-items: center;
   gap: 25px;
 }
-main .modal-crearCuenta .form-crearCuenta .user-info .crearCuenta-container-1 div {
+#main-sesion .modal-crearCuenta .form-crearCuenta .user-info .crearCuenta-container-1 div {
+  width: 50%;
+  position: relative;
+}
+#main-sesion .modal-crearCuenta .form-crearCuenta .user-info .crearCuenta-container-1 div input {
   width: 100%;
 }
-main .modal-crearCuenta .form-crearCuenta .user-info .crearCuenta-container-1 div input {
-  width: 100%;
+#main-sesion .modal-crearCuenta .form-crearCuenta .user-info .crearCuenta-container-1 div .ayuda {
+  position: absolute;
+  background-color: black;
+  color: white;
+  padding: 5px;
+  border-radius: 5px;
+  font-size: 12px;
 }
-main .modal-crearCuenta .form-crearCuenta .user-info .crearCuenta-container-2 {
+#main-sesion .modal-crearCuenta .form-crearCuenta .user-info .crearCuenta-container-2 {
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
@@ -933,13 +981,25 @@ main .modal-crearCuenta .form-crearCuenta .user-info .crearCuenta-container-2 {
   align-items: center;
   gap: 35px;
 }
-main .modal-crearCuenta .form-crearCuenta .user-info .crearCuenta-container-2 input:nth-child(1) {
-  width: 60%;
+#main-sesion .modal-crearCuenta .form-crearCuenta .user-info .crearCuenta-container-2 div {
+  width: 100%;
+  position: relative;
 }
-main .modal-crearCuenta .form-crearCuenta .user-info .crearCuenta-container-2 input:nth-child(2) {
+#main-sesion .modal-crearCuenta .form-crearCuenta .user-info .crearCuenta-container-2 div .classDireccion {
+  width: 100%;
+}
+#main-sesion .modal-crearCuenta .form-crearCuenta .user-info .crearCuenta-container-2 div .classCodPostal {
   width: 30%;
 }
-main .modal-crearCuenta .form-crearCuenta .user-info .crearCuenta-container-3 {
+#main-sesion .modal-crearCuenta .form-crearCuenta .user-info .crearCuenta-container-2 div .ayuda {
+  position: absolute;
+  background-color: black;
+  color: white;
+  padding: 5px;
+  border-radius: 5px;
+  font-size: 12px;
+}
+#main-sesion .modal-crearCuenta .form-crearCuenta .user-info .crearCuenta-container-3 {
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
@@ -947,25 +1007,37 @@ main .modal-crearCuenta .form-crearCuenta .user-info .crearCuenta-container-3 {
   align-items: center;
   gap: 25px;
 }
-main .modal-crearCuenta .form-crearCuenta .user-info .crearCuenta-container-3 input {
+#main-sesion .modal-crearCuenta .form-crearCuenta .user-info .crearCuenta-container-3 div {
+  position: relative;
   width: 100%;
 }
-main .modal-crearCuenta .form-crearCuenta .botones {
+#main-sesion .modal-crearCuenta .form-crearCuenta .user-info .crearCuenta-container-3 div input {
+  width: 100%;
+}
+#main-sesion .modal-crearCuenta .form-crearCuenta .user-info .crearCuenta-container-3 div .ayuda {
+  position: absolute;
+  background-color: black;
+  color: white;
+  padding: 5px;
+  border-radius: 5px;
+  font-size: 12px;
+}
+#main-sesion .modal-crearCuenta .form-crearCuenta .botones {
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
   justify-content: space-evenly;
   align-items: flex-end;
   grid-column: 1 / 2;
-  grid-row: 4 / 5;
+  grid-row: 5 / 6;
   padding: 4px;
 }
-main .modal-crearCuenta .form-crearCuenta .botones button {
+#main-sesion .modal-crearCuenta .form-crearCuenta .botones button {
   padding: 4px;
   margin: 0;
   background-color: rgba(0, 0, 139, 0.9);
 }
-main .modal-crearCuenta .form-crearCuenta .botones button:hover {
+#main-sesion .modal-crearCuenta .form-crearCuenta .botones button:hover {
   background-color: rgba(0, 0, 139, 0.9);
   color: rgb(126, 230, 236);
 }

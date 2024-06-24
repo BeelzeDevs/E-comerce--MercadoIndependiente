@@ -1,0 +1,165 @@
+#main-sesion{
+    .modal-crearCuenta {
+		position: fixed;
+		top: 0;
+		bottom: 0;
+		left: 0;
+		right: 0;
+		margin: auto;
+		background-color: #111111eb;
+		width: 40vw; /* Define un ancho fijo */
+		height: 70vh; /* Define una altura fija */
+		z-index: 150;
+		display: flex;
+		flex-direction: row;
+        min-height: 475px;
+		.form-crearCuenta {
+			display: grid;
+			grid-template-rows: 0.2fr 0.2fr 0.2fr 1fr 0.2fr;
+			grid-template-columns: 1fr;
+			gap: 3px;
+			min-width: 100%;
+
+            input{
+                border-bottom: 3px solid  map-get($colors,"border-sesion-input");
+                color:white;
+                background: linear-gradient(to bottom,transparent,map-get($colors,"color-sesion-input-focus"));
+                &:focus{
+                    outline:none;
+                    border-bottom: 3px solid  map-get($colors,"border-sesion-input-focus");
+                    background: transparent;
+                }
+            }
+			
+            .titulo {
+				color: white;
+				@include flex-box();
+				@include justify-align(center, center);
+				@include grid-col-row();
+			}
+			.correo {
+				@include flex-box(column);
+				@include justify-align(flex-end, stretch);
+				@include grid-col-row(1, 2, 2, 3);
+				padding: 10px 15px;
+				h3 {
+					color: white;
+					font-size: 1em;
+				}
+			}
+            .passwords{
+                @include flex-box();
+				@include justify-align(flex-start, center);
+				@include grid-col-row(1, 2, 3, 4);
+				padding: 5px 15px;
+                gap: 30px;
+                div{
+                    position: relative;
+                    width: 100%;
+                    input{
+                        width: 100%;
+                    }
+                    .ayuda{
+                        position: absolute;
+                        background-color: black;
+                        color: white;
+                        padding: 5px;
+                        border-radius: 5px;
+                        font-size: 12px;
+                        bottom: 15;
+                    }
+                }
+            }
+			.user-info {
+				@include grid-col-row(1, 2, 4, 5);
+				display: flex;
+				flex-direction: column;
+				justify-content: space-evenly;
+				gap: 20px;
+				padding: 10px 15px 20px 15px;
+				.crearCuenta-container-1 {
+					@include flex-box();
+					@include justify-align(flex-start, center);
+					gap: 25px;
+					div {
+						width: 50%;
+                        position: relative;
+						input {
+							width: 100%;
+						}
+                        .ayuda{
+                            position: absolute;
+                            background-color: black;
+                            color: white;
+                            padding: 5px;
+                            border-radius: 5px;
+                            font-size: 12px;
+                          
+					    }
+				    }
+                }
+               
+				.crearCuenta-container-2 {
+					@include flex-box();
+					@include justify-align(flex-start, center);
+					gap: 35px;
+                    div{
+                        width: 100%;
+                        position: relative;
+                        .classDireccion {
+                            width: 100%;
+                        }
+                        .classCodPostal{
+                            width: 30%;
+                        }
+                        .ayuda{
+                            position: absolute;
+                            background-color: black;
+                            color: white;
+                            padding: 5px;
+                            border-radius: 5px;
+                            font-size: 12px;
+                        }
+                    }
+				}
+
+				.crearCuenta-container-3 {
+					@include flex-box();
+					@include justify-align(flex-start, center);
+					gap: 25px;
+                    div{
+                        position: relative;
+                        width: 100%;
+                        input {
+                            width: 100%;
+                        }
+                        .ayuda{
+                            position: absolute;
+                            background-color: black;
+                            color: white;
+                            padding: 5px;
+                            border-radius: 5px;
+                            font-size: 12px;
+                        }
+                    }
+				}
+			}
+            .botones {
+                @include flex-box();
+                @include justify-align(space-evenly, flex-end);
+                @include grid-col-row(1, 2, 5, 6);
+                padding: 4px;
+                button {
+                    @extend .index-info-buttons;
+                    padding: 4px;
+                    margin: 0;
+                    background-color: map-get($colors, 'bg-header');
+                    &:hover {
+                        background-color: map-get($colors, 'bg-header');
+                        color: rgb(126, 230, 236);
+                    }
+                }
+            }
+		}
+	}
+}

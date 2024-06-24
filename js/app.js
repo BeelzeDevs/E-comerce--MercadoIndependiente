@@ -1,21 +1,26 @@
 import StorageService from "./models/Storage.js";
-import {preventFormSubmit, toggleVisibilidadForm,formCaptureData_iniciarSesion,formCaptureData_CrearCuenta} from './views/formsUser.js';
-
+import {preventFormSubmit, toggleVisibilidadForm,formCaptureData_iniciarSesion,formCaptureData_CrearCuenta} from './views/iniciarSesion.js';
+import {MainOffersButtons} from './views/home.js';
 
 document.addEventListener('DOMContentLoaded', (e)=>{
-
     if(window.location.pathname.includes('iniciar-sesion')){
         preventFormSubmit('formIniciarSesion');
         preventFormSubmit('formCrearCuenta');
         toggleVisibilidadForm('modal-crearCuenta','crearCuenta-btnCancelar');
-        toggleVisibilidadForm('modal-crearCuenta','crearCuenta'); 
+        toggleVisibilidadForm('modal-crearCuenta','crearCuenta');
+
+    }
+    if(window.location.pathname.includes('index')){
+        MainOffersButtons();
+        mostrarModal();
+    
     }
     
 });
 document.addEventListener('submit', (e)=>{
     if(window.location.pathname.includes('iniciar-sesion')){
         if(e.target.id === 'formCrearCuenta'){
-            formCaptureData_crearCuenta(e);
+            formCaptureData_CrearCuenta(e);
         }
         if(e.target.id === 'formIniciarSesion'){
             formCaptureData_iniciarSesion(e);
@@ -26,10 +31,17 @@ document.addEventListener('submit', (e)=>{
 
 document.addEventListener('click', (e)=>{
     if(window.location.pathname.includes('iniciar-sesion')){
-       
+       if(e.target.id === 'crearCuenta'){ 
+        document.querySelector('.sesion-container').style.opacity = 0.4;
+       }
+       if(e.target.id === 'crearCuenta-btnCancelar'){
+        document.querySelector('.sesion-container').style.opacity = 1;
+       }
 
     }
 })
+
+
 
 function mostrarModal() {
     const modalProducto = document.querySelector('.modal-añadirProducto');
@@ -64,24 +76,8 @@ function ajusteCSSCarrito() {
     const tamañoHead = header.offsetHeight; // Obtiene la altura del elemento
     Carrito.style.top = tamañoHead + 'px';
 }
-function MainOffersButtons() {
-    const mainOffers = document.querySelector('#mainOffersSlider');
-    const prev = document.querySelector('#mainOffers-Prev');
-    const next = document.querySelector('#mainOffers-Next');
-    prev.addEventListener('click', ()=>{
-        mainOffers.scrollLeft -= 200;
-    });
-    next.addEventListener('click', ()=>{
-        mainOffers.scrollLeft += 200;
-    });
 
 
-}
-mostrarModal();
-if(window.location.pathname.includes('index')){
-    MainOffersButtons();
-
-}
 
 
 
