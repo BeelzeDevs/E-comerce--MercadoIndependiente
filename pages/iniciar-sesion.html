@@ -17,10 +17,11 @@
 <body>
     <header>
         <nav class="navbar navbar-dark navbar-expand-md nav-bg-azul"> <!-- 1 - Header-->
-            <div class="container">
+            <div class="">
                 <div class="brand-search-container"><!-- Company Logo  / Search bar & Toggler button < 768px -->
-                    <a  class="navbar-brand" href="../index.html">
-                        <img src="../img/icons/icono-empresa.ico" alt="Imagen del sitio mercado independiente" class="company-logo">
+                    <a class="navbar-brand" href="./index.html">
+                        <img src="../img/icons/icono-empresa.ico" alt="Imagen del sitio mercado independiente"
+                            class="company-logo">
                         <h1 class="navbar-title">Mercado <br> Independiente</h1>
                     </a>
                     <form class="navbar-search" role="search">
@@ -29,32 +30,42 @@
                             <span class="navbar-search-icon btn-sm"></span>
                         </button>
                     </form>
-                    
-                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <i class="bi bi-brilliance"></i>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
                     </button>
+                    <div id="carrito">
+                        <button class="btn btn-secondary" type="button" aria-expanded="false">
+                            <i class="bi bi-cart4"></i>
+                            <i class="badge bg-primary rounded-pill visible">9</i>
+                        </button>
+                    </div>
                 </div>
+
                 <div class="collapse navbar-collapse " id="navbarSupportedContent"><!-- Navegación del sitio web -->
                     <ul class="navbar-nav line-t">
                         <li class="nav-item nav-item-one">
                             <a class="nav-link " aria-current="page" href="../index.html">Home</a>
                         </li>
                         <li class="nav-item nav-item-two">
-                            <a class="nav-link " aria-current="page" href="./producto.html">Producto</a>
+                            <a class="nav-link " aria-current="page" href="/pages/producto.html">Producto</a>
                         </li>
                         <li class="nav-item nav-item-three">
-                            <a class="nav-link " aria-current="page" href="./contacto.html">Contacto</a>
+                            <a class="nav-link " aria-current="page" href="/pages/contacto.html">Contacto</a>
                         </li>
                         <li class="nav-item nav-item-four">
-                            <a class="nav-link " aria-current="page" href="./sobre-nosotros.html">Sobre nosotros</a>
+                            <a class="nav-link " aria-current="page" href="/pages/sobre-nosotros.html">Sobre nosotros</a>
                         </li>
                         <li class="nav-item nav-item-five">
-                            <a class="nav-link active" aria-current="page" href="./iniciar-sesion.html">Iniciar sesión</a>
+                            <a class="nav-link active" aria-current="page" href="/pages/iniciar-sesion.html">Iniciar sesión</a>
                         </li>
                     </ul>
                 </div>
             </div>
         </nav>
+
     </header><!-- 1 - Fin Header-->
 
 
