@@ -1,5 +1,5 @@
 import StorageService from "./models/Storage.js";
-import {preventFormSubmit, toggleVisibilidadForm} from './views/formsUser.js';
+import {preventFormSubmit, toggleVisibilidadForm,formCaptureData_iniciarSesion,formCaptureData_CrearCuenta} from './views/formsUser.js';
 
 
 document.addEventListener('DOMContentLoaded', (e)=>{
@@ -9,14 +9,25 @@ document.addEventListener('DOMContentLoaded', (e)=>{
         preventFormSubmit('formCrearCuenta');
         toggleVisibilidadForm('modal-crearCuenta','crearCuenta-btnCancelar');
         toggleVisibilidadForm('modal-crearCuenta','crearCuenta'); 
-        toggleVisibilidadForm('modal-crearCuenta','crearCuenta-btnAceptar');// por el momento no hay validaciones en el form
     }
     
 });
+document.addEventListener('submit', (e)=>{
+    if(window.location.pathname.includes('iniciar-sesion')){
+        if(e.target.id === 'formCrearCuenta'){
+            formCaptureData_crearCuenta(e);
+        }
+        if(e.target.id === 'formIniciarSesion'){
+            formCaptureData_iniciarSesion(e);
+        }   
+    }
+    
+})
 
 document.addEventListener('click', (e)=>{
     if(window.location.pathname.includes('iniciar-sesion')){
-        console.log(e.target);
+       
+
     }
 })
 

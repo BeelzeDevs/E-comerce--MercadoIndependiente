@@ -69,7 +69,7 @@
                             <p>
                                 ¿No tienes cuenta?
                             </p>
-                            <button id="crearCuenta" class="crearCuenta">Crear una</button>
+                            <button id="crearCuenta" class="crearCuenta" type="button">Crear una</button>
                         </div>
                             
                         <div class="sesion__submit">
@@ -79,34 +79,34 @@
                     </form>
                 </div>
         </section>
-        <section class="modal-crearCuenta" id="modal-crearCuenta">
+        <section class="modal-crearCuenta d-none" id="modal-crearCuenta">
             <form  class="form-crearCuenta" method="post" action="" id="formCrearCuenta">
                 <h2 class="titulo">Crear Cuenta</h2>
                 <div class="correo">
                     <h3>Correo electrónico</h3>
-                    <input type="email" name="email"  placeholder="example@email.com">
+                    <input type="email" name="email"  placeholder="example@email.com" value="email@hotmail.com" >
                 </div>
                 <div class="user-info">
                     <div class="crearCuenta-container-1">
                         <div>
-                            <input type="text" name="nombre"  placeholder="Nombre">
+                            <input type="text" name="nombre"  placeholder="Nombre" value="user">
                         </div>
                         <div>
-                            <input type="text" name="apellido"  placeholder="Apellido">
+                            <input type="text" name="apellido"  placeholder="Apellido" value="userLastName">
                         </div>
                     </div>
                     <div class="crearCuenta-container-2">
-                        <input type="text" name="direccion"  placeholder="Direccion">
-                        <input type="text" name="codPostal" placeholder="Cod postal">
+                        <input type="text" name="direccion"  placeholder="Direccion" value="direcion 1234">
+                        <input type="text" name="codPostal" placeholder="Cod postal" value="1635" >
                     </div>
                     <div class="crearCuenta-container-3">
-                        <input type="text" name="provincia"  placeholder="Provincia">
-                        <input type="tel" name="telefono"  placeholder="Número de teléfono">
+                        <input type="text" name="provincia"  placeholder="Provincia" value="buenos aires">
+                        <input type="tel" name="telefono"  placeholder="Número de teléfono" value="1535094880">
                     </div>
                 </div>
                 <div class="botones">
+                    <button id="crearCuenta-btnCancelar" type="button">Cancelar</button>
                     <button id="crearCuenta-btnAceptar" type="submit">Aceptar</button>
-                    <button id="crearCuenta-btnCancelar">Cancelar</button>
                 </div>
             </form>
 
