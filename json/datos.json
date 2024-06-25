@@ -7,7 +7,8 @@
             "precio": 170000,
             "descuento":20,
             "stock":15,
-            "img":"img/productos/procesador-1.jpg"
+            "img":"img/productos/procesador-1.jpg",
+            "dayOffer":true
         },
         {
             "id":2,
@@ -16,7 +17,8 @@
             "precio": 190000,
             "descuento":0,
             "stock":15,
-            "img":"img/productos/procesador-2.jpg"
+            "img":"img/productos/procesador-2.jpg",
+            "dayOffer":false
         },
         {
             "id":3,
@@ -25,7 +27,8 @@
             "precio": 1059999,
             "descuento":10,
             "stock":15,
-            "img":"img/productos/notebook-dell.jpg"
+            "img":"img/productos/notebook-dell.jpg",
+            "dayOffer":false
         },
         {
             "id":4,
@@ -34,7 +37,8 @@
             "precio": 275000,
             "descuento":20,
             "stock":15,
-            "img":"img/productos/monitor.jpg"
+            "img":"img/productos/monitor.jpg",
+            "dayOffer":false
         },
         {
             "id":5,
@@ -43,7 +47,8 @@
             "precio": 99970,
             "descuento":20,
             "stock":15,
-            "img":"img/productos/memoria-16.jpg"
+            "img":"img/productos/memoria-16.jpg",
+            "dayOffer":false
         },
         {
             "id":6,
@@ -52,7 +57,8 @@
             "precio": 100450,
             "descuento":0,
             "stock":15,
-            "img":"img/productos/gabinete.jpg"
+            "img":"img/productos/gabinete.jpg",
+            "dayOffer":false
         },
         {
             "id":7,
@@ -61,7 +67,8 @@
             "precio": 190000,
             "descuento":10,
             "stock":15,
-            "img":"img/productos/fuente-1.jpg"
+            "img":"img/productos/fuente-1.jpg",
+            "dayOffer":false
         },
         {
             "id":8,
@@ -70,7 +77,8 @@
             "precio": 114000,
             "descuento":10,
             "stock":15,
-            "img":"img/productos/auriculares-hyperX.jpg"
+            "img":"img/productos/auriculares-hyperX.jpg",
+            "dayOffer":false
         }
         
     ]

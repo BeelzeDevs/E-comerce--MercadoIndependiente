@@ -41,7 +41,8 @@ export default class StorageService{
                 element.precio,
                 element.descuento,
                 element.stock,
-                element.img
+                element.img,
+                element.dayOffer
             );
              arrayProductos.push(producto);
         });
@@ -49,7 +50,7 @@ export default class StorageService{
             StorageService.setItem('productos',arrayProductos);
         }
     }
-    static getStoredProductos() {
+    static async getStoredProductos() {
         const productosData = StorageService.getItem('productos');
         if (!productosData) {
             return [];
@@ -62,7 +63,8 @@ export default class StorageService{
             data.precio,
             data.descuento,
             data.stock,
-            data.img
+            data.img,
+            data.dayOffer
         ));
     }
 }

@@ -7,9 +7,6 @@ const ajusteCSSCarrito=()=> {
 export const mostrarModalCarrito =()=> {
     const modalCarrito = document.querySelector('.modal-carrito');
     const carritoNavIcon = document.querySelector('#carrito');
-    console.log(modalCarrito);
-    console.log(carritoNavIcon);
-    
 
     carritoNavIcon.addEventListener('click', () => {
         ajusteCSSCarrito()
