@@ -46,12 +46,7 @@ export default class StorageService{
              arrayProductos.push(producto);
         });
         if(datos){
-            console.log(arrayProductos);
             StorageService.setItem('productos',arrayProductos);
-
-            // Verificar el contenido de localStorage después de guardar
-            const storedProductos = StorageService.getItem('productos');
-            console.log('Productos guardados en localStorage:', storedProductos);
         }
     }
     static getStoredProductos() {
