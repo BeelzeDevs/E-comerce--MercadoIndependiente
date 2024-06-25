@@ -346,10 +346,15 @@ a {
   color: blue;
 }
 
-.cards-price-linethrought, #main-index .main-offers-container .main-offers-moreoffers .moreoffers-slider .moreoffers-card-container div .line-through, #main-index .main-offers-container .main-offers-day .card-container .offer-day-info .line-through {
+.cards-price-linethrought, #main-index .main-offers-container .main-offers-moreoffers .moreoffers-slider .moreoffers-card-container div p .line-through, #main-index .main-offers-container .main-offers-day .card-container .offer-day-info .line-through {
   text-decoration-line: line-through;
   font-size: 0.7em;
   margin-bottom: 0.5rem;
+}
+
+.cards-descuento, #main-index .main-offers-container .main-offers-moreoffers .moreoffers-slider .moreoffers-card-container div p .descuento {
+  font-weight: 500;
+  color: green;
 }
 
 .cards-price, #main-index .main-offers-container .main-offers-moreoffers .moreoffers-slider .moreoffers-card-container div div .card__price, #main-index .main-offers-container .main-offers-day .card-container .offer-day-info div .card__price {
@@ -368,7 +373,7 @@ a {
   .cards-link, #main-index .main-offers-container .main-offers-moreoffers .moreoffers-slider .moreoffers-card-container div .card__link, #main-index .main-offers-container .main-offers-day .card-container div .card__link {
     font-size: 1.2em;
   }
-  .cards-price-linethrought, #main-index .main-offers-container .main-offers-moreoffers .moreoffers-slider .moreoffers-card-container div .line-through, #main-index .main-offers-container .main-offers-day .card-container .offer-day-info .line-through {
+  .cards-price-linethrought, #main-index .main-offers-container .main-offers-moreoffers .moreoffers-slider .moreoffers-card-container div p .line-through, #main-index .main-offers-container .main-offers-day .card-container .offer-day-info .line-through {
     font-size: 1em;
   }
   .cards-price, #main-index .main-offers-container .main-offers-moreoffers .moreoffers-slider .moreoffers-card-container div div .card__price, #main-index .main-offers-container .main-offers-day .card-container .offer-day-info div .card__price {

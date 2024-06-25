@@ -10,6 +10,10 @@
     font-size: 0.7em;
     margin-bottom: 0.5rem;
 }
+.cards-descuento{
+    font-weight: 500;
+    color: map-get($colors,"cards-shipment");;
+}
 .cards-price{
     @include font-size-weight(1em,600);
     margin-bottom: 0.5rem;

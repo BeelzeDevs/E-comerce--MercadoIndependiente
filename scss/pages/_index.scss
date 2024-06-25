@@ -212,8 +212,15 @@
 								@extend .cards-img;
 							}
 						}
-						.line-through {
-							@extend .cards-price-linethrought;
+						p{
+							.line-through {
+								@extend .cards-price-linethrought;
+								
+							}
+							.descuento{
+								@extend .cards-descuento;
+							}
+
 						}
 						div {
 							.card__price {

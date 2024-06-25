@@ -5,25 +5,32 @@ const ajusteCSSCarrito=()=> {
     Carrito.style.top = tamañoHead + 'px';
 }
 export const mostrarModalCarrito =()=> {
+    const modalCarrito = document.querySelector('.modal-carrito');
+    const carritoNavIcon = document.querySelector('#carrito');
+    console.log(modalCarrito);
+    console.log(carritoNavIcon);
+    
+
+    carritoNavIcon.addEventListener('click', () => {
+        ajusteCSSCarrito()
+        modalCarrito.classList.toggle('modal-show');
+        
+    });
+}
+export const mostrarModalAñadirProducto = () =>{
     const modalProducto = document.querySelector('.modal-añadirProducto');
     const modalCarrito = document.querySelector('.modal-carrito');
     const irCarrito = document.querySelector('#ir-carrito');
     const icono = document.querySelector('.bi-brilliance');
-    const carritoNavIcon = document.querySelector('#carrito');
 
     icono.addEventListener('click', () => {
         modalProducto.classList.toggle('modal-show');
         modalCarrito.classList.remove('modal-show');
 
-    })
+    });    
     irCarrito.addEventListener('click', () => {
         ajusteCSSCarrito();
         modalProducto.classList.toggle('modal-show');
         modalCarrito.classList.toggle('modal-show');
-    })
-    carritoNavIcon.addEventListener('click', () => {
-        ajusteCSSCarrito()
-        modalCarrito.classList.toggle('modal-show');
-        
-    })
+    });
 }

@@ -1,10 +1,11 @@
 import StorageService from "./models/Storage.js";
 import {preventFormSubmit, toggleVisibilidadForm,formCaptureData_iniciarSesion,formCaptureData_CrearCuenta} from './views/iniciarSesion.js';
 import {MainOffersButtons} from './views/home.js';
-import {mostrarModalCarrito} from './views/carrito.js';
+import {mostrarModalCarrito,mostrarModalAñadirProducto} from './views/carrito.js';
 
 document.addEventListener('DOMContentLoaded', (e)=>{
     StorageService.startStorage();
+    mostrarModalCarrito();
 
     if(window.location.pathname.includes('iniciar-sesion')){
         preventFormSubmit('formIniciarSesion');
@@ -14,11 +15,16 @@ document.addEventListener('DOMContentLoaded', (e)=>{
 
     }
     if(window.location.pathname.includes('index')){
-        MainOffersButtons();
-    
+        MainOffersButtons(); 
+    }
+    if(window.location.pathname.includes('producto')){
+        mostrarModalAñadirProducto();
+    }
+    if(window.location.pathname.includes('contacto')){
+        e.preventDefault();// trabajar en el formulario para enviar el mail
     }
     
-    mostrarModalCarrito();
+    
 });
 document.addEventListener('submit', (e)=>{
     if(window.location.pathname.includes('iniciar-sesion')){
