@@ -68,19 +68,20 @@ header {
 					background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgb(255, 255, 255)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
 				}
 			}
-			#carrito {
+			.carrito-container {
+				@include flex-box();
+				@include justify-align(flex-end, center);
 				button {
+					padding: 3px 2px;
 					border-radius: 20px;
 					border-color: map-get($colors, 'bg-carrito');
 					background-color: map-get($colors, 'bg-carrito');
+					font-size: 1.5em;
 					// background-color: map-get($colors, 'bg-details');
 					color: white;
-					@include flex-box();
-					@include justify-align(center, center);
-					padding: 3px 2px;
 					.badge {
 						max-width: 15%;
-						font-size: 0.3em;
+						font-size: 0.4em;
 						display: none;
 						&.visible {
 							@include flex-box();

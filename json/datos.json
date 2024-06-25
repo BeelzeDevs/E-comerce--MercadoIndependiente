@@ -4,7 +4,7 @@
             "id":1,
             "nombre": "Procesador AMD RYZEN 3 3200G 4.0GHz Turbo",
             "descripcion": "Procesador AMD RYZEN 3 3200G 4.0GHz Turbo + Radeon Vega 8 AM4 Wraith Stealth Cooler",
-            "precio": 162000,
+            "precio": 170000,
             "descuento":20,
             "stock":15,
             "img":"img/productos/procesador-1.jpg"
@@ -22,8 +22,8 @@
             "id":3,
             "nombre": "Notebook Dell Inspiron 3525",
             "descripcion": "Notebook Dell Inspiron 3525 IPS FHD 15.6' Ryzen 5 5625U 8GB 256GB SSD NVMe W11 Home 120Hz",
-            "precio": 999999,
-            "descuento":0,
+            "precio": 1059999,
+            "descuento":10,
             "stock":15,
             "img":"img/productos/notebook-dell.jpg"
         },
@@ -31,8 +31,8 @@
             "id":4,
             "nombre": "Monitor Gamer Samsung 24'",
             "descripcion": "Monitor Gamer Samsung 24' G50 Curvo 144Hz Full HD VA FreeSync",
-            "precio": 254900,
-            "descuento":0,
+            "precio": 275000,
+            "descuento":20,
             "stock":15,
             "img":"img/productos/monitor.jpg"
         },
@@ -40,8 +40,8 @@
             "id":5,
             "nombre": "Memoria Adata DDR4 16GB",
             "descripcion": "Memoria Adata DDR4 16GB (2x8GB) 4133MHz XPG Spectrix D60G RGB",
-            "precio": 77580,
-            "descuento":0,
+            "precio": 99970,
+            "descuento":20,
             "stock":15,
             "img":"img/productos/memoria-16.jpg"
         },
@@ -58,8 +58,8 @@
             "id":7,
             "nombre": "Fuente Be Quiet 1000W",
             "descripcion": "Fuente Be Quiet 1000W 80 Plus Gold PURE POWER 11 Full Modular",
-            "precio": 171900,
-            "descuento":0,
+            "precio": 190000,
+            "descuento":10,
             "stock":15,
             "img":"img/productos/fuente-1.jpg"
         },
@@ -68,7 +68,7 @@
             "nombre": "Auriculares HyperX",
             "descripcion": "Auriculares HyperX Cloud Flight Black Wireless*",
             "precio": 114000,
-            "descuento":0,
+            "descuento":10,
             "stock":15,
             "img":"img/productos/auriculares-hyperX.jpg"
         }

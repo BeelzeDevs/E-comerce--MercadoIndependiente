@@ -1288,24 +1288,27 @@ header nav .brand-search-container .navbar-toggler:hover {
 header nav .brand-search-container .navbar-toggler .navbar-toggler-icon {
   background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgb(255, 255, 255)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
 }
-header nav .brand-search-container #carrito button {
-  border-radius: 20px;
-  border-color: #171794;
-  background-color: #171794;
-  color: white;
+header nav .brand-search-container .carrito-container {
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
-  justify-content: center;
+  justify-content: flex-end;
   align-items: center;
-  padding: 3px 2px;
 }
-header nav .brand-search-container #carrito button .badge {
+header nav .brand-search-container .carrito-container button {
+  padding: 3px 2px;
+  border-radius: 20px;
+  border-color: #171794;
+  background-color: #171794;
+  font-size: 1.5em;
+  color: white;
+}
+header nav .brand-search-container .carrito-container button .badge {
   max-width: 15%;
-  font-size: 0.3em;
+  font-size: 0.4em;
   display: none;
 }
-header nav .brand-search-container #carrito button .badge.visible {
+header nav .brand-search-container .carrito-container button .badge.visible {
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
