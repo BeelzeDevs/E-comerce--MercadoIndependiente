@@ -178,7 +178,7 @@ a {
     -webkit-text-fill-color: transparent;
   }
 }
-.btn-pulse:hover, #main-index section .container-info .info-link .info-buttons:hover, footer .footer-container .footer-workwithus .footer-butons:hover, footer .footer-container .footer-help .footer-butons:hover, .product-productitem .product-content .product-item__btn button:hover, #main-productos .container-product .product-list .product-item .product-content .product-item__btn button:hover, .sesion-submit input[type=submit]:hover, #main-sesion .sesion-container .sesion__content .sesion-form .sesion__submit input[type=submit]:hover, .sesion-submit a:hover, #main-sesion .sesion-container .sesion__content .sesion-form .sesion__submit a:hover, .formcontact .form_input-submit[type=submit]:hover, #main-contact .contact-pos .contact .contact-container .form-contact .form_input-submit[type=submit]:hover {
+.btn-pulse:hover, #main-index section .container-info .info-link .info-buttons:hover, footer .footer-container .footer-workwithus .footer-butons:hover, footer .footer-container .footer-help .footer-butons:hover, .product-productitem .product-content .product-item__btn .item__btnSumarCarrito button:hover, #main-productos .container-product .product-list .product-item .product-content .product-item__btn .item__btnSumarCarrito button:hover, .sesion-submit input[type=submit]:hover, #main-sesion .sesion-container .sesion__content .sesion-form .sesion__submit input[type=submit]:hover, .sesion-submit a:hover, #main-sesion .sesion-container .sesion__content .sesion-form .sesion__submit a:hover, .formcontact .form_input-submit[type=submit]:hover, #main-contact .contact-pos .contact .contact-container .form-contact .form_input-submit[type=submit]:hover {
   animation: pulse 1s infinite;
 }
 
@@ -568,41 +568,90 @@ a {
 .product-productitem .product-content, #main-productos .container-product .product-list .product-item .product-content {
   display: grid;
   grid-template-columns: 1fr;
-  grid-template-rows: 1fr 0.5fr 0.3fr;
+  grid-template-rows: 1fr 0.3fr 0.3fr 1fr;
   justify-items: center;
   height: 100%;
-  padding: 20px 0px;
+  padding: 5px 0px 15px 0px;
   gap: 5px;
 }
 .product-productitem .product-content .product-item__link, #main-productos .container-product .product-list .product-item .product-content .product-item__link {
   grid-column: 1 / 2;
   grid-row: 1 / 2;
-  padding: 15px;
+  padding: 10px 12px 5px 12px;
 }
 .product-productitem .product-content .product-item__link a, #main-productos .container-product .product-list .product-item .product-content .product-item__link a {
   color: white;
 }
-.product-productitem .product-content div .product-item__price, #main-productos .container-product .product-list .product-item .product-content div .product-item__price {
+.product-productitem .product-content .product-item__price, #main-productos .container-product .product-list .product-item .product-content .product-item__price {
+  grid-column: 1 / 2;
+  grid-row: 2 / 3;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
+}
+.product-productitem .product-content .product-item__price h2, #main-productos .container-product .product-list .product-item .product-content .product-item__price h2 {
   font-family: Proxima Nova, -apple-system, Roboto, Arial, sans-serif;
+  margin: 0;
+}
+.product-productitem .product-content .product-item__stock, #main-productos .container-product .product-list .product-item .product-content .product-item__stock {
+  grid-column: 1 / 2;
+  grid-row: 3 / 4;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
 }
 .product-productitem .product-content .product-item__btn, #main-productos .container-product .product-list .product-item .product-content .product-item__btn {
   grid-column: 1 / 2;
-  grid-row: 3 / 4;
+  grid-row: 4 / 5;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  text-align: flex-end;
+  gap: 15px;
 }
-.product-productitem .product-content .product-item__btn button, #main-productos .container-product .product-list .product-item .product-content .product-item__btn button {
+.product-productitem .product-content .product-item__btn .item__btnCantidad, #main-productos .container-product .product-list .product-item .product-content .product-item__btn .item__btnCantidad {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-evenly;
+  align-items: center;
+  gap: 5px;
+}
+.product-productitem .product-content .product-item__btn .item__btnCantidad button, #main-productos .container-product .product-list .product-item .product-content .product-item__btn .item__btnCantidad button {
+  background-color: rgb(0, 0, 124);
+  color: white;
+  outline: 3px solid rgba(0, 0, 139, 0.5);
+  padding: 5px 10px;
+  border: 2px outset rgb(118, 118, 118);
+}
+.product-productitem .product-content .product-item__btn .item__btnCantidad button:hover, #main-productos .container-product .product-list .product-item .product-content .product-item__btn .item__btnCantidad button:hover {
+  background-color: rgb(13, 13, 194);
+}
+.product-productitem .product-content .product-item__btn .item__btnCantidad button:active, #main-productos .container-product .product-list .product-item .product-content .product-item__btn .item__btnCantidad button:active {
+  border: 2px inset rgb(118, 118, 118);
+}
+.product-productitem .product-content .product-item__btn .item__btnCantidad p, #main-productos .container-product .product-list .product-item .product-content .product-item__btn .item__btnCantidad p {
+  margin: 0px;
+  padding: 5px 10px;
+}
+.product-productitem .product-content .product-item__btn .item__btnSumarCarrito button, #main-productos .container-product .product-list .product-item .product-content .product-item__btn .item__btnSumarCarrito button {
   background-color: rgb(0, 0, 124);
   color: white;
   outline: 3px solid rgba(0, 0, 139, 0.5);
   padding: 10px 20px;
   border: 2px outset rgb(118, 118, 118);
 }
-.product-productitem .product-content .product-item__btn button:hover, #main-productos .container-product .product-list .product-item .product-content .product-item__btn button:hover {
+.product-productitem .product-content .product-item__btn .item__btnSumarCarrito button:hover, #main-productos .container-product .product-list .product-item .product-content .product-item__btn .item__btnSumarCarrito button:hover {
   background-color: rgb(13, 13, 194);
 }
-.product-productitem .product-content .product-item__btn button:focus, #main-productos .container-product .product-list .product-item .product-content .product-item__btn button:focus {
+.product-productitem .product-content .product-item__btn .item__btnSumarCarrito button:focus, #main-productos .container-product .product-list .product-item .product-content .product-item__btn .item__btnSumarCarrito button:focus {
   background: rgb(13, 13, 194);
 }
-.product-productitem .product-content .product-item__btn button:active, #main-productos .container-product .product-list .product-item .product-content .product-item__btn button:active {
+.product-productitem .product-content .product-item__btn .item__btnSumarCarrito button:active, #main-productos .container-product .product-list .product-item .product-content .product-item__btn .item__btnSumarCarrito button:active {
   border: 2px inset rgb(118, 118, 118);
 }
 
@@ -621,12 +670,12 @@ main .modal-añadirProducto {
   border-radius: 20px;
   opacity: 0;
   visibility: hidden;
-  transition: opacity 0.5s ease-in-out, visibility 0s ease-in-out;
+  transition: opacity 0.5s ease-in-out, visibility 0s 0.8s ease-in;
 }
 main .modal-añadirProducto.modal-show {
   visibility: visible;
   opacity: 1;
-  transition: opacity 0.5s ease-in-out, visibility 0s ease-in-out;
+  transition: opacity 0.5s ease-in-out;
   z-index: 100;
 }
 main .modal-añadirProducto .modal-añadirProducto-container {

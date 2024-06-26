@@ -6,8 +6,9 @@
             "descripcion": "Procesador AMD RYZEN 3 3200G 4.0GHz Turbo + Radeon Vega 8 AM4 Wraith Stealth Cooler",
             "precio": 170000,
             "descuento":20,
-            "stock":15,
-            "img":"img/productos/procesador-1.jpg"
+            "stock":3,
+            "img":"img/productos/procesador-1.jpg",
+            "dayOffer":true
         },
         {
             "id":2,
@@ -15,8 +16,9 @@
             "descripcion": "Procesador AMD RYZEN 5 3600 4.2GHz Turbo AM4 Wraith Stealth Cooler",
             "precio": 190000,
             "descuento":0,
-            "stock":15,
-            "img":"img/productos/procesador-2.jpg"
+            "stock":12,
+            "img":"img/productos/procesador-2.jpg",
+            "dayOffer":false
         },
         {
             "id":3,
@@ -24,8 +26,9 @@
             "descripcion": "Notebook Dell Inspiron 3525 IPS FHD 15.6' Ryzen 5 5625U 8GB 256GB SSD NVMe W11 Home 120Hz",
             "precio": 1059999,
             "descuento":10,
-            "stock":15,
-            "img":"img/productos/notebook-dell.jpg"
+            "stock":2,
+            "img":"img/productos/notebook-dell.jpg",
+            "dayOffer":false
         },
         {
             "id":4,
@@ -33,8 +36,9 @@
             "descripcion": "Monitor Gamer Samsung 24' G50 Curvo 144Hz Full HD VA FreeSync",
             "precio": 275000,
             "descuento":20,
-            "stock":15,
-            "img":"img/productos/monitor.jpg"
+            "stock":5,
+            "img":"img/productos/monitor.jpg",
+            "dayOffer":false
         },
         {
             "id":5,
@@ -42,8 +46,9 @@
             "descripcion": "Memoria Adata DDR4 16GB (2x8GB) 4133MHz XPG Spectrix D60G RGB",
             "precio": 99970,
             "descuento":20,
-            "stock":15,
-            "img":"img/productos/memoria-16.jpg"
+            "stock":29,
+            "img":"img/productos/memoria-16.jpg",
+            "dayOffer":false
         },
         {
             "id":6,
@@ -51,8 +56,9 @@
             "descripcion": "Gabinete Lian Li Lancool 205 Mesh W White",
             "precio": 100450,
             "descuento":0,
-            "stock":15,
-            "img":"img/productos/gabinete.jpg"
+            "stock":12,
+            "img":"img/productos/gabinete.jpg",
+            "dayOffer":false
         },
         {
             "id":7,
@@ -60,8 +66,9 @@
             "descripcion": "Fuente Be Quiet 1000W 80 Plus Gold PURE POWER 11 Full Modular",
             "precio": 190000,
             "descuento":10,
-            "stock":15,
-            "img":"img/productos/fuente-1.jpg"
+            "stock":8,
+            "img":"img/productos/fuente-1.jpg",
+            "dayOffer":false
         },
         {
             "id":8,
@@ -69,8 +76,9 @@
             "descripcion": "Auriculares HyperX Cloud Flight Black Wireless*",
             "precio": 114000,
             "descuento":10,
-            "stock":15,
-            "img":"img/productos/auriculares-hyperX.jpg"
+            "stock":8,
+            "img":"img/productos/auriculares-hyperX.jpg",
+            "dayOffer":false
         }
         
     ]
