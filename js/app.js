@@ -19,7 +19,8 @@ document.addEventListener('DOMContentLoaded', async (e)=>{
         toggleVisibilidadForm('modal-crearCuenta','crearCuenta');
 
     }
-    if(window.location.pathname.includes('index')){
+    if(!window.location.pathname.includes('producto') && !window.location.pathname.includes('iniciar-sesion') && !window.location.pathname.includes('contacto') && !window.location.pathname.includes('sobre-nosotros')){
+        //Posionados en el index o home, es para el deploy en vercell
         pintarSliderMasOfertas_Storage();
         mainOffersButtons(); 
     }
