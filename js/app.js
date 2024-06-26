@@ -1,6 +1,6 @@
 import StorageService from "./models/Storage.js";
 import {preventFormSubmit, toggleVisibilidadForm,formCaptureData_iniciarSesion,formCaptureData_CrearCuenta} from './views/iniciarSesion.js';
-import {mainOffersButtons,cargarSliderMasOfertas_Storage} from './views/home.js';
+import {mainOffersButtons,pintarSliderMasOfertas_Storage} from './views/home.js';
 import {mostrarModalCarrito} from './views/carrito.js';
 import {PintarProductos,modalAñadirProducto_eventoIrCarrito} from './views/product.js';
 
@@ -16,8 +16,8 @@ document.addEventListener('DOMContentLoaded', async (e)=>{
 
     }
     if(window.location.pathname.includes('index')){
+        await pintarSliderMasOfertas_Storage();
         mainOffersButtons(); 
-        cargarSliderMasOfertas_Storage();
     }
     if(window.location.pathname.includes('producto')){
         await PintarProductos();

@@ -14,7 +14,7 @@ export const mainOffersButtons = () => {
 
 }
 
-export const cargarSliderMasOfertas_Storage = async ()=>{
+export const pintarSliderMasOfertas_Storage = async ()=>{
     
     const productos = await StorageService.getStoredProductos();
     const productosOfertas = productos.filter((item)=>{
