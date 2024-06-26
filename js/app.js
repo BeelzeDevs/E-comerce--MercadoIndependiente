@@ -12,6 +12,7 @@ document.addEventListener('DOMContentLoaded', (e)=>{
         preventFormSubmit('formCrearCuenta');
         toggleVisibilidadForm('modal-crearCuenta','crearCuenta-btnCancelar');
         toggleVisibilidadForm('modal-crearCuenta','crearCuenta');
+        console.log(StorageService.url);
 
     }
     if(window.location.pathname.includes('index')){
