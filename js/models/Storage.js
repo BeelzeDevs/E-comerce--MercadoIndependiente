@@ -65,7 +65,7 @@ export default class StorageService{
         }
     }
     static getStoredProductos() {
-        const productosData = StorageService.getItem('productos');
+        return StorageService.getItem('productos');
         
     }
 }
