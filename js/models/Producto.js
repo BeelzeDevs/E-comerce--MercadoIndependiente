@@ -1,7 +1,7 @@
 export default class Producto{
     id;
     nombre;
-    descripción;
+    descripcion;
     precio;
     descuento;
     stock;
@@ -12,7 +12,7 @@ export default class Producto{
         Producto.pid += 1;
         this.id = parseInt(id);
         this.nombre = nombre;
-        this.descripción = descripcion;
+        this.descripcion = descripcion;
         this.precio = parseFloat(precio);
         this.stock = parseInt(stock);
         this.img = img;
@@ -60,10 +60,10 @@ export default class Producto{
     }
 
     get getDescripcion(){
-        return this.descripción;
+        return this.descripcion;
     }
     set setDescripcion(descripcion){
-        this.descripción = descripcion;
+        this.descripcion = descripcion;
     }
     get getImg(){
         return (this.img);

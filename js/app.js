@@ -1,10 +1,11 @@
 import StorageService from "./models/Storage.js";
 import {preventFormSubmit, toggleVisibilidadForm,formCaptureData_iniciarSesion,formCaptureData_CrearCuenta} from './views/iniciarSesion.js';
 import {mainOffersButtons,cargarSliderMasOfertas_Storage} from './views/home.js';
-import {mostrarModalCarrito,mostrarModalAñadirProducto} from './views/carrito.js';
+import {mostrarModalCarrito} from './views/carrito.js';
+import {PintarProductos,modalAñadirProducto_eventoIrCarrito} from './views/product.js';
 
-document.addEventListener('DOMContentLoaded', (e)=>{
-    StorageService.startStorage();
+document.addEventListener('DOMContentLoaded', async (e)=>{
+    await StorageService.startStorage();
     mostrarModalCarrito();
 
     if(window.location.pathname.includes('iniciar-sesion')){
@@ -20,7 +21,8 @@ document.addEventListener('DOMContentLoaded', (e)=>{
         cargarSliderMasOfertas_Storage();
     }
     if(window.location.pathname.includes('producto')){
-        mostrarModalAñadirProducto();
+        await PintarProductos();
+        modalAñadirProducto_eventoIrCarrito();
     }
     if(window.location.pathname.includes('contacto')){
         e.preventDefault();// trabajar en el formulario para enviar el mail

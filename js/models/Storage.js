@@ -8,7 +8,26 @@ export default class StorageService{
 
     }
     static getItem(key){
-        return JSON.parse(localStorage.getItem(key));
+        
+        if(key === 'productos'){
+           const productos = JSON.parse(localStorage.getItem(key)) || [];
+           if(productos.length !== 0){
+            return productos.map((element)=>new Producto(
+                element.id,
+                element.nombre,
+                element.descripcion,
+                element.precio,
+                element.descuento,
+                element.stock,
+                element.img,
+                element.dayOffer
+            ));
+           }else{
+            return productos;
+           }
+        }else{
+            return JSON.parse(localStorage.getItem(key));
+        }
     }
     static async getDatos(){
         try {
@@ -56,7 +75,8 @@ export default class StorageService{
             return [];
         }
 
-        return productosData.map(data => new Producto(
+        return productosData.map(data =>
+            new Producto(
             data.id,
             data.nombre,
             data.descripcion,
@@ -65,6 +85,7 @@ export default class StorageService{
             data.stock,
             data.img,
             data.dayOffer
+            
         ));
     }
 }

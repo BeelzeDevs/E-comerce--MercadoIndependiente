@@ -19,41 +19,77 @@
         }
     }
     .product-content{
-        @include grid-box(1fr, 1fr 0.5fr 0.3fr);
+        @include grid-box(1fr, 1fr 0.3fr 0.3fr 1fr);
         justify-items: center;
         height: 100%;
-        padding: 20px 0px;
+        padding: 5px 0px 15px 0px;
         gap: 5px;
         .product-item__link{
             @include grid-col-row();
-            padding: 15px;
+            padding: 10px 12px 5px 12px;
             a{
                 color: map-get($colors,"color-link");
             }
 
         }
-        div{
-            .product-item__price{    
+        .product-item__price{
+            @include grid-col-row(1,2,2,3);
+            @include flex-box();
+            @include justify-align(center,center);
+            h2{    
                 font-family:map-get($fonts,"f-product-price");
+                margin: 0;
             }
         }
-        .product-item__btn{
+        .product-item__stock{
             @include grid-col-row(1,2,3,4);
-            button{
-                @extend .btn-pulse;
-                background-color: map-get($colors,"bg-product-btn");
-                color:map-get($colors,"color-product-btn");
-                outline: 3px solid map-get($colors,"outline-product-btn");
-                padding: 10px 20px;
-                border: 2px outset map-get($colors,"border-product-btn");
-                &:hover{
-                    background-color: map-get($colors,"bg-product-btn-hover");
+            @include flex-box();
+            @include justify-align(center,center);
+        }
+        .product-item__btn{
+            @include grid-col-row(1,2,4,5);
+            @include flex-box(column);
+            text-align: flex-end;
+            gap: 15px;
+            .item__btnCantidad{
+                @include flex-box();
+                @include justify-align(space-evenly,center);
+                gap: 5px;
+                button{
+                    background-color: map-get($colors,"bg-product-btn");
+                    color:map-get($colors,"color-product-btn");
+                    outline: 3px solid map-get($colors,"outline-product-btn");
+                    padding: 5px 10px;
+                    border: 2px outset map-get($colors,"border-product-btn");
+                    &:hover{
+                        background-color: map-get($colors,"bg-product-btn-hover");
+                    }
+                    &:active{
+                        border: 2px inset map-get($colors,"border-product-btn");
+                    }
                 }
-                &:focus{
-                    background:map-get($colors,"bg-product-btn-hover");
+                p{
+                    margin: 0px;
+                    padding: 5px 10px;
                 }
-                &:active{
-                    border: 2px inset map-get($colors,"border-product-btn");
+            }
+            .item__btnSumarCarrito{
+                button{
+                    @extend .btn-pulse;
+                    background-color: map-get($colors,"bg-product-btn");
+                    color:map-get($colors,"color-product-btn");
+                    outline: 3px solid map-get($colors,"outline-product-btn");
+                    padding: 10px 20px;
+                    border: 2px outset map-get($colors,"border-product-btn");
+                    &:hover{
+                        background-color: map-get($colors,"bg-product-btn-hover");
+                    }
+                    &:focus{
+                        background:map-get($colors,"bg-product-btn-hover");
+                    }
+                    &:active{
+                        border: 2px inset map-get($colors,"border-product-btn");
+                    }
                 }
             }
         }
