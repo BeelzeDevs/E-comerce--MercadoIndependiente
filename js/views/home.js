@@ -22,7 +22,7 @@ export const pintarSliderMasOfertas_Storage = async ()=>{
             return item;
         }
     });
-    if(productosOfertas.length !== 0){
+    if(productosOfertas){
         const MoreOffersContainer = document.getElementById('moreOffersSlider');
         const fragment = document.createDocumentFragment();
         const templateCardSliderContainer = document.getElementById('templateCardMoreOffers').content;
