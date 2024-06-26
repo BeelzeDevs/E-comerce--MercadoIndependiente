@@ -5,8 +5,12 @@ import {mostrarModalCarrito} from './views/carrito.js';
 import {PintarProductos,modalAñadirProducto_eventoIrCarrito} from './views/product.js';
 
 document.addEventListener('DOMContentLoaded', async (e)=>{
-    await StorageService.startStorage();
-    mostrarModalCarrito();
+    try{
+        await StorageService.startStorage();
+        mostrarModalCarrito();
+    }catch(error){
+        console.error('Error inicializando el storage: ', error);
+    }
 
     if(window.location.pathname.includes('iniciar-sesion')){
         preventFormSubmit('formIniciarSesion');

@@ -24,46 +24,48 @@ export default class StorageService{
             return data;
         }
     }
-    static async getDatos(){
+    static async getDatos() {
         try {
-            const response = await fetch(StorageService.url)
-            if(!response.ok) {
-                throw new Error('Problema de Conexion a datos.json');
+            const response = await fetch(StorageService.url);
+            if (!response.ok) {
+                throw new Error('Problema de conexión a datos.json');
             }
             const data = await response.json();
             return data;
-        }catch(error) {
+        } catch (error) {
             alert(error);
             return null;
         }
     }
-    static async startStorage(){
+    static async startStorage() {
         let arrayProductos = [];
-        const datos = await StorageService.getDatos();   
+        try {
+            const datos = await StorageService.getDatos();
+            
+            if (!datos || !datos.Productos) {
+                throw new Error('No se encontraron productos en los datos');
+            }
 
-        if (!datos.Productos) {
-            alert('No se encontraron productos en los datos');
-            return;
-        }
-        
-        const productos = datos.Productos;
-        productos.forEach(element => {
-            const producto = new Producto(
-                element.id,
-                element.nombre,
-                element.descripcion,
-                element.precio,
-                element.descuento,
-                element.stock,
-                element.img,
-                element.dayOffer
-            );
-             arrayProductos.push(producto);
-        });
-        if(datos){
-            StorageService.setItem('productos',arrayProductos);
+            const productos = datos.Productos;
+            productos.forEach(element => {
+                const producto = new Producto(
+                    element.id,
+                    element.nombre,
+                    element.descripcion,
+                    element.precio,
+                    element.descuento,
+                    element.stock,
+                    element.img,
+                    element.dayOffer
+                );
+                arrayProductos.push(producto);
+            });
+            StorageService.setItem('productos', arrayProductos);
+        } catch (error) {
+            console.error('Error fetch data || productos:', error);
         }
     }
+
     static getStoredProductos() {
         return StorageService.getItem('productos');
         
