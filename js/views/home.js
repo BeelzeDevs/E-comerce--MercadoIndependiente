@@ -17,15 +17,16 @@ export const mainOffersButtons = () => {
 export const pintarSliderMasOfertas_Storage = ()=>{
     
     const productos = StorageService.getStoredProductos();
-    const productosOfertas = productos.filter((item)=>{
-        if(item.getDescuento > 1 && item.getDayOffer === false){
-            return item;
-        }
-    });
-    if(productosOfertas){
+    if(!productos) return;
+
+    const productosOfertas = productos.filter((item)=> item.getDescuento > 1 && !item.getDayOffer);
+
+    if(productosOfertas.length > 0){
         const MoreOffersContainer = document.getElementById('moreOffersSlider');
         const fragment = document.createDocumentFragment();
         const templateCardSliderContainer = document.getElementById('templateCardMoreOffers').content;
+        
+        if (!MoreOffersContainer || !templateCardSliderContainer) return;
         
         MoreOffersContainer.innerHTML = '';
         productosOfertas.forEach((item)=>{

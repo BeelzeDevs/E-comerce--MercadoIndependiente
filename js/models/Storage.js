@@ -8,11 +8,9 @@ export default class StorageService{
 
     }
     static getItem(key){
-        
-        if(key === 'productos'){
-           const productos = JSON.parse(localStorage.getItem(key)) || [];
-           if(productos.length !== 0){
-            return productos.map((element)=>new Producto(
+        const data = JSON.parse(localStorage.getItem(key)) || [];
+        if (key === 'productos' && data.length > 0) {
+            return data.map(element => new Producto(
                 element.id,
                 element.nombre,
                 element.descripcion,
@@ -22,11 +20,8 @@ export default class StorageService{
                 element.img,
                 element.dayOffer
             ));
-           }else{
-            return productos;
-           }
         }else{
-            return JSON.parse(localStorage.getItem(key));
+            return data;
         }
     }
     static async getDatos(){
@@ -71,22 +66,7 @@ export default class StorageService{
     }
     static getStoredProductos() {
         const productosData = StorageService.getItem('productos');
-        if (productosData.length === 0) {
-            return [];
-        }
-
-        return productosData.map(data =>
-            new Producto(
-            data.id,
-            data.nombre,
-            data.descripcion,
-            data.precio,
-            data.descuento,
-            data.stock,
-            data.img,
-            data.dayOffer
-            
-        ));
+        
     }
 }
 
