@@ -16,11 +16,11 @@ document.addEventListener('DOMContentLoaded', async (e)=>{
 
     }
     if(window.location.pathname.includes('index')){
-        await pintarSliderMasOfertas_Storage();
+        pintarSliderMasOfertas_Storage();
         mainOffersButtons(); 
     }
     if(window.location.pathname.includes('producto')){
-        await PintarProductos();
+        PintarProductos();
         modalAñadirProducto_eventoIrCarrito();
     }
     if(window.location.pathname.includes('contacto')){

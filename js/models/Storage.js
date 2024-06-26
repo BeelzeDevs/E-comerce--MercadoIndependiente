@@ -69,9 +69,9 @@ export default class StorageService{
             StorageService.setItem('productos',arrayProductos);
         }
     }
-    static async getStoredProductos() {
+    static getStoredProductos() {
         const productosData = StorageService.getItem('productos');
-        if (!productosData) {
+        if (productosData.length === 0) {
             return [];
         }
 

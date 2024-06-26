@@ -37,8 +37,8 @@ const addEventBtn_mostrarModalAñadirProducto = (btn) =>{
     });
 
 }
-export const PintarProductos =  async ()=>{
-    const productData =  await StorageService.getItem('productos');
+export const PintarProductos = ()=>{
+    const productData =  StorageService.getItem('productos');
 
     const templateProductCard = document.getElementById('templateProductCard').content;
     const productList = document.getElementById('productList');

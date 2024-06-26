@@ -14,9 +14,9 @@ export const mainOffersButtons = () => {
 
 }
 
-export const pintarSliderMasOfertas_Storage = async ()=>{
+export const pintarSliderMasOfertas_Storage = ()=>{
     
-    const productos = await StorageService.getStoredProductos();
+    const productos = StorageService.getStoredProductos();
     const productosOfertas = productos.filter((item)=>{
         if(item.getDescuento > 1 && item.getDayOffer === false){
             return item;
