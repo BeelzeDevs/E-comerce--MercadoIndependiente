@@ -1,7 +1,7 @@
 import Producto from "./Producto.js";
 
 export default class StorageService{
-    static url = 'datos.json';
+    static url = '/json/datos.json';
 
     static setItem(key,value){
         localStorage.setItem(key,JSON.stringify(value));
