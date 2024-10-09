@@ -1,6 +1,6 @@
 import Producto from '../models/Producto.js';
 import StorageService from '../models/Storage.js';
-import {ajusteCSSCarrito} from './carrito.js';
+import {ajusteCSSCarrito, existeEnCarrito , agregarEnCarrito} from './carrito.js';
 
 export const modalAñadirProducto_eventoIrCarrito = () =>{
     const modalProducto = document.querySelector('.modal-añadirProducto');
@@ -37,6 +37,20 @@ const addEventBtn_mostrarModalAñadirProducto = (btn) =>{
     });
 
 }
+const addEventBtn_agregarCarrito = (btn) =>{
+    let ProductID = btn.dataset.pid;
+    btn.addEventListener('click',()=>{
+        let product = buscarProducto(ProductID);
+        let quant = buscarCantidad(ProductID);
+        if(existeEnCarrito(ProductID)){
+            console.log(btn.dataset.pid);
+            console.log('existe');
+        }else{
+            agregarEnCarrito(product,quant);
+        }
+    })
+}
+
 export const PintarProductos = ()=>{
     const productData =  StorageService.getItem('productos');
 
@@ -62,8 +76,10 @@ export const PintarProductos = ()=>{
         btnAddCart.dataset.pid = element.getPid;
         btnLessquantity.dataset.pid = element.getPid;
         btnMorequantity.dataset.pid = element.getPid;
+        productquant.dataset.pid = element.getPid;
         //evento
         addEventBtn_mostrarModalAñadirProducto(btnAddCart);
+        addEventBtn_agregarCarrito(btnAddCart);
         //textContent
         productImgLink.href = '../index.html';
         productImgSource.src = '../' + element.getImg;
@@ -75,4 +91,13 @@ export const PintarProductos = ()=>{
         fragment.appendChild(item);
     });
     productList.appendChild(fragment);
+}
+
+function buscarProducto(ProductID){
+    let productos = StorageService.getItem('productos');
+    return productos.filter((item)=> item.getPid == ProductID)[0];
+}
+function buscarCantidad(ProductID){
+    const quant = document.querySelector(`.item__quant[data-pid='${ProductID}']`);
+    return quant ? quant.textContent : null;
 }
