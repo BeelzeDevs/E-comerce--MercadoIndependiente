@@ -188,10 +188,11 @@ main {
 		flex-direction: column;
 		align-items: center;
 		margin:40px 20vw;
-		background-color: red;
+		background: linear-gradient(90deg, rgba(29,65,253,1) 8%, rgba(7,145,237,1) 30%, rgba(7,145,237,1) 60%, rgba(29,65,253,1) 92%);
+		border: 2px solid map-get($colors,bg-header);
 		position: relative;
 		.carrito-title{
-			background-color: map-get($colors, bg-header);
+			background:linear-gradient(0deg, rgba(0,212,255,1) 0%, rgba(9,9,121,1) 10%,rgba(9,9,121,1) 90%, rgba(0,212,255,1) 100%);
 			color:map-get($colors,carrito-title);
 			padding: 5px 25px;
 			font-family: map-get($fonts, f-primary);
@@ -205,41 +206,61 @@ main {
 		.carrito-separation{
 			margin: 5px 0px;
 		}
-		.carrito-item{
-			display: grid;
-			grid-template-columns:2fr 0.5fr 0.5fr 50px;
-			grid-template-rows: 1fr;
-			align-items: center;
-			justify-items:center;
-			margin: 25px 6vw ;
-			background: linear-gradient(90deg, rgba(0,212,255,1) 0%, rgba(9,9,121,1) 35%, rgba(2,0,36,1) 100%);
-			color:map-get($colors,carrito-title);
-			p{
-				font-family: map-get($fonts, f-product-price);
-				padding: 0;
-				margin: 0;
-			}
-			.carrito-productInfo{
-				grid-column: 1/2;
-				display: flex;
+		#carrito-items{
+			width: 100%;
+			display: flex;
+			flex-direction: column;
+			min-height: 50px;
+			.carrito-item{
+				display: grid;
+				grid-template-columns:2fr 0.5fr minmax(70px,100px);
+				grid-template-rows: 1fr;
 				align-items: center;
-				justify-content: space-between;
-				img{
-					width: 150px;
-					border-bottom-right-radius: 20%;
-					border-top-right-radius: 20%;
+				justify-items:center;
+				margin: 25px 6vw ;
+				background: linear-gradient(90deg, rgba(0,212,255,1) 0%, rgba(9,9,121,1) 35%, rgba(2,0,36,1) 100%);
+				color:map-get($colors,carrito-title);
+				p{
+					font-family: map-get($fonts, f-product-price);
+					padding: 0;
+					margin: 0;
 				}
-				
+				.carrito-productInfo{
+					grid-column: 1/2;
+					display: flex;
+					align-items: center;
+					justify-content: space-between;
+					width: 100%;
+					img{
+						width: 150px;
+						border-bottom-right-radius: 20%;
+						border-top-right-radius: 20%;
+					}
+					
+				}
+				.carrito-productCant{
+					grid-column: 2/3;
+					display: flex;
+					align-items: center;
+					gap: 5px;
+					button{
+						@extend .carrito-ProductBtns;
+					}
+					
+				}
+				.carrito-productSubtotal{
+					grid-column: 3/4;
+				}
 			}
-			.carrito-productCant{
-				grid-column: 2/3;
-				display: flex;
-				align-items: center;
-				gap: 5px;
-				
-			}
-			.carrito-productSubtotal{
-				grid-column: 3/4;
+		}
+		.carrito-footer{
+			display: flex;
+			justify-content: center;
+			width: 100%;
+			background: linear-gradient(90deg, rgba(9,9,121,1) 0%, rgba(0,212,255,1) 50%, rgba(9,9,121,1) 100%);
+			gap: 45px;
+			button{
+				@extend .carrito-BuyEmptyBtns;
 			}
 		}
 	}

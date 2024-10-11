@@ -1,6 +1,7 @@
 import Producto from '../models/Producto.js';
 import StorageService from '../models/Storage.js';
-import {ajusteCSSCarrito, existeEnCarrito , agregarEnCarrito,sumarEnCarrito} from './carrito.js';
+import {ajusteCSSCarrito, existeEnCarrito , agregarEnCarrito,sumarEnCarrito, 
+    actualizarBadgeProductosUnicosEnCarrito} from './carrito.js';
 
 export const modalAñadirProducto_eventoIrCarrito = () =>{
     const modalProducto = document.querySelector('.modal-añadirProducto');
@@ -44,6 +45,7 @@ const addEventBtn_agregarCarrito = (btn) =>{
             sumarEnCarrito(product,quant);
         }else{
             agregarEnCarrito(product,quant);
+            actualizarBadgeProductosUnicosEnCarrito();
         }
         PintarProductos();
     })
@@ -103,7 +105,7 @@ export const PintarProductos = ()=>{
     });
 }
 
-function buscarProducto(ProductID){
+export function buscarProducto (ProductID){
     let productos = StorageService.getItem('productos');
     return productos.filter((item)=> item.getPid == ProductID)[0];
 }

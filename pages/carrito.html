@@ -68,7 +68,7 @@
 
     </header><!-- 1 - Fin Header-->
 
-    <main>
+    <main >
         <section class="modal-carrito">
             <div class="modal-carrito-container">
                 <div class="modal-carrito-titulo">
@@ -149,39 +149,81 @@
             <h2 class="carrito-title">Carrito</h2>
             <div class="carrito-separation">
             </div>
+            <div id="carrito-items">
+
+            </div>
+           
+            <footer class="carrito-footer">
+                <button>Comprar</button>
+                <button id="carritoVaciar">Vaciar</button>
+            </footer>
+        </section>
+        
+        <template id="template-carrito-web">
             <article class="carrito-item">
                 <div class="carrito-productInfo">
                     <img src="../img/productos/fuente-1.jpg" alt="">
                     <p>Fuente Be Quiet 1000W 80 Plus Gold PURE POWER 11 Full Modular</p>
                 </div>
                 <div class="carrito-productCant">
-                    <button>-</button>
+                    <button class="carrito-btnLess" >-</button>
                     <p>1</p>
-                    <button>+</button>
+                    <button class="carrito-btnMore">+</button>
                 </div>
                 <div class="carrito-productSubtotal">
                     <p>$1300</p>
                 </div>
             </article>
-        </section>
+        </template>
+
+        <footer> <!-- 3 - Footer -->
+            <div class="footer-container container">  
+                <div class="footer-help">
+                    <a href="../index.html" class="footer-butons btn">Ayuda</a>
+                    <a href="../index.html" class="footer-butons btn">Botón de arrepentimiento</a>
+                </div>
+                <div class="footer-division-1">
+                        <p class="division-p">linea horizontal 1</p>
+                </div>
+                <div class="footer-networks">
+                    <p class="txt-white">Seguinos en</p>
+                    <div class="footer-networks-butons">
+                        <a href="https://twitter.com" class="butons-a">
+                            <i class="bi bi-twitter-x footer-links"></i>
+                        </a>
+                        <a href="https://youtube.com" class="butons-a">
+                            <i class="bi bi-youtube footer-links"></i>
+                        </a>
+                        <a href="https://Facebook.com" class="butons-a">
+                            <i class="bi bi-facebook footer-links"></i>
+                        </a>
+                        <a href="https://linkedin.com" class="butons-a">
+                            <i class="bi bi-linkedin footer-links"></i>
+                        </a>
+                        <a href="https://instagram.com" class="butons-a">
+                            <i class="bi bi-instagram footer-links"></i> 
+                        </a>
+                        <a href="https://twitch.com" class="butons-a">
+                            <i class="bi bi-twitch footer-links"></i>
+                        </a>
+                        <a href="https://tiktok.com" class="butons-a">
+                            <i class="bi bi-tiktok footer-links"></i>
+                        </a>  
+                    </div>
+                </div>
+                <div class="footer-division-2">
+                    <p class="division-p">linea horizontal 2</p>
+                </div>
+                <div class="footer-workwithus">
+                    <img src="../img/index/great place to work.png" alt="Logotipo certificado de Great Place to Work: un símbolo de excelencia que representa un lugar de trabajo que fomenta la confianza, la colaboración y la satisfacción de los empleados." class="footer-workplaceicon">
+                    
+                    <a href="../index.html" class="footer-butons btn" >¡Trabaja con nosotros!</a> 
+                </div>
+            </div>   
+        </footer> <!-- Fin Seccion 3 - Footer --> 
+
     </main>
     
-    <template class="modal-carrito-web">
-        <div class="productos-item">
-            <div class="producto-info">
-                <img src="../img/productos/fuente-1.jpg" alt="">
-                <p>Fuente Be Quiet 1000W 80 Plus Gold PURE POWER 11 Full Modular</p>
-            </div>
-            <div class="producto-cantidad">
-                <button>-</button>
-                <p>1</p>
-                <button>+</button>
-            </div>
-            <div class="producto-subtotal">
-                <p>$1300</p>
-            </div>
-        </div>
-    </template>
     
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>    
     <script src="../js/app.js" type="module"></script>

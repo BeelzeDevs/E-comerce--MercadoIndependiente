@@ -225,6 +225,35 @@ a {
 }
 
 /* components */
+.carrito-ProductBtns, main .carrito-container #carrito-items .carrito-item .carrito-productCant button {
+  background-color: rgb(0, 0, 124);
+  color: white;
+  outline: 3px solid rgba(0, 0, 139, 0.5);
+  padding: 5px 10px;
+  border: 2px outset rgb(118, 118, 118);
+}
+.carrito-ProductBtns:hover, main .carrito-container #carrito-items .carrito-item .carrito-productCant button:hover {
+  background-color: rgb(13, 13, 194);
+}
+.carrito-ProductBtns:active, main .carrito-container #carrito-items .carrito-item .carrito-productCant button:active {
+  border: 2px inset rgb(118, 118, 118);
+}
+
+.carrito-BuyEmptyBtns, main .carrito-container .carrito-footer button {
+  background-color: rgb(0, 0, 124);
+  color: white;
+  outline: 3px solid rgba(0, 0, 139, 0.5);
+  padding: 5px 10px;
+  border: 2px outset rgb(118, 118, 118);
+  margin: 5px 0px;
+}
+.carrito-BuyEmptyBtns:hover, main .carrito-container .carrito-footer button:hover {
+  background-color: rgb(13, 13, 194);
+}
+.carrito-BuyEmptyBtns:active, main .carrito-container .carrito-footer button:active {
+  border: 2px inset rgb(118, 118, 118);
+}
+
 /* btn-footer controla todos los botones, divisions controla las primera division 
 , la 2da tiene su propio comportamiento pero comparte las características */
 .btn-footer, footer .footer-container .footer-workwithus .footer-butons, footer .footer-container .footer-help .footer-butons {
@@ -863,11 +892,12 @@ main .carrito-container {
   flex-direction: column;
   align-items: center;
   margin: 40px 20vw;
-  background-color: red;
+  background: linear-gradient(90deg, rgb(29, 65, 253) 8%, rgb(7, 145, 237) 30%, rgb(7, 145, 237) 60%, rgb(29, 65, 253) 92%);
+  border: 2px solid rgba(0, 0, 139, 0.9);
   position: relative;
 }
 main .carrito-container .carrito-title {
-  background-color: rgba(0, 0, 139, 0.9);
+  background: linear-gradient(0deg, rgb(0, 212, 255) 0%, rgb(9, 9, 121) 10%, rgb(9, 9, 121) 90%, rgb(0, 212, 255) 100%);
   color: white;
   padding: 5px 25px;
   font-family: "Montserrat", sans-serif;
@@ -880,9 +910,15 @@ main .carrito-container .carrito-title {
 main .carrito-container .carrito-separation {
   margin: 5px 0px;
 }
-main .carrito-container .carrito-item {
+main .carrito-container #carrito-items {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  min-height: 50px;
+}
+main .carrito-container #carrito-items .carrito-item {
   display: grid;
-  grid-template-columns: 2fr 0.5fr 0.5fr 50px;
+  grid-template-columns: 2fr 0.5fr minmax(70px, 100px);
   grid-template-rows: 1fr;
   align-items: center;
   justify-items: center;
@@ -890,30 +926,38 @@ main .carrito-container .carrito-item {
   background: linear-gradient(90deg, rgb(0, 212, 255) 0%, rgb(9, 9, 121) 35%, rgb(2, 0, 36) 100%);
   color: white;
 }
-main .carrito-container .carrito-item p {
+main .carrito-container #carrito-items .carrito-item p {
   font-family: Proxima Nova, -apple-system, Roboto, Arial, sans-serif;
   padding: 0;
   margin: 0;
 }
-main .carrito-container .carrito-item .carrito-productInfo {
+main .carrito-container #carrito-items .carrito-item .carrito-productInfo {
   grid-column: 1/2;
   display: flex;
   align-items: center;
   justify-content: space-between;
+  width: 100%;
 }
-main .carrito-container .carrito-item .carrito-productInfo img {
+main .carrito-container #carrito-items .carrito-item .carrito-productInfo img {
   width: 150px;
   border-bottom-right-radius: 20%;
   border-top-right-radius: 20%;
 }
-main .carrito-container .carrito-item .carrito-productCant {
+main .carrito-container #carrito-items .carrito-item .carrito-productCant {
   grid-column: 2/3;
   display: flex;
   align-items: center;
   gap: 5px;
 }
-main .carrito-container .carrito-item .carrito-productSubtotal {
+main .carrito-container #carrito-items .carrito-item .carrito-productSubtotal {
   grid-column: 3/4;
+}
+main .carrito-container .carrito-footer {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  background: linear-gradient(90deg, rgb(9, 9, 121) 0%, rgb(0, 212, 255) 50%, rgb(9, 9, 121) 100%);
+  gap: 45px;
 }
 @media only screen and (min-width: 576px) {
   main .modal-carrito {
