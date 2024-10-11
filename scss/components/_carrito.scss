@@ -183,6 +183,66 @@ main {
 			}
 		}
 	}
+	.carrito-container{
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		margin:40px 20vw;
+		background-color: red;
+		position: relative;
+		.carrito-title{
+			background-color: map-get($colors, bg-header);
+			color:map-get($colors,carrito-title);
+			padding: 5px 25px;
+			font-family: map-get($fonts, f-primary);
+			position: absolute;
+			top: 0;
+			left: 50%;
+			transform: translate(-50%,-50%);
+			margin: 0;
+			
+		}
+		.carrito-separation{
+			margin: 5px 0px;
+		}
+		.carrito-item{
+			display: grid;
+			grid-template-columns:2fr 0.5fr 0.5fr 50px;
+			grid-template-rows: 1fr;
+			align-items: center;
+			justify-items:center;
+			margin: 25px 6vw ;
+			background: linear-gradient(90deg, rgba(0,212,255,1) 0%, rgba(9,9,121,1) 35%, rgba(2,0,36,1) 100%);
+			color:map-get($colors,carrito-title);
+			p{
+				font-family: map-get($fonts, f-product-price);
+				padding: 0;
+				margin: 0;
+			}
+			.carrito-productInfo{
+				grid-column: 1/2;
+				display: flex;
+				align-items: center;
+				justify-content: space-between;
+				img{
+					width: 150px;
+					border-bottom-right-radius: 20%;
+					border-top-right-radius: 20%;
+				}
+				
+			}
+			.carrito-productCant{
+				grid-column: 2/3;
+				display: flex;
+				align-items: center;
+				gap: 5px;
+				
+			}
+			.carrito-productSubtotal{
+				grid-column: 3/4;
+			}
+		}
+	}
 	@include mq-sm {
 		.modal-carrito {
 			max-width: 40vw;

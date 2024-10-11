@@ -1,5 +1,6 @@
 import Producto from "../models/Producto.js";
 import StorageService from "../models/Storage.js";
+import { PintarProductos } from "./product.js";
 
 export const ajusteCSSCarrito=()=> {
     const header = document.querySelector('header');
@@ -28,7 +29,9 @@ export const existeEnCarrito = (ProductID) =>{
 }
 export const agregarEnCarrito = (prod,quant) =>{
     let carrito = StorageService.getItem('carrito');
-    console.log(prod);
+    let productos = StorageService.getItem('productos');
+    let productoArestarStock = productos.find((item)=> item.getPid == prod.getPid);
+    productoArestarStock.setStock = productoArestarStock.getStock - quant;
     carrito.push(new Producto(
             prod.getPid,
             prod.getNombre,
@@ -40,4 +43,17 @@ export const agregarEnCarrito = (prod,quant) =>{
             prod.getDayOffer
         ));
     StorageService.setItem('carrito',carrito);
+    StorageService.setItem('productos',productos);
+}
+
+export const sumarEnCarrito = (prod,quant)=>{
+    let carrito = StorageService.getItem('carrito');
+    let productos = StorageService.getItem('productos');
+    let productoCarrritoAsumar = carrito.find((item)=> item.getPid == prod.getPid);
+    let productoArestarStock = productos.find((item)=> item.getPid == prod.getPid);
+    if(productoArestarStock.getStock - quant < 0) return;
+    productoCarrritoAsumar.stock += quant;
+    productoArestarStock.setStock = productoArestarStock.getStock - quant;
+    StorageService.setItem('carrito',carrito);
+    StorageService.setItem('productos',productos);
 }

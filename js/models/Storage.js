@@ -20,7 +20,20 @@ export default class StorageService{
                 element.img,
                 element.dayOffer
             ));
-        }else{
+        }
+        if(key == 'carrito' && data.length > 0){
+            return data.map(element => new Producto(
+                element.id,
+                element.nombre,
+                element.descripcion,
+                element.precio,
+                element.descuento,
+                element.stock,
+                element.img,
+                element.dayOffer
+            ));
+        }
+        else{
             return data;
         }
     }

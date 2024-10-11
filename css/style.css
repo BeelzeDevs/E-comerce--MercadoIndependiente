@@ -858,6 +858,63 @@ main .modal-carrito .modal-carrito-container .modal-carrito-pie .carrito-pie-2 b
   background-color: rgba(0, 0, 139, 0.9);
   color: rgb(126, 230, 236);
 }
+main .carrito-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 40px 20vw;
+  background-color: red;
+  position: relative;
+}
+main .carrito-container .carrito-title {
+  background-color: rgba(0, 0, 139, 0.9);
+  color: white;
+  padding: 5px 25px;
+  font-family: "Montserrat", sans-serif;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  margin: 0;
+}
+main .carrito-container .carrito-separation {
+  margin: 5px 0px;
+}
+main .carrito-container .carrito-item {
+  display: grid;
+  grid-template-columns: 2fr 0.5fr 0.5fr 50px;
+  grid-template-rows: 1fr;
+  align-items: center;
+  justify-items: center;
+  margin: 25px 6vw;
+  background: linear-gradient(90deg, rgb(0, 212, 255) 0%, rgb(9, 9, 121) 35%, rgb(2, 0, 36) 100%);
+  color: white;
+}
+main .carrito-container .carrito-item p {
+  font-family: Proxima Nova, -apple-system, Roboto, Arial, sans-serif;
+  padding: 0;
+  margin: 0;
+}
+main .carrito-container .carrito-item .carrito-productInfo {
+  grid-column: 1/2;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+main .carrito-container .carrito-item .carrito-productInfo img {
+  width: 150px;
+  border-bottom-right-radius: 20%;
+  border-top-right-radius: 20%;
+}
+main .carrito-container .carrito-item .carrito-productCant {
+  grid-column: 2/3;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+main .carrito-container .carrito-item .carrito-productSubtotal {
+  grid-column: 3/4;
+}
 @media only screen and (min-width: 576px) {
   main .modal-carrito {
     max-width: 40vw;
