@@ -2,20 +2,38 @@ import Producto from "../models/Producto.js";
 import StorageService from "../models/Storage.js";
 import { PintarProductos, buscarProducto } from "./product.js";
 
-export const ajusteCSSCarrito=()=> {
-    const header = document.querySelector('header');
-    const Carrito = document.querySelector('.modal-carrito');
-    const tamañoHead = header.offsetHeight; // Obtiene la altura del elemento
-    Carrito.style.top = tamañoHead + 'px';
-}
+
 export const mostrarModalCarrito =()=> {
-    // const modalCarrito = document.querySelector('.modal-carrito');
-    // const carritoNavIcon = document.querySelector('#carrito');
-    // carritoNavIcon.addEventListener('click', () => {
-    //     ajusteCSSCarrito()
-    //     modalCarrito.classList.toggle('modal-show');
-        
-    // });
+    const modalCarrito = document.querySelector('.modal-carrito');
+    const carritoModalBtn = document.querySelector('#modal-carritobtn');
+    const modalCarritoContainer = document.querySelector('.carritoModal-btnContainer');
+    carritoModalBtn.addEventListener('click', () => {
+        modalCarrito.classList.toggle('modal-show');
+        const widthOffset = modalCarrito.offsetWidth;
+
+        carritoModalBtn.classList.toggle('bi-cart4');
+        carritoModalBtn.classList.toggle('bi-x-lg');
+
+        if(modalCarrito.classList.contains('modalcarrito-animate-left')){
+            modalCarritoContainer.style.left = "0px";
+            modalCarrito.classList.remove('modalcarrito-animate-left');
+            modalCarrito.classList.add('modalcarrito-animate-right');
+            modalCarritoContainer.classList.remove('modalcarritoBtn-animate-left');
+            modalCarritoContainer.classList.add('modalcarritoBtn-animate-right');
+            
+        } else if(modalCarrito.classList.contains('modalcarrito-animate-right')){
+            modalCarritoContainer.style.left = widthOffset + 35 + "px";
+            modalCarrito.classList.remove('modalcarrito-animate-right');
+            modalCarrito.classList.add('modalcarrito-animate-left');
+            modalCarritoContainer.classList.add('modalcarritoBtn-animate-left');
+            modalCarritoContainer.classList.remove('modalcarritoBtn-animate-right');
+        }
+        else{
+            modalCarritoContainer.style.left = widthOffset + 35 + "px";
+            modalCarrito.classList.add('modalcarrito-animate-left');
+            modalCarritoContainer.classList.add('modalcarritoBtn-animate-left');
+        }
+    });
 }
 export const agregarEventoBtn_headerCarrito = () =>{
     const carritoNavIcon = document.querySelector('#carrito');
@@ -31,13 +49,15 @@ export const actualizarBadgeProductosUnicosEnCarrito = ()=>{
         contador++;
     });
     carritoCountBadge[0].textContent = contador;
-    console.log(carritoCountBadge);
 }
 export const PintarCarritoHtml = () =>{
+    const totalCarritoWeb = document.getElementById('totalCarritoWeb');
+    let acumTotalCarrito = 0;
     let carrito = StorageService.getItem('carrito');
     const templateCarritoWebItem = document.getElementById('template-carrito-web').content;
     const carritoArticletoCreate = document.getElementById('carrito-items');
     const fragment = document.createDocumentFragment();
+    // carrito web
     carritoArticletoCreate.innerHTML = '';
     carrito.forEach(item => {
         
@@ -57,7 +77,11 @@ export const PintarCarritoHtml = () =>{
         img.src = '../' + item.getImg;
         descripcion.textContent = item.getDescripcion;
         quant.textContent = item.getStock;
-        subtotal.textContent =`$ ${parseInt(item.getPrecioFinal * item.getStock)}`;
+        let subTotalMount = parseFloat((item.getPrecio * item.getStock).toFixed(2));
+        let formattedTotal = subTotalMount.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+        
+        subtotal.innerHTML =`<span class"remark">$</span> ${formattedTotal}`;
+        acumTotalCarrito += parseFloat(item.getPrecio * item.getStock);
 
         fragment.appendChild(itemArticle);
 
@@ -68,8 +92,6 @@ export const PintarCarritoHtml = () =>{
         const ProductID = prod.getPid;
         const btnLess = document.querySelector(`.carrito-btnLess[data-pid='${ProductID}']`);
         const btnMore = document.querySelector(`.carrito-btnMore[data-pid='${ProductID}']`);
-        const quant = document.querySelector(`.carrito-productCant p`);
-        const subtotal = document.querySelector(`.carrito-productSubtotal p[data-pid='${ProductID}']`);
         const btnVaciar = document.getElementById('carritoVaciar');
 
         addEventBtn_carritoBtnMas(btnMore);
@@ -77,6 +99,66 @@ export const PintarCarritoHtml = () =>{
         addEventBtn_carritoVaciar(btnVaciar);
 
     });
+    let acumTotal = parseFloat(acumTotalCarrito.toFixed(2));
+    let formattedAcumTotal = acumTotal.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+    totalCarritoWeb.innerHTML = `<p id="totalCarritoWeb">Total: <span class="remark">$ </span>${formattedAcumTotal}</p>`;
+}
+export const PintarCarritoModal = () => {
+    
+    let acumTotalCarrito = 0;
+    let carrito = StorageService.getItem('carrito');
+    const fragment = document.createDocumentFragment();
+    const modalCarritoItems = document.getElementById('modal-carrito-productos');
+    const templateCarritoModal = document.getElementById('template-carrito-modal').content;
+    const totalCarritoModal = document.querySelector('.carrito-total');
+
+    modalCarritoItems.innerHTML = '';
+    carrito.forEach((prod)=>{
+        const clone = templateCarritoModal.cloneNode(true);
+        const img = clone.querySelector('.producto-info img');
+        const descripcion = clone.querySelector('.producto-info p');
+        const btnLess = clone.querySelector('.btnLess');
+        const btnMore = clone.querySelector('.btnMore');
+        const quant = clone.querySelector('.producto-cantidad p');
+        const subtotal = clone.querySelector('.producto-subtotal p');
+
+        btnLess.dataset.pid = prod.getPid;
+        btnMore.dataset.pid = prod.getPid;
+        quant.dataset.pid = prod.getPid;
+        
+        img.src = `../${prod.getImg}`;
+        descripcion.textContent = prod.getDescripcion;
+        quant.textContent = prod.getStock;
+        let subTotalMount = parseFloat((prod.getPrecio * prod.getStock).toFixed(2));
+        let formattedTotal = subTotalMount.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+        
+        subtotal.innerHTML =`<span class"remark">$</span> ${formattedTotal}`;
+        acumTotalCarrito += parseFloat(prod.getPrecio * prod.getStock);
+
+        fragment.appendChild(clone);
+    });
+
+    modalCarritoItems.appendChild(fragment);
+    acumTotalCarrito = acumTotalCarrito.toLocaleString('en-US', { minimumFractionDigits:2, maximumFractionDigits:2});
+    totalCarritoModal.innerHTML=`<span class="remark">$</span>${acumTotalCarrito}`;
+
+    // eventos
+    carrito.forEach((prod)=>{
+        const ProductID = prod.getPid;
+        const btnLess = document.querySelector(`.btnLess[data-pid="${ProductID}"]`);
+        const btnMore = document.querySelector(`.btnMore[data-pid="${ProductID}"]`);
+        const btnVaciar = document.getElementById('vaciarCarritoModal');
+
+        
+        addEventBtn_carritoBtnMas(btnMore);
+        addEventBtn_carritoBtnMenos(btnLess);
+        addEventBtn_carritoVaciar(btnVaciar);
+    })
+    
+    
+
+
+
 }
 export const existeEnCarrito = (ProductID) =>{
     let carrito = [] ;
@@ -117,7 +199,16 @@ export const sumarEnCarrito = (prod,quant)=>{
     StorageService.setItem('carrito',carrito);
     StorageService.setItem('productos',productos);
 }
-
+export const modalCarrito_defaultReset = ()=> {
+    const carritoModalBtnContainer = document.querySelector('.carritoModal-btnContainer');
+    const carritoModalBtn = document.querySelector('#modal-carritobtn');
+    const modalCarrito = document.querySelector('.modal-carrito');
+    if(carritoModalBtnContainer.classList.contains('modalcarritoBtn-animate-left')){
+        modalCarrito.className = 'modal-carrito modalcarrito-animate-right';
+        carritoModalBtnContainer.className = 'carritoModal-btnContainer modalcarritoBtn-animate-right';
+        carritoModalBtn.className = 'bi bi-cart4'        
+    }
+}
 
 function addEventBtn_carritoBtnMenos(btnLess){
     btnLess.addEventListener('click', () => {
@@ -140,7 +231,9 @@ function addEventBtn_carritoBtnMenos(btnLess){
             StorageService.setItem('productos',productos);
             actualizarBadgeProductosUnicosEnCarrito();
         }
-        PintarCarritoHtml();
+        if(window.location.pathname.includes('carrito')) PintarCarritoHtml();
+        if(window.location.pathname.includes('producto')) PintarProductos();
+        PintarCarritoModal();
     })
 }
 function addEventBtn_carritoBtnMas(btnMore){
@@ -160,7 +253,9 @@ function addEventBtn_carritoBtnMas(btnMore){
         }else{
             return;
         }
-        PintarCarritoHtml();
+        if(window.location.pathname.includes('carrito')) PintarCarritoHtml();
+        if(window.location.pathname.includes('producto')) PintarProductos();
+        PintarCarritoModal();
     })
 }
 
@@ -178,7 +273,10 @@ function addEventBtn_carritoVaciar(btnVaciar){
             StorageService.setItem('productos',productos);
             localStorage.removeItem('carrito');
             actualizarBadgeProductosUnicosEnCarrito();
-            PintarCarritoHtml();
+            if(window.location.pathname.includes('carrito')) PintarCarritoHtml();
+            if(window.location.pathname.includes('producto')) PintarProductos();
+            PintarCarritoModal();
+
         });
 
 }

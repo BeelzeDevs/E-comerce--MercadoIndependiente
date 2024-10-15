@@ -3,12 +3,13 @@
 
 /* components Animations*/
 @import 'components/animations/cardprod';
-@import 'components/animations/textcontact';
+@import 'components/animations/textaboutUs';
 @import 'components/animations/email';
 @import 'components/animations/title-sesion';
 @import 'components/animations/btn-pulse';
 @import 'components/animations/nav-items';
 @import 'components/animations/link-jump';
+@import 'components/animations/carritobtn';
 
 /* components */
 @import 'components/btns';
@@ -21,7 +22,6 @@
 @import 'components/sesion-submit';
 @import 'components/mainOffersbtns';
 @import 'components/product-productitem';
-@import 'components/carrito';
 @import 'components/sesion-formNewUser';
 
 /* Layouts */
@@ -30,6 +30,7 @@
 
 /* Pages */
 @import 'pages/index';
+@import 'pages/carrito';
 @import 'pages/contacto';
 @import 'pages/iniciar-sesion';
 @import 'pages/producto';

@@ -1,4 +1,11 @@
+
 main {
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;  
+	align-items: stretch;      
+	min-height: 100vh; 
 	.modal-añadirProducto {
 		background-color: #111111eb;
 		color: white;
@@ -57,18 +64,63 @@ main {
 			}
 		}
 	}
+	
+	.carritoModal-btnContainer{
+		position: absolute;
+		top:35vh;
+		left: 0;
+		padding: 5px;
+		display: flex;
+		justify-content: center;
+		transform: translate(-10%,0%);
+		z-index: 500;
+		&.modalcarritoBtn-animate-left{
+			@extend .btn-anim-left;
+			opacity: 90%;
+			button{
+				outline: 1px solid rgb(132, 23, 78);
+				background-color: rgb(132, 23, 78);
+				color: white;
+			}
+		}
+		&.modalcarritoBtn-animate-right{
+			@extend .btn-anim-right;
+			opacity: 1;
+			button{
+				border: 0;
+			}
+		}
+		button{
+			background-color: map-get($colors,bg-product-btn);
+			border-radius: 10%;
+			width: 60px;
+			height: 60px;
+			color:white;
+			border: 0.2px solid $primary-c-anim;
+			display: flex; /* Asegura que el icono se centre en el botón */
+			align-items: center;
+			justify-content: center;
+			@extend .btn-pulse;
+			font-size: 1.3em;
+			border-color: map-get($colors, cards-border)
+			
+		}
+	}
+	
 	.modal-carrito {
-		display: none;
+		display: block;
 		visibility: hidden;
-		opacity: 1;
-		transition: visibility 0s ease-in-out, opacity 0.5s ease-in-out;
+		opacity: 0;
+		transition: visibility 2s ease-in-out, opacity 0.5s ease-in-out;
 		position: fixed;
-		bottom: 5%;
-		right: 0;
-		background-color: rgb(24, 24, 24);
+		left: 0;
+		top:0;
+		background-color: rgb(25, 2, 73);
 		color: white;
 		min-width: 30vw;
-		max-width: 80vw; /* Asegura que el modal no exceda la altura de la ventana */
+		max-width: 50vw; /* Asegura que el modal no exceda la altura de la ventana */
+		max-height: 80vh;
+		border-right: 1px inset map-get($colors, 'txt-carousel');
 
 		&.modal-show {
 			display: block;
@@ -76,11 +128,17 @@ main {
 			visibility: visible;
 			z-index: 100;
 		}
+		&.modalcarrito-animate-left{
+			@extend .modalcarrito-anim-left;
+		}
+		&.modalcarrito-animate-right{
+			@extend .modalcarrito-anim-right;
+		}
 		.modal-carrito-container {
 			@include flex-box(column);
 			justify-content: space-between;
 			align-items: stretch;
-			max-height: 100%; /* Asegurar que el contenedor no exceda la altura del modal */
+			max-height: 100%; /* Asegura que el contenedor no exceda la altura del modal */
 			min-height: 100%;
 			overflow: hidden; /* Para que el overflow en los hijos funcione correctamente */
 			.modal-carrito-titulo {
@@ -92,27 +150,33 @@ main {
 			p {
 				margin: 0;
 			}
+			
 			.modal-carrito-productos {
 				@include flex-box(row);
+				align-content: flex-start;
 				flex-wrap: wrap;
-				gap: 0.4rem;
+				gap: 1.4rem;
 				overflow: auto; //Funcionando
 				max-height: calc(
 					100vh - 350px
 				); /* Altura máxima para permitir el desbordamiento, ajusta dinámicamente la altura máxima */
 				min-height: calc(100vh - 350px);
+				scrollbar-width: thin; 
+  				scrollbar-color: map-get($colors,'txt-carousel') map-get($colors,'bg-header'); 
 				.productos-item {
 					@include flex-box();
 					@include justify-align(space-between, center);
-					gap: 3rem;
+					gap: 2rem;
 					width: 100%;
-					padding: 0px 15px 0px 0px;
+					padding: 0px 8px 0px 0px;
 					.producto-info {
 						@include flex-box();
 						@include justify-align(space-between, center);
+						width: 60%;
 						gap: 10px;
 						img {
-							width: 30%;
+							min-width: 95px;
+							max-width: 95px;
 							border-radius: 20px;
 						}
 						p {
@@ -123,7 +187,7 @@ main {
 						@include flex-box();
 						@include justify-align(space-between, center);
 						gap: 3px;
-
+						width: 10%;
 						button {
 							font-size: 0.8rem;
 							font-weight: 400;
@@ -144,9 +208,10 @@ main {
 						}
 					}
 					.producto-subtotal {
-						justify-self: flex-end;
+						width: 20%;
 						p {
 							font-size: 1rem;
+							display: flex;
 						}
 					}
 				}
@@ -213,7 +278,7 @@ main {
 			min-height: 50px;
 			.carrito-item{
 				display: grid;
-				grid-template-columns:2fr 0.5fr minmax(70px,100px);
+				grid-template-columns:2fr 0.5fr minmax(120px,100px);
 				grid-template-rows: 1fr;
 				align-items: center;
 				justify-items:center;
@@ -255,12 +320,34 @@ main {
 		}
 		.carrito-footer{
 			display: flex;
+			flex-direction: column;
 			justify-content: center;
 			width: 100%;
 			background: linear-gradient(90deg, rgba(9,9,121,1) 0%, rgba(0,212,255,1) 50%, rgba(9,9,121,1) 100%);
-			gap: 45px;
-			button{
-				@extend .carrito-BuyEmptyBtns;
+			.carrito-footer-btns{
+				display: flex;
+				justify-content: center;
+				gap: 45px;
+				button{
+					@extend .carrito-BuyEmptyBtns;
+				}
+			}
+			.carrito-footer-total{
+				display: flex;
+				justify-content: flex-end;
+				margin: 5px 6vw ;
+				font-family: map-get($fonts,f-primary);
+				font-size: 1em;
+				font-weight: 600;
+				p{
+					grid-column: 3/4;
+					color: map-get($colors,bg-main);
+					margin: 0 5px 0 0;
+					.remark{
+						color: $secondary-c-anim;
+					}
+				}
+				
 			}
 		}
 	}
@@ -268,10 +355,18 @@ main {
 		.modal-carrito {
 			max-width: 40vw;
 		}
+		.carritoModal-btnContainer{
+			visibility: hidden;
+		}
 	}
 	@include mq-md {
+		
+		.carritoModal-btnContainer{
+			visibility:visible;
+		}
 		.modal-carrito {
 			bottom: 0;
+			max-width: 50vw;
 			.modal-carrito-container {
 				gap: 1px;
 				.modal-carrito-productos {
@@ -294,6 +389,7 @@ main {
 		}
 	}
 	@include mq-xl {
+		
 		.modal-carrito {
 			bottom: 5%;
 			.modal-carrito-container {
@@ -304,17 +400,17 @@ main {
 						.producto-info {
 							gap: 10px;
 							p {
-								font-size: 1em;
+								font-size: 0.8em;
 							}
 						}
 						.producto-cantidad {
 							p {
-								font-size: 1.1em;
+								font-size: 0.8em;
 							}
 						}
 						.producto-subtotal {
 							p {
-								font-size: 1.1em;
+								font-size: 0.8em;
 							}
 						}
 					}

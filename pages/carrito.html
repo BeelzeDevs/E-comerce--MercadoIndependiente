@@ -69,83 +69,49 @@
     </header><!-- 1 - Fin Header-->
 
     <main >
-        <section class="modal-carrito">
+        
+        <section class="modal-carrito"> <!-- Modal carrito -->
             <div class="modal-carrito-container">
                 <div class="modal-carrito-titulo">
                     <h2>Carrito</h2>
                     <i class="bi bi-cart4 carrito-logo"></i>
                 </div>
-                <div class="modal-carrito-productos">
-                    <div class="productos-item">
-                        <div class="producto-info">
-                            <img src="../img/productos/fuente-1.jpg" alt="">
-                            <p>Fuente Be Quiet 1000W 80 Plus Gold PURE POWER 11 Full Modular</p>
-                        </div>
-                        <div class="producto-cantidad">
-                            <button>-</button>
-                            <p>1</p>
-                            <button>+</button>
-                        </div>
-                        <div class="producto-subtotal">
-                            <p>$1300</p>
-                        </div>
-                    </div>
-                    <div class="productos-item">
-                        <div class="producto-info">
-                            <img src="../img/productos/fuente-1.jpg" alt="">
-                            <p>Fuente Be Quiet 1000W 80 Plus Gold PURE POWER 11 Full Modular</p>
-                        </div>
-                        <div class="producto-cantidad">
-                            <button>-</button>
-                            <p>1</p>
-                            <button>+</button>
-                        </div>
-                        <div class="producto-subtotal">
-                            <p>$1300</p>
-                        </div>
-                    </div>
-                    <div class="productos-item">
-                        <div class="producto-info">
-                            <img src="../img/productos/fuente-1.jpg" alt="">
-                            <p>Fuente Be Quiet 1000W 80 Plus Gold PURE POWER 11 Full Modular</p>
-                        </div>
-                        <div class="producto-cantidad">
-                            <button>-</button>
-                            <p>1</p>
-                            <button>+</button>
-                        </div>
-                        <div class="producto-subtotal">
-                            <p>$1300</p>
-                        </div>
-                    </div>
-                    <div class="productos-item">
-                        <div class="producto-info">
-                            <img src="../img/productos/fuente-1.jpg" alt="">
-                            <p>Fuente Be Quiet 1000W 80 Plus Gold PURE POWER 11 Full Modular</p>
-                        </div>
-                        <div class="producto-cantidad">
-                            <button>-</button>
-                            <p>1</p>
-                            <button>+</button>
-                        </div>
-                        <div class="producto-subtotal">
-                            <p>$1300</p>
-                        </div>
-                    </div>
+                <div class="modal-carrito-productos" id="modal-carrito-productos">
+                    
                 </div>
                 <div class="modal-carrito-pie">
                     <div class="carrito-pie-1">
                         <p>TOTAL</p>
-                        <p class="carrito-total"><span>$</span>1300</p>
+                        <p class="carrito-total"><span>$</span>0</p>
                     </div>
                     <div class="carrito-pie-2">
                         <button id="comprarCarrito">Comprar</button>
-                        <button id="vaciarCarrito">Vaciar carrito</button>
+                        <button id="vaciarCarritoModal">Vaciar carrito</button>
                     </div>
                 </div>
             </div>
         </section>
-        <section class="carrito-container">
+        <section class="carritoModal-btnContainer">
+            <button id="modal-carritobtn" class="bi bi-cart4"></button>
+        </section>
+        <template id="template-carrito-modal">
+            <div class="productos-item">
+                <div class="producto-info">
+                    <img src="../img/productos/fuente-1.jpg" alt="">
+                    <p>Fuente Be Quiet 1000W 80 Plus Gold PURE POWER 11 Full Modular</p>
+                </div>
+                <div class="producto-cantidad">
+                    <button class="btnLess">-</button>
+                    <p>1</p>
+                    <button class="btnMore">+</button>
+                </div>
+                <div class="producto-subtotal">
+                    <p>$1300</p>
+                </div>
+            </div>
+        </template> <!-- Fin Modal carrito -->
+        
+        <section class="carrito-container"> <!-- Carrito Web --> 
             <h2 class="carrito-title">Carrito</h2>
             <div class="carrito-separation">
             </div>
@@ -154,11 +120,15 @@
             </div>
            
             <footer class="carrito-footer">
-                <button>Comprar</button>
-                <button id="carritoVaciar">Vaciar</button>
+                <div class="carrito-footer-total">
+                    <p id="totalCarritoWeb">Total: <span class="remark">$ </span>1000000</p>
+                </div>
+                <div class="carrito-footer-btns">
+                    <button>Comprar</button>
+                    <button id="carritoVaciar">Vaciar</button>
+                </div>
             </footer>
         </section>
-        
         <template id="template-carrito-web">
             <article class="carrito-item">
                 <div class="carrito-productInfo">
@@ -174,7 +144,8 @@
                     <p>$1300</p>
                 </div>
             </article>
-        </template>
+        </template>  <!-- Fin Carrito Web -->
+      
 
         <footer> <!-- 3 - Footer -->
             <div class="footer-container container">  

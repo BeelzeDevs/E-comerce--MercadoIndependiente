@@ -70,89 +70,13 @@
 
 
     <main id="main-sesion"> <!-- Sección 2 - Main -->
-        <section class="modal-carrito">
-            <div class="modal-carrito-container">
-                <div class="modal-carrito-titulo">
-                    <h2>Carrito</h2>
-                    <i class="bi bi-cart4 carrito-logo"></i>
-                </div>
-                <div class="modal-carrito-productos">
-                    <div class="productos-item">
-                        <div class="producto-info">
-                            <img src="../img/productos/fuente-1.jpg" alt="">
-                            <p>Fuente Be Quiet 1000W 80 Plus Gold PURE POWER 11 Full Modular</p>
-                        </div>
-                        <div class="producto-cantidad">
-                            <button>-</button>
-                            <p>1</p>
-                            <button>+</button>
-                        </div>
-                        <div class="producto-subtotal">
-                            <p>$1300</p>
-                        </div>
-                    </div>
-                    <div class="productos-item">
-                        <div class="producto-info">
-                            <img src="../img/productos/fuente-1.jpg" alt="">
-                            <p>Fuente Be Quiet 1000W 80 Plus Gold PURE POWER 11 Full Modular</p>
-                        </div>
-                        <div class="producto-cantidad">
-                            <button>-</button>
-                            <p>1</p>
-                            <button>+</button>
-                        </div>
-                        <div class="producto-subtotal">
-                            <p>$1300</p>
-                        </div>
-                    </div>
-                    <div class="productos-item">
-                        <div class="producto-info">
-                            <img src="../img/productos/fuente-1.jpg" alt="">
-                            <p>Fuente Be Quiet 1000W 80 Plus Gold PURE POWER 11 Full Modular</p>
-                        </div>
-                        <div class="producto-cantidad">
-                            <button>-</button>
-                            <p>1</p>
-                            <button>+</button>
-                        </div>
-                        <div class="producto-subtotal">
-                            <p>$1300</p>
-                        </div>
-                    </div>
-                    <div class="productos-item">
-                        <div class="producto-info">
-                            <img src="../img/productos/fuente-1.jpg" alt="">
-                            <p>Fuente Be Quiet 1000W 80 Plus Gold PURE POWER 11 Full Modular</p>
-                        </div>
-                        <div class="producto-cantidad">
-                            <button>-</button>
-                            <p>1</p>
-                            <button>+</button>
-                        </div>
-                        <div class="producto-subtotal">
-                            <p>$1300</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="modal-carrito-pie">
-                    <div class="carrito-pie-1">
-                        <p>TOTAL</p>
-                        <p class="carrito-total"><span>$</span>1300</p>
-                    </div>
-                    <div class="carrito-pie-2">
-                        <button id="comprarCarrito">Comprar</button>
-                        <button id="vaciarCarrito">Vaciar carrito</button>
-                    </div>
-                </div>
-            </div>
-        </section>
     
         <section class="sesion-container container">
                 <h2 class="sesion-title">Iniciar sesión</h2>
                 <div class="sesion__content">
                     <form   class="sesion-form" id="formIniciarSesion">
-                        <input type="email" name="email"  placeholder="example@email.com" class="sesion-form__input" id="1234">
-                        <input type="password" name="password"  placeholder="contraseña..." class="sesion-form__input">
+                        <input type="email" name="email"  placeholder="example@email.com" class="sesion-form__input" id="1234" autocomplete="username">
+                        <input type="password" name="password"  placeholder="contraseña..." class="sesion-form__input" autocomplete="new-password">
                         <div >
                             <p>
                                 ¿No tienes cuenta?
@@ -172,47 +96,47 @@
                 <h2 class="titulo">Crear Cuenta</h2>
                 <div class="correo">
                     <h3>Correo electrónico</h3>
-                    <input type="email" name="email"  placeholder="example@email.com" value="email@hotmail.com" > 
+                    <input type="email" name="email"  placeholder="example@email.com" value="email@hotmail.com" autocomplete="email" > 
                 </div>
                 <div class="passwords">
                     <div>
-                        <input type="password" value="Contraseña" name="password1" placeholder="contraseña">
+                        <input type="password" value="Contraseña" name="password1" placeholder="contraseña" autocomplete="new-password">
                         <div id="ayudaPassword1" class="ayuda lead d-none" ></div>
                     </div>
                     <div>
-                        <input type="password" value="Contraseña" name="password2" placeholder="repetir contraseña">
+                        <input type="password" value="Contraseña" name="password2" placeholder="repetir contraseña" autocomplete="new-password2">
                         <div id="ayudaPassword2" class="ayuda lead d-none" ></div>
                     </div>
                 </div>
                 <div class="user-info">
                     <div class="crearCuenta-container-1">
                         <div >
-                            <input type="text" name="nombre"  placeholder="Nombre" value="user">
+                            <input type="text" name="nombre"  placeholder="Nombre" value="user" autocomplete="name">
                             <div id="ayudaNombre" class="ayuda lead d-none" >Solo letras</div>
                         </div>
                         <div>
-                            <input type="text" name="apellido"  placeholder="Apellido" value="userLastName">
+                            <input type="text" name="apellido"  placeholder="Apellido" value="userLastName" autocomplete="family-name">
                             <div id="ayudaApellido" class="ayuda lead d-none" >Solo letras</div>
                         </div>
                     </div>
                   
                     <div class="crearCuenta-container-2">
                         <div>
-                            <input type="text" name="direccion"  placeholder="Direccion" value="dirección 1234" class="classDireccion">
+                            <input type="text" name="direccion"  placeholder="Direccion" value="dirección 1234" class="classDireccion" autocomplete="address-line1">
                             <div id="ayudaDireccion" class="ayuda lead d-none" >Solo letras y números</div>
                         </div>
                         <div>
-                            <input type="text" name="codPostal" placeholder="Cod postal" value="1635" class="classCodPostal">
+                            <input type="text" name="codPostal" placeholder="Cod postal" value="1635" class="classCodPostal" autocomplete="postal-code">
                             <div id="ayudaCodPostal" class="ayuda lead d-none" >Deben ser 4 números</div>
                         </div>
                     </div>
                     <div class="crearCuenta-container-3">
                         <div>
-                            <input type="text" name="provincia"  placeholder="Provincia" value="buenos aires">
+                            <input type="text" name="provincia"  placeholder="Provincia" value="buenos aires" autocomplete="address-level1">
                             <div id="ayudaProvincia" class="ayuda lead d-none" >Solo letras</div>
                         </div>
                         <div>
-                            <input type="tel" name="telefono"  placeholder="Número de teléfono" value="1535094880" >
+                            <input type="tel" name="telefono"  placeholder="Número de teléfono" value="1535094880" autocomplete="tel-local">
                             <div id="ayudaTelefono" class="ayuda lead d-none" >Deben ser 10 números</div>
                         </div>
                     </div>
@@ -224,7 +148,49 @@
             </form>
 
         </section>
-
+        
+        
+        <section class="modal-carrito"> <!-- Modal carrito -->
+            <div class="modal-carrito-container">
+                <div class="modal-carrito-titulo">
+                    <h2>Carrito</h2>
+                    <i class="bi bi-cart4 carrito-logo"></i>
+                </div>
+                <div class="modal-carrito-productos" id="modal-carrito-productos">
+                    
+                </div>
+                <div class="modal-carrito-pie">
+                    <div class="carrito-pie-1">
+                        <p>TOTAL</p>
+                        <p class="carrito-total"><span>$</span>0</p>
+                    </div>
+                    <div class="carrito-pie-2">
+                        <button id="comprarCarrito">Comprar</button>
+                        <button id="vaciarCarritoModal">Vaciar carrito</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="carritoModal-btnContainer">
+            <button id="modal-carritobtn" class="bi bi-cart4"></button>
+        </section>
+        <template id="template-carrito-modal">
+            <div class="productos-item">
+                <div class="producto-info">
+                    <img src="../img/productos/fuente-1.jpg" alt="">
+                    <p>Fuente Be Quiet 1000W 80 Plus Gold PURE POWER 11 Full Modular</p>
+                </div>
+                <div class="producto-cantidad">
+                    <button class="btnLess">-</button>
+                    <p>1</p>
+                    <button class="btnMore">+</button>
+                </div>
+                <div class="producto-subtotal">
+                    <p>$1300</p>
+                </div>
+            </div>
+        </template> <!-- Fin Modal carrito -->
+   
     </main> <!-- Fin Sección 2 - Main -->
 
 

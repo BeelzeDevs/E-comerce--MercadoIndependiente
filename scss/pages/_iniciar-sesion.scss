@@ -1,8 +1,10 @@
 /* INICIO - MAIN - INICIAR-SESION */
 #main-sesion{
     @include bg-image-sesion-contact();
-    min-height: 70vh;
+    min-height: 90vh;
     padding: 10px;
+    display: flex;
+    justify-content: center;
     .sesion-container{
         @include flex-box(column);
         @include margin-bottom-top(40px,40px);

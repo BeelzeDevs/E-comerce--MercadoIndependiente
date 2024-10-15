@@ -1,17 +1,16 @@
 import Producto from '../models/Producto.js';
 import StorageService from '../models/Storage.js';
-import {ajusteCSSCarrito, existeEnCarrito , agregarEnCarrito,sumarEnCarrito, 
-    actualizarBadgeProductosUnicosEnCarrito} from './carrito.js';
+import { existeEnCarrito , agregarEnCarrito,sumarEnCarrito, 
+    actualizarBadgeProductosUnicosEnCarrito, mostrarModalCarrito, modalCarrito_defaultReset,PintarCarritoModal} from './carrito.js';
 
 export const modalAñadirProducto_eventoIrCarrito = () =>{
     const modalProducto = document.querySelector('.modal-añadirProducto');
-    const modalCarrito = document.querySelector('.modal-carrito');
     const irCarrito = document.querySelector('#ir-carrito');
-   
+    const carritoBtn = document.querySelector('#carrito');
+    
     irCarrito.addEventListener('click', () => {
-        ajusteCSSCarrito();
         modalProducto.classList.remove('modal-show');
-        modalCarrito.classList.add('modal-show');
+        carritoBtn.click();
     });
 }
 const modalAñadirProductoTimeout = (modalProducto)=>{
@@ -37,8 +36,14 @@ const addEventBtn_mostrarModalAñadirProducto = (btn) =>{
 
 }
 const addEventBtn_agregarCarrito = (btn) =>{
+    const carritoModalBtnContainer = document.querySelector('.carritoModal-btnContainer');
+
     let ProductID = btn.dataset.pid;
     btn.addEventListener('click',()=>{
+
+        // Evitar Bug - Ajuste por sumar mientras esta abierto el modal
+        if(carritoModalBtnContainer.classList.contains('modalcarritoBtn-animate-left')) modalCarrito_defaultReset(); //fin
+
         let product = buscarProducto(ProductID);
         let quant = buscarCantidad(ProductID);
         if(existeEnCarrito(ProductID)){
@@ -48,6 +53,7 @@ const addEventBtn_agregarCarrito = (btn) =>{
             actualizarBadgeProductosUnicosEnCarrito();
         }
         PintarProductos();
+        PintarCarritoModal();
     })
 }
 

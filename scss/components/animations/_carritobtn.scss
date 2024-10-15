@@ -1,0 +1,50 @@
+.btn-anim-left{
+    animation:appears-left1 1s linear forwards;
+    position: absolute;
+    transition: left 1s ease-in-out;
+    @keyframes appears-left1 {
+        0%{
+            left:0%;
+        }
+        100%{
+            left: 50.5%;
+        }
+    }
+}
+.btn-anim-right{
+    animation:appears-right1 1s linear forwards;
+    position: absolute;
+    transition: left 1s ease-in-out;
+    @keyframes appears-right1 {
+        0%{
+            left:50%;
+        }
+        100%{
+            left: 0%;
+        }
+    }
+}
+.modalcarrito-anim-left{
+    animation:appears-left2 1s linear forwards;
+    position: absolute;
+    @keyframes appears-left2 {
+        0%{
+            left:-50%;
+        }
+        100%{
+            right: 0%;
+        }
+    }
+}
+.modalcarrito-anim-right{
+    animation:appears-right2 1s linear forwards;
+    position: absolute;
+    @keyframes appears-right2 {
+        0%{
+            right: 0%;
+        }
+        100%{
+            left:-50%;
+        }
+    }
+}

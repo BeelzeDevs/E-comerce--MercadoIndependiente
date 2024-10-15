@@ -1,7 +1,7 @@
 import StorageService from "./models/Storage.js";
 import {preventFormSubmit, toggleVisibilidadForm,formCaptureData_iniciarSesion,formCaptureData_CrearCuenta} from './views/iniciarSesion.js';
 import {mainOffersButtons,pintarSliderMasOfertas_Storage} from './views/home.js';
-import {mostrarModalCarrito,agregarEventoBtn_headerCarrito,PintarCarritoHtml,actualizarBadgeProductosUnicosEnCarrito} from './views/carrito.js';
+import {mostrarModalCarrito,agregarEventoBtn_headerCarrito,PintarCarritoHtml,PintarCarritoModal,actualizarBadgeProductosUnicosEnCarrito} from './views/carrito.js';
 import {PintarProductos,modalAñadirProducto_eventoIrCarrito} from './views/product.js';
 
 document.addEventListener('DOMContentLoaded', async (e)=>{
@@ -19,8 +19,9 @@ document.addEventListener('DOMContentLoaded', async (e)=>{
     actualizarBadgeProductosUnicosEnCarrito();
     //events header
     agregarEventoBtn_headerCarrito();
+    //event modal carrito
     mostrarModalCarrito();
-
+    PintarCarritoModal();
     //location functions
     if(window.location.pathname.includes('iniciar-sesion')){
         preventFormSubmit('formIniciarSesion');

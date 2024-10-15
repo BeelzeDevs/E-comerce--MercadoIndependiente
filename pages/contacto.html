@@ -69,82 +69,7 @@
     </header><!-- 1 - Fin Header-->
 
     <main id="main-contact"> <!-- Seccion 2 - Main -->
-        <section class="modal-carrito">
-            <div class="modal-carrito-container">
-                <div class="modal-carrito-titulo">
-                    <h2>Carrito</h2>
-                    <i class="bi bi-cart4 carrito-logo"></i>
-                </div>
-                <div class="modal-carrito-productos">
-                    <div class="productos-item">
-                        <div class="producto-info">
-                            <img src="../img/productos/fuente-1.jpg" alt="">
-                            <p>Fuente Be Quiet 1000W 80 Plus Gold PURE POWER 11 Full Modular</p>
-                        </div>
-                        <div class="producto-cantidad">
-                            <button>-</button>
-                            <p>1</p>
-                            <button>+</button>
-                        </div>
-                        <div class="producto-subtotal">
-                            <p>$1300</p>
-                        </div>
-                    </div>
-                    <div class="productos-item">
-                        <div class="producto-info">
-                            <img src="../img/productos/fuente-1.jpg" alt="">
-                            <p>Fuente Be Quiet 1000W 80 Plus Gold PURE POWER 11 Full Modular</p>
-                        </div>
-                        <div class="producto-cantidad">
-                            <button>-</button>
-                            <p>1</p>
-                            <button>+</button>
-                        </div>
-                        <div class="producto-subtotal">
-                            <p>$1300</p>
-                        </div>
-                    </div>
-                    <div class="productos-item">
-                        <div class="producto-info">
-                            <img src="../img/productos/fuente-1.jpg" alt="">
-                            <p>Fuente Be Quiet 1000W 80 Plus Gold PURE POWER 11 Full Modular</p>
-                        </div>
-                        <div class="producto-cantidad">
-                            <button>-</button>
-                            <p>1</p>
-                            <button>+</button>
-                        </div>
-                        <div class="producto-subtotal">
-                            <p>$1300</p>
-                        </div>
-                    </div>
-                    <div class="productos-item">
-                        <div class="producto-info">
-                            <img src="../img/productos/fuente-1.jpg" alt="">
-                            <p>Fuente Be Quiet 1000W 80 Plus Gold PURE POWER 11 Full Modular</p>
-                        </div>
-                        <div class="producto-cantidad">
-                            <button>-</button>
-                            <p>1</p>
-                            <button>+</button>
-                        </div>
-                        <div class="producto-subtotal">
-                            <p>$1300</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="modal-carrito-pie">
-                    <div class="carrito-pie-1">
-                        <p>TOTAL</p>
-                        <p class="carrito-total"><span>$</span>1300</p>
-                    </div>
-                    <div class="carrito-pie-2">
-                        <button id="comprarCarrito">Comprar</button>
-                        <button id="vaciarCarrito">Vaciar carrito</button>
-                    </div>
-                </div>
-            </div>
-        </section>
+     
         
         <section  class="container contact-pos">
             <article class='contact'> <!-- Formulario de contacto -->
@@ -168,6 +93,48 @@
                 </div>
             </article><!-- Fin Formulario de contacto -->
         </section>
+                
+        <section class="modal-carrito"> <!-- Modal carrito -->
+            <div class="modal-carrito-container">
+                <div class="modal-carrito-titulo">
+                    <h2>Carrito</h2>
+                    <i class="bi bi-cart4 carrito-logo"></i>
+                </div>
+                <div class="modal-carrito-productos" id="modal-carrito-productos">
+                    
+                </div>
+                <div class="modal-carrito-pie">
+                    <div class="carrito-pie-1">
+                        <p>TOTAL</p>
+                        <p class="carrito-total"><span>$</span>0</p>
+                    </div>
+                    <div class="carrito-pie-2">
+                        <button id="comprarCarrito">Comprar</button>
+                        <button id="vaciarCarritoModal">Vaciar carrito</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="carritoModal-btnContainer">
+            <button id="modal-carritobtn" class="bi bi-cart4"></button>
+        </section>
+        <template id="template-carrito-modal">
+            <div class="productos-item">
+                <div class="producto-info">
+                    <img src="../img/productos/fuente-1.jpg" alt="">
+                    <p>Fuente Be Quiet 1000W 80 Plus Gold PURE POWER 11 Full Modular</p>
+                </div>
+                <div class="producto-cantidad">
+                    <button class="btnLess">-</button>
+                    <p>1</p>
+                    <button class="btnMore">+</button>
+                </div>
+                <div class="producto-subtotal">
+                    <p>$1300</p>
+                </div>
+            </div>
+        </template> <!-- Fin Modal carrito -->
+   
     </main><!-- Fin Seccion 2 - Main -->
 
 
